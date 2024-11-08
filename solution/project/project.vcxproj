@@ -100,6 +100,7 @@
   <ItemGroup>
     <ClCompile Include="src\core\hooks.cpp" />
     <ClCompile Include="src\rdr2\rdr2.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\ActionContext.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\AmmoComponent.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\animAnimatorComponent.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\aniRide.cpp" />
@@ -110,6 +111,7 @@
     <ClCompile Include="src\rdr2\rdr2_include\camCameraTransitionBase.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\CameraViewport.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\camManager.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\ConditionMoverNotOnGround.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\gohCamera.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\gohCameraFactory.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\gohDofSettings.cpp" />
@@ -143,6 +145,7 @@
     <ClCompile Include="src\shared\mem_utils\mem_utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\rdr2\rdr2_include\ActionContext.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\AmmoComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\animAnimatorComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniRide.hpp" />
@@ -152,6 +155,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\camCameraChannel.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCameraTransitionBase.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\CameraViewport.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\ConditionMoverNotOnGround.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eCodeSideStatistics.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eState.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eWeaponAction.hpp" />

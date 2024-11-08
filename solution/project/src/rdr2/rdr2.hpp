@@ -1,5 +1,6 @@
 #pragma once
 
+#include "rdr2_include/ActionContext.hpp"
 #include "rdr2_include/AmmoComponent.hpp"
 #include "rdr2_include/animAnimatorComponent.hpp"
 #include "rdr2_include/aniRide.hpp"
@@ -10,6 +11,7 @@
 #include "rdr2_include/camCameraTransitionBase.hpp"
 #include "rdr2_include/CameraViewport.hpp"
 #include "rdr2_include/camManager.hpp"
+#include "rdr2_include/ConditionMoverNotOnGround.hpp"
 #include "rdr2_include/eCodeSideStatistics.hpp"
 #include "rdr2_include/eState.hpp"
 #include "rdr2_include/eWeaponAction.hpp"

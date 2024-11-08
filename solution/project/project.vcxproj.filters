@@ -44,6 +44,8 @@
     <ClCompile Include="src\rdr2\rdr2_include\projProjectile.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\ProjectileLaunchData.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\weapBaseWeaponType.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\ConditionMoverNotOnGround.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\ActionContext.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage_include\Color32.hpp" />
@@ -106,5 +108,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\ProjectileLaunchData.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\weapBaseWeaponType.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagGuid.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\ConditionMoverNotOnGround.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\ActionContext.hpp" />
   </ItemGroup>
 </Project>
