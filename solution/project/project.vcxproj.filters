@@ -19,6 +19,11 @@
     <ClCompile Include="src\shared\con_utils\con_utils.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\hlthHealthComponent.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\hlthMsgInjure.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\CameraViewport.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\camCameraChannel.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\camCamera.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\camCameraTransitionBase.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\grcViewport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage_include\Color32.hpp" />
@@ -50,5 +55,10 @@
     <ClInclude Include="src\shared\con_utils\con_utils.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthHealthComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthMsgInjure.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\CameraViewport.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\camCameraChannel.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\camCamera.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\camCameraTransitionBase.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\grcViewport.hpp" />
   </ItemGroup>
 </Project>

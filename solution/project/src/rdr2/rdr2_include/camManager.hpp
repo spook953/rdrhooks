@@ -1,5 +1,8 @@
 #pragma once
 
+#include "camCamera.hpp"
+#include "camCameraChannel.hpp"
+#include "CameraViewport.hpp"
 #include "gohCameraFactory.hpp"
 
 namespace rdr2
@@ -7,6 +10,9 @@ namespace rdr2
 	class camManager
 	{
 	public:
-		gohCameraFactory *const GetCameraFactory();
+		camCamera *GetCamera();
+		camCameraChannel *GetCameraChannel();
+		CameraViewport *GetCameraViewport();
+		gohCameraFactory *GetCameraFactory();
 	};
 }

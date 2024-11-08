@@ -12,7 +12,7 @@ bool rdrhLoad()
 	for (Hook *const h : getInsts<Hook>())
 	{
 		if (!h->init()) {
-			con::printErr(std::format("failed to hook: {}", h->name()));
+			con::printErr(std::format("failed to hook {}", h->name()));
 			return false;
 		}
 

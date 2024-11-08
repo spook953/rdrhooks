@@ -30,6 +30,11 @@ MAKE_HOOK(
 	float,
 	rdr2::weapWeapon *thisptr)
 {
+	if (rdr2::camManager *const cam_manager{ rdr2::GetCamManager() })
+	{
+		con::printMsg(std::format("{:X}", reinterpret_cast<uintptr_t>(cam_manager->GetCameraChannel())));
+	}
+
 	return -1000.0f;
 }
 
