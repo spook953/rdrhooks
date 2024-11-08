@@ -100,6 +100,9 @@
   <ItemGroup>
     <ClCompile Include="src\core\hooks.cpp" />
     <ClCompile Include="src\rdr2\rdr2.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\animAnimatorComponent.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\bhPacketExec.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\bhWeaponsPacket.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\camCamera.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\camCameraChannel.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\camCameraTransitionBase.cpp" />
@@ -112,9 +115,13 @@
     <ClCompile Include="src\rdr2\rdr2_include\hlthHealthComponent.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\hlthMsgInjure.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\invInventoryComponent.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\invWeaponType.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\mvrMoverComponent.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\sagActor.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\sagPlayer.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\tgtReticleComponent.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\TransitionCamera.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\WeaponSpecialRequest.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\weapProjectileInfo.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\weapWeapon.cpp" />
     <ClCompile Include="src\shared\minhook\buffer.cpp" />
@@ -127,10 +134,14 @@
     <ClCompile Include="src\shared\mem_utils\mem_utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\rdr2\rdr2_include\animAnimatorComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\base.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\bhPacketExec.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\bhWeaponsPacket.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCameraChannel.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCameraTransitionBase.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\CameraViewport.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\eCodeSideStatistics.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eState.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohDofSettings.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\grcViewport.hpp" />
@@ -138,6 +149,8 @@
     <ClInclude Include="src\rdr2\rdr2_include\hlthMsgInjure.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCamera.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invInventoryComponent.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\invWeaponType.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\mvrMoverComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage_include\Color32.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage_include\Math.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage_include\Matrix34.hpp" />
@@ -153,7 +166,9 @@
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagActor.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagPlayer.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\tgtReticleComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\TransitionCamera.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\WeaponSpecialRequest.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\weapProjectileInfo.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\weapWeapon.hpp" />
     <ClInclude Include="src\shared\make_sig\make_sig.hpp" />

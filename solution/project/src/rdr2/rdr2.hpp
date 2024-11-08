@@ -1,10 +1,14 @@
 #pragma once
 
+#include "rdr2_include/animAnimatorComponent.hpp"
+#include "rdr2_include/bhPacketExec.hpp"
+#include "rdr2_include/bhWeaponsPacket.hpp"
 #include "rdr2_include/camCamera.hpp"
 #include "rdr2_include/camCameraChannel.hpp"
 #include "rdr2_include/camCameraTransitionBase.hpp"
 #include "rdr2_include/CameraViewport.hpp"
 #include "rdr2_include/camManager.hpp"
+#include "rdr2_include/eCodeSideStatistics.hpp"
 #include "rdr2_include/eState.hpp"
 #include "rdr2_include/gohCamera.hpp"
 #include "rdr2_include/gohCameraFactory.hpp"
@@ -13,9 +17,13 @@
 #include "rdr2_include/hlthHealthComponent.hpp"
 #include "rdr2_include/hlthMsgInjure.hpp"
 #include "rdr2_include/invInventoryComponent.hpp"
+#include "rdr2_include/invWeaponType.hpp"
+#include "rdr2_include/mvrMoverComponent.hpp"
 #include "rdr2_include/sagActor.hpp"
 #include "rdr2_include/sagPlayer.hpp"
+#include "rdr2_include/tgtReticleComponent.hpp"
 #include "rdr2_include/TransitionCamera.hpp"
+#include "rdr2_include/WeaponSpecialRequest.hpp"
 #include "rdr2_include/weapProjectileInfo.hpp"
 #include "rdr2_include/weapWeapon.hpp"
 

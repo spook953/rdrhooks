@@ -28,6 +28,13 @@
     <ClCompile Include="src\rdr2\rdr2_include\gohDofSettings.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\sagPlayer.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\invInventoryComponent.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\mvrMoverComponent.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\animAnimatorComponent.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\tgtReticleComponent.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\bhPacketExec.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\bhWeaponsPacket.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\invWeaponType.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\WeaponSpecialRequest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage_include\Color32.hpp" />
@@ -71,5 +78,13 @@
     <ClInclude Include="src\rdr2\rdr2_include\eState.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\base.hpp" />
     <ClInclude Include="src\shared\make_sig\make_sig.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\mvrMoverComponent.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\animAnimatorComponent.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\tgtReticleComponent.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\bhPacketExec.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\bhWeaponsPacket.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\invWeaponType.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\WeaponSpecialRequest.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\eCodeSideStatistics.hpp" />
   </ItemGroup>
 </Project>
