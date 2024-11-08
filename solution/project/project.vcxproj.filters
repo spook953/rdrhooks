@@ -35,6 +35,15 @@
     <ClCompile Include="src\rdr2\rdr2_include\bhWeaponsPacket.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\invWeaponType.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\WeaponSpecialRequest.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\sagLayout.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\aniRide.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\rdrActorTracker.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\AmmoComponent.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\rdrMatrixAudioEntity.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\WeaponParams.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\projProjectile.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\ProjectileLaunchData.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\weapBaseWeaponType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage_include\Color32.hpp" />
@@ -86,5 +95,16 @@
     <ClInclude Include="src\rdr2\rdr2_include\invWeaponType.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\WeaponSpecialRequest.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eCodeSideStatistics.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagLayout.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\aniRide.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\rdrActorTracker.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\AmmoComponent.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\rdrMatrixAudioEntity.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\eWeaponAction.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\WeaponParams.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\projProjectile.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\ProjectileLaunchData.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\weapBaseWeaponType.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagGuid.hpp" />
   </ItemGroup>
 </Project>
