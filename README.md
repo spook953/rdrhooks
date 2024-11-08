@@ -1,6 +1,6 @@
 # resources
 
-https://dg.getrektby.us/ (get [NX] Red Dead Redemption [01007820196A6000][v0].7z (15.6 MB))
+https://dg.getrektby.us/ -> [NX] Red Dead Redemption [01007820196A6000][v0].7z
 
 https://github.com/pgarba/SwitchIDAProLoader
 
