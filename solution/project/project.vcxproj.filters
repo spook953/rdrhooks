@@ -24,6 +24,8 @@
     <ClCompile Include="src\rdr2\rdr2_include\camCamera.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\camCameraTransitionBase.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\grcViewport.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\TransitionCamera.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\gohDofSettings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage_include\Color32.hpp" />
@@ -60,5 +62,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\camCamera.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCameraTransitionBase.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\grcViewport.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\TransitionCamera.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\gohDofSettings.hpp" />
   </ItemGroup>
 </Project>

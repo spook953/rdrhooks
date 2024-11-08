@@ -107,10 +107,12 @@
     <ClCompile Include="src\rdr2\rdr2_include\camManager.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\gohCamera.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\gohCameraFactory.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\gohDofSettings.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\grcViewport.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\hlthHealthComponent.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\hlthMsgInjure.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\sagActor.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\TransitionCamera.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\weapProjectileInfo.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\weapWeapon.cpp" />
     <ClCompile Include="src\shared\minhook\buffer.cpp" />
@@ -126,6 +128,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\camCameraChannel.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCameraTransitionBase.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\CameraViewport.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\gohDofSettings.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\grcViewport.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthHealthComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthMsgInjure.hpp" />
@@ -144,6 +147,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\gohCameraFactory.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagActor.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\TransitionCamera.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\weapProjectileInfo.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\weapWeapon.hpp" />
     <ClInclude Include="src\shared\minhook\buffer.hpp" />
