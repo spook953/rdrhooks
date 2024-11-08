@@ -2,6 +2,16 @@
 
 bool rdrhLoad()
 {
+	for (Sig *const s : getInsts<Sig>())
+	{
+		if (!s->init()) {
+			con::printErr(std::format("failed to find {}", s->name()));
+			return false;
+		}
+
+		con::printMsg(std::format("found {} at {:X}", s->name(), s->addr().get()));
+	}
+
 	if (MH_Initialize() != MH_OK) {
 		con::printErr("failed to initialize minhook");
 		return false;

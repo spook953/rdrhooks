@@ -26,6 +26,8 @@
     <ClCompile Include="src\rdr2\rdr2_include\grcViewport.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\TransitionCamera.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\gohDofSettings.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\sagPlayer.cpp" />
+    <ClCompile Include="src\rdr2\rdr2_include\invInventoryComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\rage\rage_include\Color32.hpp" />
@@ -64,5 +66,10 @@
     <ClInclude Include="src\rdr2\rdr2_include\grcViewport.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\TransitionCamera.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohDofSettings.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagPlayer.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\invInventoryComponent.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\eState.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\base.hpp" />
+    <ClInclude Include="src\shared\make_sig\make_sig.hpp" />
   </ItemGroup>
 </Project>

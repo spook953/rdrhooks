@@ -17,5 +17,5 @@ rdr2::CameraViewport *rdr2::camManager::GetCameraViewport()
 
 rdr2::gohCameraFactory *rdr2::camManager::GetCameraFactory()
 {
-	return MemAddr{ this }.offset(0x50).rcast<gohCameraFactory *>();
+	return *reinterpret_cast<gohCameraFactory **>(reinterpret_cast<uintptr_t>(this) + 0x50);
 }

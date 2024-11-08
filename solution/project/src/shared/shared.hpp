@@ -8,6 +8,7 @@
 #include "con_utils/con_utils.hpp"
 #include "inst_tracker/inst_tracker.hpp"
 #include "make_hook/make_hook.hpp"
+#include "make_sig/make_sig.hpp"
 #include "mem_address/mem_address.hpp"
 #include "mem_utils/mem_utils.hpp"
 #include "minhook/minhook.hpp"

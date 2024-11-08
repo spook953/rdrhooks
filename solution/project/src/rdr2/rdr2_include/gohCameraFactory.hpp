@@ -1,5 +1,7 @@
 #pragma once
 
+#include "base.hpp"
+
 #include "gohCamera.hpp"
 
 namespace rdr2

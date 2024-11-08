@@ -1,5 +1,7 @@
 #pragma once
 
+#include "base.hpp"
+
 #include "grcViewport.hpp"
 
 namespace rdr2

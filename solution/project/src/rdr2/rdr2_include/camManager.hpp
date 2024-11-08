@@ -1,5 +1,7 @@
 #pragma once
 
+#include "base.hpp"
+
 #include "camCamera.hpp"
 #include "camCameraChannel.hpp"
 #include "CameraViewport.hpp"

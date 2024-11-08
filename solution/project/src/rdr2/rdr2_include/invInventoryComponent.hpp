@@ -4,10 +4,9 @@
 
 namespace rdr2
 {
-	class weapWeapon
+	class invInventoryComponent
 	{
 	public:
-		float &GetAmmoInClip();
-		int &GetAutoFire();
+		bool IsItemSwitchingWeaponToWeapon();
 	};
 }
