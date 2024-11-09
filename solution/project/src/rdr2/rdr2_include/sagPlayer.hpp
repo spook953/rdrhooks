@@ -22,7 +22,7 @@ namespace rdr2
 			return sigs::sagPlayer_CanSniperZoom.call<bool>(this, param_1);
 		}
 
-		rdr2::weapWeapon *GetActiveWeapon(bool param_1)
+		weapWeapon *GetActiveWeapon(bool param_1)
 		{
 			return sigs::sagPlayer_GetActiveWeapon.call<weapWeapon *>(this, param_1);
 		}

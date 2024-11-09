@@ -28,17 +28,17 @@ namespace rdr2
 			sigs::camCameraChannel_Update.call<void>(this);
 		}
 
-		rdr2::CameraViewport *GetCameraViewport()
+		CameraViewport *GetCameraViewport()
 		{
 			return *reinterpret_cast<CameraViewport **>(reinterpret_cast<uintptr_t>(this) + 0x40);
 		}
 
-		rdr2::gohDofSettings *GetDofSettings()
+		gohDofSettings *GetDofSettings()
 		{
 			return *reinterpret_cast<gohDofSettings **>(reinterpret_cast<uintptr_t>(this) + 0x610);
 		}
 
-		rdr2::TransitionCamera *GetTransitionCamera()
+		TransitionCamera *GetTransitionCamera()
 		{
 			return *reinterpret_cast<TransitionCamera **>(reinterpret_cast<uintptr_t>(this) + 0x18);
 		}

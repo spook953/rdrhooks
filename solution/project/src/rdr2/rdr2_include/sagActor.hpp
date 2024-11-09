@@ -20,14 +20,14 @@ namespace rdr2
 			return sigs::sagActor_IsIndoors.call<bool>(this);
 		}
 
-		bool GetHeadPosition(rdr2::Vector3 &param_1)
+		bool GetHeadPosition(Vector3 &param_1)
 		{
-			return sigs::sagActor_GetHeadPosition.call<bool, sagActor *, rdr2::Vector3 &>(this, param_1);
+			return sigs::sagActor_GetHeadPosition.call<bool, sagActor *, Vector3 &>(this, param_1);
 		}
 
-		bool GetRootPosition(rdr2::Vector3 &param_1)
+		bool GetRootPosition(Vector3 &param_1)
 		{
-			return sigs::sagActor_GetRootPosition.call<bool, sagActor *, rdr2::Vector3 &>(this, param_1);
+			return sigs::sagActor_GetRootPosition.call<bool, sagActor *, Vector3 &>(this, param_1);
 		}
 
 		void Init(int param_1, sagLayout *param_2)
@@ -55,7 +55,7 @@ namespace rdr2
 			return sigs::sagActor_GetMostLocalDescription.call<const char *>(this);
 		}
 
-		void SpatialPositionUpdate(rdr2::Vector3 *param_1)
+		void SpatialPositionUpdate(Vector3 *param_1)
 		{
 			sigs::sagActor_SpatialPositionUpdate.call<void>(this, param_1);
 		}

@@ -26,17 +26,17 @@ namespace rdr2
 			return *reinterpret_cast<int *>(*reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0x28) + 0x1B0);
 		}
 
-		void ClampVelocityToMaxFlatDist(rdr2::Vector3 *param_1)
+		void ClampVelocityToMaxFlatDist(Vector3 *param_1)
 		{
 			sigs::weapWeapon_ClampVelocityToMaxFlatDist.call<void>(this, param_1);
 		}
 
-		void ComputeMainMuzzlePosition(rdr2::Vector3 *param_1, float param_2, bool param_3)
+		void ComputeMainMuzzlePosition(Vector3 *param_1, float param_2, bool param_3)
 		{
 			sigs::weapWeapon_ComputeMainMuzzlePosition.call<void>(this, param_1, param_2, param_3);
 		}
 
-		void GetMuzzleLocationMatrix(rdr2::Matrix34 *param_1, bool param_2)
+		void GetMuzzleLocationMatrix(Matrix34 *param_1, bool param_2)
 		{
 			sigs::weapWeapon_GetMuzzleLocationMatrix.call<void>(this, param_1, param_2);
 		}
@@ -46,7 +46,7 @@ namespace rdr2
 			return sigs::weapWeapon_UpdateOpMode.call<bool>(this);
 		}
 
-		float GetThrownArmingDistanceSqrd(rdr2::Vector3 *param_1)
+		float GetThrownArmingDistanceSqrd(Vector3 *param_1)
 		{
 			return sigs::weapWeapon_GetThrownArmingDistanceSqrd.call<float>(this, param_1);
 		}
@@ -86,7 +86,7 @@ namespace rdr2
 			sigs::weapWeapon_UpdateAudio.call<void>(this, param_1);
 		}
 
-		void FireProjectile(projProjectile *param_1, int param_2, rdr2::Matrix34 *param_3, float param_4, int param_5, bool param_6, int param_7, bool param_8)
+		void FireProjectile(projProjectile *param_1, int param_2, Matrix34 *param_3, float param_4, int param_5, bool param_6, int param_7, bool param_8)
 		{
 			sigs::weapWeapon_FireProjectile.call<void>(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
 		}

@@ -18,6 +18,6 @@ namespace rdr2
 		uint8_t field_0[16]{};
 
 	public:
-		rdr2::Matrix44 m_mMatrix{};
+		Matrix44 m_mMatrix{};
 	};
 }
