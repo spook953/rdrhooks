@@ -10,6 +10,7 @@ MAKE_SIG(camManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B 
 MAKE_SIG(WeatherManager_sm_instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B 48 54 85 C9 74 1C").fixRip(3).deref());
 MAKE_SIG(sagLayoutManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 48 8B 48 10 48 8B 71 10 48 85 F6 0F 84 ? ? ? ? 0F 29 B4 24 ? ? ? ?").fixRip(3).deref());
 MAKE_SIG(phLevelNew_sm_ActiveInstance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 4F 8D 04 40 4D 03 C0 48 8B 50 60").fixRip(3).deref());
+MAKE_SIG(aGuidGeneral_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 44 8B 53 08 45 0F B7 CA 4D 03 C9").fixRip(3).deref());
 
 #pragma endregion
 
@@ -89,9 +90,27 @@ MAKE_SIG(sagPlayer_UpdateWeaponSelection, mem::findBytes("RDR.exe", "4C 8B DC 57
 
 #pragma endregion
 
+#pragma region sagLayout
+
+MAKE_SIG(sagLayout_DestroyActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 0F B6 DB").fixRip());
+
+#pragma endregion
+
+#pragma region entEntityComponent
+
+MAKE_SIG(entEntityComponent_HandleDestroyOnDeathNotify_newbodies, mem::findBytes("RDR.exe", "48 89 54 24 ? 55 41 55"));
+
+#pragma endregion
+
 #pragma region hlthHealthComponent
 
 MAKE_SIG(hlthHealthComponent_SetHitPoints, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 0F 2E C7").fixRip());
+MAKE_SIG(hlthHealthComponent_InstantCorpsify, mem::findBytes("RDR.exe", "E8 ? ? ? ? 88 43 28").fixRip());
+MAKE_SIG(hlthHealthComponent_CreateBloodPool, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 83 3D ? ? ? ? ? 40 88 6C 24 ?").fixRip());
+MAKE_SIG(hlthHealthComponent_HandleMoverLanded, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 48 8B 59 60 48 85 DB 0F 84 ? ? ? ? F3 0F 10 43 ?"));
+MAKE_SIG(hlthHealthComponent_Kill, mem::findBytes("RDR.exe", "E9 ? ? ? ? F6 C1 84").fixRip());
+MAKE_SIG(hlthHealthComponent_Injure, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 BB ? ? ? ? ? B9 ? ? ? ?").fixRip());
+MAKE_SIG(hlthHealthComponent_HandleInjure, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F B7 8F ? ? ? ? 4C 8B 05 ? ? ? ? 48 03 C9 0F B7 87 ? ? ? ? 66 41 39 44 C8 ?").fixRip());
 
 #pragma endregion
 

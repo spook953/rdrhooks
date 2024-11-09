@@ -6,7 +6,16 @@ MAKE_HOOK(
 	void,
 	rdr2::hlthHealthComponent *thisptr, float param_1, bool param_2, bool param_3, rdr2::hlthMsgInjure *param_4)
 {
-	//CALL_ORIGINAL(thisptr, param_1, param_2, param_3, param_4);
+	if (rdr2::sagActor *const plr{ rdr2::GetPlayerActor() })
+	{
+		if (thisptr && thisptr->GetActor() == plr) {
+			return; //dont hurt me :(
+		}
+	}
+
+	//everyone else can die >:D
+
+	CALL_ORIGINAL(thisptr, param_1, param_2, param_3, param_4);
 }
 
 MAKE_HOOK(

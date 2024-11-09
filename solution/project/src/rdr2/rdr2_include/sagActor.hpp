@@ -2,6 +2,7 @@
 
 #include "base.hpp"
 
+#include "entEntityComponent.hpp"
 #include "sagLayout.hpp"
 #include "Vector3.hpp"
 
@@ -68,6 +69,17 @@ namespace rdr2
 		bool ProcessPhase1()
 		{
 			return sigs::sagActor_ProcessPhase1.call<bool>(this);
+		}
+
+	public:
+		sagLayout *GetLayout()
+		{
+			return *reinterpret_cast<sagLayout **>(reinterpret_cast<uintptr_t>(this) + 0x190);
+		}
+
+		entEntityComponent *GetEntityComponent()
+		{
+			return *reinterpret_cast<entEntityComponent **>(reinterpret_cast<uintptr_t>(this) + 0x50);
 		}
 	};
 }

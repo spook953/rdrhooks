@@ -92,5 +92,8 @@
     <ClInclude Include="src\rdr2\rdr2_include\eObjectState.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniLedge.h" />
     <ClInclude Include="src\rdr2\rdr2_include\sagMsgAttachmentImpact.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\entEntityComponent.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagMsgDestroyOnDeathNotify.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\mvrMsgLanded.hpp" />
   </ItemGroup>
 </Project>

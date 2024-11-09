@@ -134,6 +134,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\crFrame.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\crFrameFilter.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eCodeSideStatistics.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\entEntityComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eObjectState.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eState.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eWeaponAction.hpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\invInventoryComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invWeaponType.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\mvrMoverComponent.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\mvrMsgLanded.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\phInst.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\phLevelNew.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\phSimulator.hpp" />
@@ -157,6 +159,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\Quaternion.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\rdrAnimation.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagMsgAttachmentImpact.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagMsgDestroyOnDeathNotify.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Vector2.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Vector3.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Vector4.hpp" />
