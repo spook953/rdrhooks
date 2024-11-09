@@ -160,6 +160,8 @@
     <ClInclude Include="src\rdr2\rdr2_include\rdrAnimation.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagMsgAttachmentImpact.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagMsgDestroyOnDeathNotify.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagPlayerMgr.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagPlayerStates.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Vector2.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Vector3.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Vector4.hpp" />

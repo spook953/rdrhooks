@@ -96,6 +96,25 @@ MAKE_SIG(sagLayout_DestroyActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 0F 
 
 #pragma endregion
 
+#pragma region sagPlayerMgr
+
+
+
+#pragma endregion
+
+#pragma region sagPlayerStates
+
+MAKE_SIG(sagPlayerStates_CheckIsUsingGringo, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 75 A7").fixRip());
+MAKE_SIG(sagPlayerStates_AllowWeaponsCycle, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 4C 8B 01 48 8B D9"));
+MAKE_SIG(sagPlayerStates_CheckIsSittingOnTrain, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 75 3D 48 8B 03").fixRip());
+MAKE_SIG(sagPlayerStates_CheckIsDeadOrInvalid, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 0F 85 ? ? ? ? 48 85 D2 74 22").fixRip());
+MAKE_SIG(sagPlayerStates_CheckIsRiding, mem::findBytes("RDR.exe", "E8 ? ? ? ? 3C 01 75 0F").fixRip());
+MAKE_SIG(sagPlayerStates_CheckIsUsingVehicle, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8B ? ? ? ? 44 0F B6 E8").fixRip());
+MAKE_SIG(sagPlayerStates_CheckIsInsideVehicle, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 74 3D 4D 85 C9").fixRip());
+MAKE_SIG(sagPlayerStates_EvaluateReticleDraw, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8E ? ? ? ? 0F 57 F6").fixRip());
+
+#pragma endregion
+
 #pragma region entEntityComponent
 
 MAKE_SIG(entEntityComponent_HandleDestroyOnDeathNotify_newbodies, mem::findBytes("RDR.exe", "48 89 54 24 ? 55 41 55"));

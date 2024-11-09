@@ -95,5 +95,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\entEntityComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagMsgDestroyOnDeathNotify.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\mvrMsgLanded.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagPlayerMgr.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagPlayerStates.hpp" />
   </ItemGroup>
 </Project>

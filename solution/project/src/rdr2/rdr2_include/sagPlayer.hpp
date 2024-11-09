@@ -8,6 +8,7 @@
 #include "invInventoryComponent.hpp"
 #include "invWeaponType.hpp"
 #include "mvrMoverComponent.hpp"
+#include "sagPlayerStates.hpp"
 #include "tgtReticleComponent.hpp"
 #include "WeaponSpecialRequest.hpp"
 #include "weapWeapon.hpp"
@@ -155,6 +156,12 @@ namespace rdr2
 		void UpdateWeaponSelection(int param_1)
 		{
 			sigs::sagPlayer_UpdateWeaponSelection.call<void>(this, param_1);
+		}
+
+	public:
+		sagPlayerStates *GetPlayerStates()
+		{
+			return *reinterpret_cast<sagPlayerStates **>(reinterpret_cast<uintptr_t>(this) + 0x410);
 		}
 	};
 }

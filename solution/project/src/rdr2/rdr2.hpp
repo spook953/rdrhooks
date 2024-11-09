@@ -58,6 +58,8 @@
 #include "rdr2_include/sagMsgAttachmentImpact.hpp"
 #include "rdr2_include/sagMsgDestroyOnDeathNotify.hpp"
 #include "rdr2_include/sagPlayer.hpp"
+#include "rdr2_include/sagPlayerMgr.hpp"
+#include "rdr2_include/sagPlayerStates.hpp"
 #include "rdr2_include/tgtReticleComponent.hpp"
 #include "rdr2_include/TransitionCamera.hpp"
 #include "rdr2_include/Vector2.hpp"

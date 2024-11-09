@@ -31,6 +31,9 @@ namespace rdr2
 			sigs::hlthHealthComponent_HandleMoverLanded.call<void>(this, param_1);
 		}
 
+		//most likely wrong
+		//used like so in hlthHealthComponent::SetHitPoints:
+		//Kill((hlthMsgInjure *)this,SUB81(param_4,0));
 		hlthMsgInjure *Kill(hlthMsgInjure *param_1, bool param_2)
 		{
 			return sigs::hlthHealthComponent_Kill.call<hlthMsgInjure *>(this, param_1, param_2);
