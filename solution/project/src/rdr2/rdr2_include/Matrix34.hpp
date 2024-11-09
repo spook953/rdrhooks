@@ -1,5 +1,7 @@
 #pragma once
 
+#include "base.hpp"
+
 #include "Vector3.hpp"
 
 namespace rdr2

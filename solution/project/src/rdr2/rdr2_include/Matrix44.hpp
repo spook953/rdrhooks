@@ -1,5 +1,7 @@
 #pragma once
 
+#include "base.hpp"
+
 #include "Math.hpp"
 #include "Matrix34.hpp"
 #include "Vector4.hpp"
