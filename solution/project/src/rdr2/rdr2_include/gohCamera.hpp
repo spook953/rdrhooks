@@ -2,6 +2,8 @@
 
 #include "base.hpp"
 
+#include "Matrix44.hpp"
+
 namespace rdr2
 {
 	enum eCameraType : int
@@ -16,6 +18,6 @@ namespace rdr2
 		uint8_t field_0[16]{};
 
 	public:
-		rage::Matrix44 m_mMatrix{};
+		rdr2::Matrix44 m_mMatrix{};
 	};
 }

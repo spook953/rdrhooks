@@ -1,11 +1,15 @@
 #pragma once
 
-#include "rage/rage.hpp"
+#include "../../shared/shared.hpp"
 
 #pragma region global
 
 MAKE_SIG(GetPlayerActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 C0 74 DF").fixRip());
-MAKE_SIG(atSingleton_camManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B D5 48 8B 48 50").fixRip(3).deref());
+
+MAKE_SIG(camManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B D5 48 8B 48 50").fixRip(3).deref());
+MAKE_SIG(WeatherManager_sm_instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B 48 54 85 C9 74 1C").fixRip(3).deref());
+MAKE_SIG(sagLayoutManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 48 8B 48 10 48 8B 71 10 48 85 F6 0F 84 ? ? ? ? 0F 29 B4 24 ? ? ? ?").fixRip(3).deref());
+MAKE_SIG(phLevelNew_sm_ActiveInstance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 4F 8D 04 40 4D 03 C0 48 8B 50 60").fixRip(3).deref());
 
 #pragma endregion
 
@@ -156,5 +160,94 @@ MAKE_SIG(rdrActorTracker_EndTrack, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F B6 8
 #pragma region rdrMatrixAudioEntity
 
 MAKE_SIG(rdrMatrixAudioEntity_PlayWeaponSound, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8B 05 ? ? ? ? 48 8B 0D ? ? ? ?").fixRip());
+
+#pragma endregion
+
+#pragma region animAnimatorComponent
+
+MAKE_SIG(animAnimatorComponent_ResetMembers, mem::findBytes("RDR.exe", "E8 ? ? ? ? 40 38 AB ? ? ? ? 74 1E").fixRip());
+MAKE_SIG(animAnimatorComponent_InitAnimator, mem::findBytes("RDR.exe", "48 89 5C 24 ? 55 48 83 EC 20 48 8B 41 10"));
+MAKE_SIG(animAnimatorComponent_DetermineBodyType, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 4F 08 41 BE ? ? ? ?").fixRip());
+MAKE_SIG(animAnimatorComponent_StopParameterizedMotion, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B CE E8 ? ? ? ? 48 8B 7E 08").fixRip());
+MAKE_SIG(animAnimatorComponent_IsCurrentAnimFadeOut, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 75 04 B3 01").fixRip());
+MAKE_SIG(animAnimatorComponent_StopCurrentAnim, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 30 40 84 ED").fixRip());
+MAKE_SIG(animAnimatorComponent_ScheduleAnimation, mem::findBytes("RDR.exe", "E8 ? ? ? ? 45 0F 2F DD").fixRip());
+MAKE_SIG(animAnimatorComponent_PoseAndUpdateHeadTurn, mem::findBytes("RDR.exe", "40 53 48 83 EC 40 48 83 B9 ? ? ? ? ? 48 8B D9 0F 84 ? ? ? ? 48 8B 81 ? ? ? ?"));
+MAKE_SIG(animAnimatorComponent_DetermineAndLoadNextIdle, mem::findBytes("RDR.exe", "E8 ? ? ? ? 41 C7 84 BF ? ? ? ? ? ? ? ?").fixRip());
+MAKE_SIG(animAnimatorComponent_Shutdown, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC 20 48 8B D9 48 8D B9 ? ? ? ?"));
+MAKE_SIG(animAnimatorComponent_IsAnimationsLoaded, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 74 71 48 8B 83 ? ? ? ?").fixRip());
+MAKE_SIG(animAnimatorComponent_ScheduleExpression, mem::findBytes("RDR.exe", "E8 ? ? ? ? C6 43 38 01").fixRip());
+MAKE_SIG(animAnimatorComponent_NotifyInjured, mem::findBytes("RDR.exe", "E8 ? ? ? ? 45 84 ED 4C 8B AC 24 ? ? ? ?").fixRip());
+MAKE_SIG(animAnimatorComponent_UpdateActionTreeGaitMixer, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 FF 74 5D").fixRip());
+MAKE_SIG(animAnimatorComponent_InitFromSkeleton, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 39 B3 ? ? ? ? 0F 84 ? ? ? ?").fixRip());
+MAKE_SIG(animAnimatorComponent_UpdatePM, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 44 0F 10 15 ? ? ? ? 40 38 B3 ? ? ? ?").fixRip());
+MAKE_SIG(animAnimatorComponent_EnableRepulsion, mem::findBytes("RDR.exe", "E8 ? ? ? ? 40 38 77 1C").fixRip());
+MAKE_SIG(animAnimatorComponent_UpdateCharacterAnimation, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 48 8B 41 10 44 8B C2"));
+MAKE_SIG(animAnimatorComponent_HandleAttachmentImpact, mem::findBytes("RDR.exe", "E8 ? ? ? ? 49 8B 55 00 48 8B 5C 24 ?").fixRip());
+
+#pragma endregion
+
+#pragma region aniActionSet
+
+MAKE_SIG(aniActionSet_Init, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B BB ? ? ? ? 48 39 2F").fixRip());
+MAKE_SIG(aniActionSet_Shutdown, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 4B 08 48 8B D7").fixRip());
+
+#pragma endregion
+
+#pragma region crFrame
+
+MAKE_SIG(crFrame_Set, mem::findBytes("RDR.exe", "E9 ? ? ? ? 48 8B 51 28").fixRip());
+
+#pragma endregion
+
+#pragma region animMotionTreeManager
+
+MAKE_SIG(animMotionTreeManager_ScheduleAnimation, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4D 8B 77 08 EB 03").fixRip());
+MAKE_SIG(animMotionTreeManager_Shutdown, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8B ? ? ? ? 33 FF 48 85 C9 74 0F").fixRip());
+
+#pragma endregion
+
+#pragma region aniAim
+
+MAKE_SIG(aniAim_UpdateWeaponAttachment, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8B ? ? ? ? 48 8B 49 28").fixRip());
+MAKE_SIG(aniAim_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F 28 74 24 ? 85 F6").fixRip());
+
+#pragma endregion
+
+#pragma region aniAnimProp
+
+MAKE_SIG(aniAnimProp_UpdatePropAttachments, mem::findBytes("RDR.exe", "48 8B C4 48 89 70 18 48 89 78 20 55 41 56 41 57 48 8B EC"));
+
+#pragma endregion
+
+#pragma region aniGatling
+
+MAKE_SIG(aniGatling_UpdateWeaponLocation, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 05 48 85 FF").fixRip());
+
+#pragma endregion
+
+#pragma region animAnimSetHandle
+
+MAKE_SIG(animAnimSetHandle_GetObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 38 58 28").fixRip());
+
+#pragma endregion
+
+#pragma region phSimulator
+
+MAKE_SIG(phSimulator_MoveObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 45 84 F6 74 08").fixRip());
+MAKE_SIG(phSimulator_AddFixedObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B 57 10").fixRip());
+
+#pragma endregion
+
+#pragma region phLevelNew
+
+MAKE_SIG(phLevelNew_AddObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8B F8 3D ? ? ? ?").fixRip());
+MAKE_SIG(phLevelNew_AddObjectHelper, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 7C 24 ? ? 8B D8").fixRip());
+
+#pragma endregion
+
+#pragma region aniLedge
+
+MAKE_SIG(aniLedge_CancelLedge, mem::findBytes("RDR.exe", "E8 ? ? ? ? E9 ? ? ? ? 83 F9 01").fixRip());
 
 #pragma endregion

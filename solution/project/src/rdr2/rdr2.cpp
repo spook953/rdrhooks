@@ -7,5 +7,5 @@ rdr2::sagActor *const rdr2::GetPlayerActor()
 
 rdr2::camManager *const rdr2::GetCamManager()
 {
-	return sigs::atSingleton_camManager_sm_Instance.rcast<camManager *>();
+	return sigs::camManager_sm_Instance.rcast<camManager *>();
 }
