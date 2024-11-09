@@ -132,7 +132,6 @@
     <ClCompile Include="src\rdr2\rdr2_include\TransitionCamera.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\weapBaseWeaponType.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\WeaponParams.cpp" />
-    <ClCompile Include="src\rdr2\rdr2_include\WeaponSpecialRequest.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\weapProjectileInfo.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\weapWeapon.cpp" />
     <ClCompile Include="src\shared\minhook\buffer.cpp" />

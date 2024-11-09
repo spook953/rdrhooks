@@ -4,9 +4,5 @@
 
 namespace rdr2
 {
-	class WeaponSpecialRequest
-	{
-	public:
-
-	};
+	using WeaponSpecialRequest = int;
 }

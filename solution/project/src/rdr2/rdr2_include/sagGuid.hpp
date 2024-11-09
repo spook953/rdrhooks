@@ -4,5 +4,5 @@
 
 namespace rdr2
 {
-	using sagGuid = int; //?
+	using sagGuid = int;
 }

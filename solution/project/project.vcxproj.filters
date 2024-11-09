@@ -34,7 +34,6 @@
     <ClCompile Include="src\rdr2\rdr2_include\bhPacketExec.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\bhWeaponsPacket.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\invWeaponType.cpp" />
-    <ClCompile Include="src\rdr2\rdr2_include\WeaponSpecialRequest.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\sagLayout.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\aniRide.cpp" />
     <ClCompile Include="src\rdr2\rdr2_include\rdrActorTracker.cpp" />
