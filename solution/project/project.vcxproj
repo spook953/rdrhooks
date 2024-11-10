@@ -99,7 +99,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\hooks.cpp" />
-    <ClCompile Include="src\rdr2\rdr2.cpp" />
     <ClCompile Include="src\shared\minhook\buffer.cpp" />
     <ClCompile Include="src\shared\minhook\hde64.cpp" />
     <ClCompile Include="src\shared\minhook\hook.cpp" />
@@ -145,6 +144,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\hlthHealthComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthMsgInjure.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCamera.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\invBaseItem.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invInventoryComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invWeaponType.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\mvrMoverComponent.hpp" />

@@ -38,6 +38,7 @@
 #include "rdr2_include/grcViewport.hpp"
 #include "rdr2_include/hlthHealthComponent.hpp"
 #include "rdr2_include/hlthMsgInjure.hpp"
+#include "rdr2_include/invBaseItem.hpp"
 #include "rdr2_include/invInventoryComponent.hpp"
 #include "rdr2_include/invWeaponType.hpp"
 #include "rdr2_include/Math.hpp"
@@ -75,11 +76,94 @@
 
 namespace rdr2
 {
-	sagActor *GetPlayerActor();
-	weapWeapon *FindWeaponFromActor(sagActor *param_1, int param_2, AmmoComponent **param_3);
-	camManager *GetCamManager();
+	sagActor *GetPlayerActor()
+	{
+		return sigs::GetPlayerActor.call<sagActor *>();
+	}
 
-	//custom utils/helpers:
+	weapWeapon *FindWeaponFromActor(sagActor *param_1, int param_2, AmmoComponent **param_3)
+	{
+		return sigs::FindWeaponFromActor.call<weapWeapon *>(param_1, param_2, param_3);
+	}
 
-	bool ActorHasWeapon(sagActor *const actor, weapWeapon *const weapon);
+	void *GetBonePointerById(int param_1, sagActor *param_2)
+	{
+		return sigs::GetBonePointerById.call<void *>(param_1, param_2);
+	}
+
+	int GetEquipSlot(int param_1)
+	{
+		return sigs::GetEquipSlot.call<int>(param_1);
+	}
+
+	int GetFeelingForTarget(sagActor *param_1, sagActor *param_2)
+	{
+		return sigs::GetFeelingForTarget.call<int>(param_1, param_2);
+	}
+
+	bool GetHardLockTargetAnchorPoint(Vector3 *param_1, Vector3 *param_2, Vector3 *param_3, gohGUID *param_4, bool param_5, Vector2 *param_6)
+	{
+		return sigs::GetHardLockTargetAnchorPoint.call<bool>(param_1, param_2, param_3, param_4, param_5, param_6);
+	}
+
+	bool GetHoofMatrix(int param_1, sagActor *param_2, Matrix34 *param_3)
+	{
+		return sigs::GetHoofMatrix.call<bool>(param_1, param_2, param_3);
+	}
+
+	int GetWeaponEnumForAmmoEnum(sagActor *param_1, int param_2)
+	{
+		return sigs::GetWeaponEnumForAmmoEnum.call<int>(param_1, param_2);
+	}
+
+	void GiveEnumeratedWeapon(sagActor *param_1, int param_2, float param_3, bool param_4, bool param_5)
+	{
+		sigs::GiveEnumeratedWeapon.call<void>(param_1, param_2, param_3, param_4, param_5);
+	}
+
+	bool IsViewVectorInBox(Vector3 *param_1, Matrix34 *param_2, Vector2 *param_3)
+	{
+		return sigs::IsViewVectorInBox.call<bool>(param_1, param_2, param_3);
+	}
+
+	bool SelectEnumeratedWeapon(sagActor *param_1, int param_2, bool param_3)
+	{
+		return sigs::SelectEnumeratedWeapon.call<bool>(param_1, param_2, param_3);
+	}
+
+	void SetWeaponAmmoForItem(sagActor *param_1, invBaseItem *param_2, float param_3)
+	{
+		sigs::SetWeaponAmmoForItem.call<void>(param_1, param_2, param_3);
+	}
+}
+
+namespace rdr2
+{
+	camManager *GetCamManager()
+	{
+		return sigs::camManager_sm_Instance.rcast<camManager *>();
+	}
+}
+
+namespace rdr2
+{
+	bool ActorHasWeapon(sagActor *const actor, weapWeapon *const weapon)
+	{
+		if (!actor || !weapon) {
+			return false;
+		}
+
+		//4 = revolver
+		//8 = carbine
+		constexpr int max_it{ 20 };
+
+		for (int n{}; n < max_it; n++)
+		{
+			if (FindWeaponFromActor(actor, n, nullptr) == weapon) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 }

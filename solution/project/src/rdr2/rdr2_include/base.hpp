@@ -31,6 +31,16 @@ MAKE_SIG(WeaponEnumManager_sm_EnumWeaponEnumTree, mem::findBytes("RDR.exe", "48 
 
 MAKE_SIG(GetPlayerActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 C0 74 DF").fixRip());
 MAKE_SIG(FindWeaponFromActor, mem::findBytes("RDR.exe", "40 56 48 83 EC 20 49 8B F0"));
+MAKE_SIG(GetBonePointerById, mem::findBytes("RDR.exe", "48 89 5C 24 ? 8B 41 38"));
+MAKE_SIG(GetEquipSlot, mem::findBytes("RDR.exe", "83 F9 FF 74 3A 48 8B 05 ? ? ? ?"));
+MAKE_SIG(GetFeelingForTarget, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8D 48 FD").fixRip());
+MAKE_SIG(GetHardLockTargetAnchorPoint, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 38 BD ? ? ? ?").fixRip());
+MAKE_SIG(GetHoofMatrix, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 74 38 48 63 07").fixRip());
+MAKE_SIG(GetWeaponEnumForAmmoEnum, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 8B F2 48 85 C9"));
+MAKE_SIG(GiveEnumeratedWeapon, mem::findBytes("RDR.exe", "48 85 C9 0F 84 ? ? ? ? 48 89 74 24 ? 57"));
+MAKE_SIG(IsViewVectorInBox, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 A7 ? ? ? ? ? 02 C0").fixRip());
+MAKE_SIG(SelectEnumeratedWeapon, mem::findBytes("RDR.exe", "E8 ? ? ? ? 49 8D BE ? ? ? ? 0F 1F 44 00 ?").fixRip());
+MAKE_SIG(SetWeaponAmmoForItem, mem::findBytes("RDR.exe", "48 85 C9 0F 84 ? ? ? ? 53 48 83 EC 40"));
 
 #pragma endregion
 

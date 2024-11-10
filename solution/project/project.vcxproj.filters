@@ -9,7 +9,6 @@
     <ClCompile Include="src\shared\mem_address\mem_address.cpp" />
     <ClCompile Include="src\shared\mem_utils\mem_utils.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\rdr2\rdr2.cpp" />
     <ClCompile Include="src\shared\con_utils\con_utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -99,5 +98,6 @@
     <ClInclude Include="src\rdr2\rdr2_include\sagPlayerStates.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniActionSetData.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohGUID.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\invBaseItem.hpp" />
   </ItemGroup>
 </Project>
