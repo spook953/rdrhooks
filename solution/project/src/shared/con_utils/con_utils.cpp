@@ -32,7 +32,7 @@ std::string getTimeStamp()
 
 void printStr(std::string_view str)
 {
-	std::cout << std::format("[{}] [{}] {}\n", con_name, getTimeStamp(), str);
+	std::cout << std::format("[{}] [{}] {}", con_name, getTimeStamp(), str);
 }
 
 void con::alloc(std::string_view name)
@@ -58,6 +58,13 @@ void con::alloc(std::string_view name)
 void con::free()
 {
 	FreeConsole();
+}
+
+void con::printOke(std::string_view str)
+{
+	setColors(FOREGROUND_GREEN);
+	printStr(str);
+	resetColors();
 }
 
 void con::printMsg(std::string_view str)

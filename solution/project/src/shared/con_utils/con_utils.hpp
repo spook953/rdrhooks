@@ -11,6 +11,7 @@ namespace con
 	void alloc(std::string_view name);
 	void free();
 
+	void printOke(std::string_view str);
 	void printMsg(std::string_view str);
 	void printWrn(std::string_view str);
 	void printErr(std::string_view str);

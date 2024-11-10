@@ -191,6 +191,7 @@ MAKE_SIG(weapWeapon_FindAndFireOpMode, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F 
 MAKE_SIG(weapWeapon_SetDrawn, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 7B 20 00").fixRip());
 MAKE_SIG(weapWeapon_Init, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 03 48 83 C4 30").fixRip());
 MAKE_SIG(weapWeapon_FireProjectileRemote, mem::findBytes("RDR.exe", "48 89 74 24 ? 57 48 81 EC ? ? ? ? 48 63 41 30"));
+MAKE_SIG(weapWeapon_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B C3 B2 01").fixRip());
 
 #pragma endregion
 

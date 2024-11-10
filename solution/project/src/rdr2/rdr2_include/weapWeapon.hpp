@@ -120,5 +120,10 @@ namespace rdr2
 		{
 			sigs::weapWeapon_OnFireProjectile.call<void>(this, param_1);
 		}
+
+		void Update(Matrix34 *param_1, Vector3 *param_2, bool param_3, float param_4)
+		{
+			sigs::weapWeapon_Update.call<void>(this, param_1, param_2, param_3, param_4);
+		}
 	};
 }

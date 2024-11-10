@@ -155,7 +155,7 @@ namespace rdr2
 
 		//4 = revolver
 		//8 = carbine
-		constexpr int max_it{ 20 };
+		constexpr int max_it{ 16 };
 
 		for (int n{}; n < max_it; n++)
 		{

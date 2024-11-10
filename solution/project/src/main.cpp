@@ -5,36 +5,36 @@ bool rdrhLoad()
 	for (Sig *const s : getInsts<Sig>())
 	{
 		if (!s->init()) {
-			con::printErr(std::format("failed to find {}", s->name()));
+			con::printErr(std::format("failed to find {}\n", s->name()));
 			return false;
 		}
 
-		con::printMsg(std::format("found {} at {:X}", s->name(), s->addr().get()));
+		con::printMsg(std::format("found {} at {:X}\n", s->name(), s->addr().get()));
 	}
 
 	if (MH_Initialize() != MH_OK) {
-		con::printErr("failed to initialize minhook");
+		con::printErr("failed to initialize minhook\n");
 		return false;
 	}
 
-	con::printMsg("minhook initialized");
+	//con::printMsg("minhook initialized\n");
 
 	for (Hook *const h : getInsts<Hook>())
 	{
 		if (!h->init()) {
-			con::printErr(std::format("failed to hook {}", h->name()));
+			con::printErr(std::format("failed to hook {}\n", h->name()));
 			return false;
 		}
 
-		con::printMsg(std::format("hooked {}", h->name()));
+		con::printMsg(std::format("hooked {}\n", h->name()));
 	}
 
 	if (MH_EnableHook(MH_ALL_HOOKS) != MH_OK) {
-		con::printErr("failed to enable all hooks");
+		con::printErr("failed to enable all hooks\n");
 		return false;
 	}
 
-	con::printMsg("all hooks enabled");
+	//con::printMsg("all hooks enabled\n");
 
 	return true;
 }
@@ -42,7 +42,7 @@ bool rdrhLoad()
 bool rdrhUnload()
 {
 	if (MH_Uninitialize() != MH_OK) {
-		con::printErr("minhook failed to uninitialize");
+		con::printErr("minhook failed to uninitialize\n");
 		return false;
 	}
 
@@ -55,7 +55,7 @@ DWORD WINAPI mainThread(LPVOID param)
 
 	if (rdrhLoad())
 	{
-		con::printMsg("loaded");
+		con::printOke("loaded\n");
 
 		while (!GetAsyncKeyState(VK_F11)) {
 			Sleep(100);
@@ -64,7 +64,7 @@ DWORD WINAPI mainThread(LPVOID param)
 
 	rdrhUnload();
 
-	con::printMsg("unloaded");
+	con::printOke("unloaded\n");
 
 	con::free();
 
