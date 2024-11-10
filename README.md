@@ -12,4 +12,4 @@ https://github.com/pgarba/SwitchIDAProLoader
 
 https://github.com/Adubbz/Ghidra-Switch-Loader
 
-https://gist.github.com/spook953/2702340b0bbbcbb4d56eab716bc3ae37
+https://gist.github.com/spook953/4d6a1231e583c580b245fcf49a91463b
