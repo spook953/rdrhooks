@@ -100,5 +100,13 @@
     <ClInclude Include="src\rdr2\rdr2_include\gohGUID.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invBaseItem.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniNavigationGait.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\CollisionHelper.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\gohCameraTarget.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\CameraShakeFactory.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\camCameraShakeBase.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\camCameraTransitionFactory.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\eTransitionType.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\CutsceneCameraShotTuningManager.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\eCameraChannelEnum.hpp" />
   </ItemGroup>
 </Project>

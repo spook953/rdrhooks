@@ -28,6 +28,13 @@ namespace rdr2
 			sigs::camCameraChannel_Update.call<void>(this);
 		}
 
+	public:
+		static void ReleaseTransitionCamera(TransitionCamera **param_1)
+		{
+			sigs::camCameraChannel_ReleaseTransitionCamera.call<void>(param_1);
+		}
+
+	public:
 		CameraViewport *GetCameraViewport()
 		{
 			return *reinterpret_cast<CameraViewport **>(reinterpret_cast<uintptr_t>(this) + 0x40);

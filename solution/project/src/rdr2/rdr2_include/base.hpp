@@ -49,12 +49,32 @@ MAKE_SIG(SetWeaponAmmoForItem, mem::findBytes("RDR.exe", "48 85 C9 0F 84 ? ? ? ?
 MAKE_SIG(camCameraChannel_RemoveCamera, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 53 38 45 33 C9").fixRip());
 MAKE_SIG(camCameraChannel_PushCamera, mem::findBytes("RDR.exe", "E9 ? ? ? ? 41 83 F8 FF").fixRip());
 MAKE_SIG(camCameraChannel_Update, mem::findBytes("RDR.exe", "48 89 5C 24 ? 57 48 83 EC 20 48 8B 59 18 48 8B F9 48 89 5C 24 ?"));
+MAKE_SIG(camCameraChannel_ReleaseTransitionCamera, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB A4").fixRip());
 
 #pragma endregion
 
 #pragma region CameraViewport
 
 MAKE_SIG(CameraViewport_SetCameraMatrix, mem::findBytes("RDR.exe", "48 83 EC 28 44 8B 89 ? ? ? ?"));
+MAKE_SIG(CameraViewport_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8D 57 40 48 8D 8F ? ? ? ?").fixRip());
+MAKE_SIG(CameraViewport_Lerp, mem::findBytes("RDR.exe", "E9 ? ? ? ? CC CC 48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B 01").fixRip());
+MAKE_SIG(CameraViewport_LerpArc, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F 28 B4 24 ? ? ? ? 48 8B AC 24 ? ? ? ?").fixRip());
+MAKE_SIG(CameraViewport_Reset, mem::findBytes("RDR.exe", "33 C0 48 C7 41 ? ? ? ? ? 48 8D 91 ? ? ? ?"));
+
+#pragma endregion
+
+#pragma region grcViewport
+
+MAKE_SIG(grcViewport_SetCameraMtx, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 8B 55 40").fixRip());
+
+#pragma endregion
+
+#pragma region camManager
+
+MAKE_SIG(camManager_EndDeathScreenCamera, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 48 8B 41 40"));
+MAKE_SIG(camManager_PostInit, mem::findBytes("RDR.exe", "48 83 EC 38 48 8B 05 ? ? ? ? 4C 8D 05 ? ? ? ?"));
+MAKE_SIG(camManager_RemoveCameraOnChannel, mem::findBytes("RDR.exe", "85 D2 75 22 4C 8B 49 08"));
+MAKE_SIG(camManager_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 0D ? ? ? ? 33 FF 48 85 C9").fixRip());
 
 #pragma endregion
 
@@ -334,5 +354,54 @@ MAKE_SIG(phSimulator_AddFixedObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B
 
 MAKE_SIG(phLevelNew_AddObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8B F8 3D ? ? ? ?").fixRip());
 MAKE_SIG(phLevelNew_AddObjectHelper, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 7C 24 ? ? 8B D8").fixRip());
+
+#pragma endregion
+
+#pragma region camCamera
+
+MAKE_SIG(camCamera_GetCollisionTarget, mem::findBytes("RDR.exe", "48 89 5C 24 ? 57 48 83 EC 20 48 8B 99 ? ? ? ? 49 8B C0"));
+MAKE_SIG(camCamera_InitCameraSettingsFromCamera, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 88 65 C7").fixRip());
+MAKE_SIG(camCamera_ProcessShake, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48 8B D9 48 8B 89 ? ? ? ? 48 85 C9 0F 84 ? ? ? ? 48 8B 01 FF 50 28"));
+MAKE_SIG(camCamera_Reset, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48 8D 99 ? ? ? ? C7 81 ? ? ? ? ? ? ? ?"));
+MAKE_SIG(camCamera_ShakeCameraRandom, mem::findBytes("RDR.exe", "E8 ? ? ? ? E9 ? ? ? ? F3 0F 59 73 ?").fixRip());
+MAKE_SIG(camCamera_Update, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48 8B 01 48 8B D9 FF 90 ? ? ? ? 84 C0 74 35"));
+
+#pragma endregion
+
+#pragma region gohCameraTarget
+
+MAKE_SIG(gohCameraTarget_GetPosition, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 0F 10 83 ? ? ? ? 48 8D 45 6F").fixRip());
+
+#pragma endregion
+
+#pragma region CollisionHelper
+
+MAKE_SIG(CollisionHelper_PerformCollision, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 74 1C 41 80 7E ? ?").fixRip());
+
+#pragma endregion
+
+#pragma region CameraShakeFactory
+
+MAKE_SIG(CameraShakeFactory_ReturnCameraShake, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 C7 83 ? ? ? ? ? ? ? ? 48 8B 03").fixRip());
+
+#pragma endregion
+
+#pragma region TransitionCamera
+
+MAKE_SIG(TransitionCamera_Reset, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 13 4C 8D 05 ? ? ? ?").fixRip());
+
+#pragma endregion
+
+#pragma region camCameraTransitionFactory
+
+MAKE_SIG(camCameraTransitionFactory_ReleaseTransition, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B E5").fixRip());
+MAKE_SIG(camCameraTransitionFactory_GetTransition, mem::findBytes("RDR.exe", "E8 ? ? ? ? 49 89 43 70").fixRip());
+
+#pragma endregion
+
+#pragma region camCameraTransitionBase
+
+MAKE_SIG(camCameraTransitionBase_ComputeCollision, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC 30 48 8B 01"));
+MAKE_SIG(camCameraTransitionBase_Start, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 F3 0F 10 0A"));
 
 #pragma endregion
