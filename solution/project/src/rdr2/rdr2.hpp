@@ -3,6 +3,7 @@
 #include "rdr2_include/ActionContext.hpp"
 #include "rdr2_include/AmmoComponent.hpp"
 #include "rdr2_include/aniActionSet.hpp"
+#include "rdr2_include/aniActionSetData.hpp"
 #include "rdr2_include/aniAim.hpp"
 #include "rdr2_include/aniAnimProp.hpp"
 #include "rdr2_include/aniGatling.hpp"

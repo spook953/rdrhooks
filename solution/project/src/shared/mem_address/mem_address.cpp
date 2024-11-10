@@ -69,7 +69,7 @@ MemAddr MemAddr::deref(size_t count)
 
 	while (out && count > 0)
 	{
-		out = *reinterpret_cast<uintptr_t*>(out);
+		out = *reinterpret_cast<uintptr_t *>(out);
 
 		if (!out) {
 			return m_addr;
