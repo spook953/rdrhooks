@@ -6,14 +6,9 @@ MAKE_HOOK(
 	void,
 	rdr2::hlthHealthComponent *thisptr, float param_1, bool param_2, bool param_3, rdr2::hlthMsgInjure *param_4)
 {
-	if (rdr2::sagActor *const plr{ rdr2::GetPlayerActor() })
-	{
-		if (thisptr && thisptr->GetActor() == plr) {
-			return; //dont hurt me :(
-		}
+	if (thisptr && thisptr->GetActor() == rdr2::GetPlayerActor()) {
+		return;
 	}
-
-	//everyone else can die >:D
 
 	CALL_ORIGINAL(thisptr, param_1, param_2, param_3, param_4);
 }
@@ -24,6 +19,11 @@ MAKE_HOOK(
 	void,
 	rdr2::weapWeapon *thisptr, rdr2::weapProjectileInfo *proj_info)
 {
+	if (!rdr2::ActorHasWeapon(rdr2::GetPlayerActor(), thisptr)) {
+		CALL_ORIGINAL(thisptr, proj_info);
+		return;
+	}
+
 	thisptr->GetAutoFire() = 1;
 
 	const float pre_call_ammo_in_clip{ thisptr->GetAmmoInClip() };
@@ -39,5 +39,9 @@ MAKE_HOOK(
 	float,
 	rdr2::weapWeapon *thisptr)
 {
+	if (!rdr2::ActorHasWeapon(rdr2::GetPlayerActor(), thisptr)) {
+		return CALL_ORIGINAL(thisptr);
+	}
+
 	return -1000.0f;
 }

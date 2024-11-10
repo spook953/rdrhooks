@@ -22,11 +22,15 @@ MAKE_SIG(aGuidGeneral_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 05 ? ? ?
 //rage::aGuidGeneral<gohBase>::sm_ManagerSlots
 MAKE_SIG(aGuidGeneral_gohBase_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? 44 0F B7 C0 4D 03 C0").fixRip(3).deref());
 
+//WeaponEnumManager::sm_EnumWeaponEnumTree
+MAKE_SIG(WeaponEnumManager_sm_EnumWeaponEnumTree, mem::findBytes("RDR.exe", "48 8B 05 61 ? ? ? 48 85 C0 74 23 0F 1F 40 00").fixRip(3).deref());
+
 #pragma endregion
 
 #pragma region global functions
 
 MAKE_SIG(GetPlayerActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 C0 74 DF").fixRip());
+MAKE_SIG(FindWeaponFromActor, mem::findBytes("RDR.exe", "40 56 48 83 EC 20 49 8B F0"));
 
 #pragma endregion
 

@@ -75,6 +75,11 @@
 
 namespace rdr2
 {
-	sagActor *const GetPlayerActor();
-	camManager *const GetCamManager();
+	sagActor *GetPlayerActor();
+	weapWeapon *FindWeaponFromActor(sagActor *param_1, int param_2, AmmoComponent **param_3);
+	camManager *GetCamManager();
+
+	//custom utils/helpers:
+
+	bool ActorHasWeapon(sagActor *const actor, weapWeapon *const weapon);
 }
