@@ -19,6 +19,9 @@ MAKE_SIG(phLevelNew_sm_ActiveInstance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ?
 //rage::aGuidGeneral<>::sm_ManagerSlots
 MAKE_SIG(aGuidGeneral_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 44 8B 53 08 45 0F B7 CA 4D 03 C9").fixRip(3).deref());
 
+//rage::aGuidGeneral<gohBase>::sm_ManagerSlots
+MAKE_SIG(aGuidGeneral_gohBase_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? 44 0F B7 C0 4D 03 C0").fixRip(3).deref());
+
 #pragma endregion
 
 #pragma region global functions
@@ -250,6 +253,16 @@ MAKE_SIG(animMotionTreeManager_Shutdown, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4
 
 MAKE_SIG(aniAim_UpdateWeaponAttachment, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8B ? ? ? ? 48 8B 49 28").fixRip());
 MAKE_SIG(aniAim_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F 28 74 24 ? 85 F6").fixRip());
+MAKE_SIG(aniAim_SetAim, mem::findBytes("RDR.exe", "40 53 48 83 EC 60 41 8B C0"));
+MAKE_SIG(aniAim_FastDraw, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8B 55 5F").fixRip());
+MAKE_SIG(aniAim_RequestReload, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 1F 83 F9 01").fixRip());
+MAKE_SIG(aniAim_Throw, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 43 08 48 8B 48 10 48 8B 41 70").fixRip());
+MAKE_SIG(aniAim_ScheduleThrow, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8C 24 ? ? ? ? 0F B6 D8 F0 0F C1 69 ?").fixRip());
+MAKE_SIG(aniAim_Fire, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 55 45 33 C9").fixRip());
+MAKE_SIG(aniAim_AddReloadToFrameMT, mem::findBytes("RDR.exe", "E8 ? ? ? ? E9 ? ? ? ? 48 8B 80 ? ? ? ?").fixRip());
+MAKE_SIG(aniAim_FillAimFrameMT, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F 29 BC 24 ? ? ? ? 48 8B CB").fixRip());
+MAKE_SIG(aniAim_AddDrawHolsterToFrameMT, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B CE E8 ? ? ? ? E9 ? ? ? ? 48 8B 80 ? ? ? ?").fixRip());
+MAKE_SIG(aniAim_UpdateInternalStates, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 0F 10 87 ? ? ? ? F3 0F 10 4F ?").fixRip());
 
 #pragma endregion
 

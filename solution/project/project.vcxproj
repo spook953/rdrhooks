@@ -113,6 +113,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\ActionContext.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\AmmoComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniActionSet.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\aniActionSetData.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniAim.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniAnimProp.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniGatling.hpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\eState.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eWeaponAction.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohDofSettings.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\gohGUID.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\grcViewport.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthHealthComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthMsgInjure.hpp" />

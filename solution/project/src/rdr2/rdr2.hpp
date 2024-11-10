@@ -34,6 +34,7 @@
 #include "rdr2_include/gohCamera.hpp"
 #include "rdr2_include/gohCameraFactory.hpp"
 #include "rdr2_include/gohDofSettings.hpp"
+#include "rdr2_include/gohGUID.hpp"
 #include "rdr2_include/grcViewport.hpp"
 #include "rdr2_include/hlthHealthComponent.hpp"
 #include "rdr2_include/hlthMsgInjure.hpp"

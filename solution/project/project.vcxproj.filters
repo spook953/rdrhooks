@@ -97,5 +97,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\mvrMsgLanded.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagPlayerMgr.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagPlayerStates.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\aniActionSetData.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\gohGUID.hpp" />
   </ItemGroup>
 </Project>
