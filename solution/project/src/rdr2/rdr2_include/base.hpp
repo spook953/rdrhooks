@@ -7,7 +7,7 @@
 MAKE_SIG(GetPlayerActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 C0 74 DF").fixRip());
 
 MAKE_SIG(camManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B D5 48 8B 48 50").fixRip(3).deref());
-MAKE_SIG(WeatherManager_sm_instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B 48 54 85 C9 74 1C").fixRip(3).deref());
+MAKE_SIG(WeatherManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B 48 54 85 C9 74 1C").fixRip(3).deref());
 MAKE_SIG(sagLayoutManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 48 8B 48 10 48 8B 71 10 48 85 F6 0F 84 ? ? ? ? 0F 29 B4 24 ? ? ? ?").fixRip(3).deref());
 MAKE_SIG(phLevelNew_sm_ActiveInstance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 4F 8D 04 40 4D 03 C0 48 8B 50 60").fixRip(3).deref());
 MAKE_SIG(aGuidGeneral_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 44 8B 53 08 45 0F B7 CA 4D 03 C9").fixRip(3).deref());
