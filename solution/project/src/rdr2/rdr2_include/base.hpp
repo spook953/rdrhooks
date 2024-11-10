@@ -257,6 +257,12 @@ MAKE_SIG(aniActionSet_Shutdown, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 4B 0
 
 #pragma endregion
 
+#pragma region aniNavigationGait
+
+MAKE_SIG(aniNavigationGait_Set, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B 4D 20").fixRip());
+
+#pragma endregion
+
 #pragma region animMotionTreeManager
 
 MAKE_SIG(animMotionTreeManager_ScheduleAnimation, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4D 8B 77 08 EB 03").fixRip());

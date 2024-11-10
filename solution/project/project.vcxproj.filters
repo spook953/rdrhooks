@@ -99,5 +99,6 @@
     <ClInclude Include="src\rdr2\rdr2_include\aniActionSetData.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohGUID.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invBaseItem.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\aniNavigationGait.hpp" />
   </ItemGroup>
 </Project>

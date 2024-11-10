@@ -12,6 +12,7 @@
 #include "rdr2_include/animAnimSetHandle.hpp"
 #include "rdr2_include/AnimIdleBodyTypes.hpp"
 #include "rdr2_include/animMotionTreeManager.hpp"
+#include "rdr2_include/aniNavigationGait.hpp"
 #include "rdr2_include/aniRide.hpp"
 #include "rdr2_include/bhPacketExec.hpp"
 #include "rdr2_include/bhWeaponsPacket.hpp"

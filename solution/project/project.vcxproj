@@ -121,6 +121,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\animAnimSetHandle.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\AnimIdleBodyTypes.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\animMotionTreeManager.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\aniNavigationGait.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniRide.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\base.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\bhPacketExec.hpp" />
