@@ -158,6 +158,11 @@ namespace rdr2
 			sigs::sagPlayer_UpdateWeaponSelection.call<void>(this, param_1);
 		}
 
+		void Reset()
+		{
+			sigs::sagPlayer_Reset.call<void>(this);
+		}
+
 	public:
 		sagPlayerStates *GetPlayerStates()
 		{

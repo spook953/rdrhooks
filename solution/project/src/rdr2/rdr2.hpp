@@ -91,6 +91,11 @@ namespace rdr2
 		return sigs::GetPlayerActor.call<sagActor *>();
 	}
 
+	sagPlayer *GetPlayer()
+	{
+		return *sigs::sagPlayer_ptr.rcast<rdr2::sagPlayer **>();
+	}
+
 	weapWeapon *FindWeaponFromActor(sagActor *param_1, int param_2, AmmoComponent **param_3)
 	{
 		return sigs::FindWeaponFromActor.call<weapWeapon *>(param_1, param_2, param_3);

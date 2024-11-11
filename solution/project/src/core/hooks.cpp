@@ -52,56 +52,21 @@ MAKE_HOOK(
 	void,
 	void *thisptr)
 {
-	//terrible way of applying auto fire on weapons temporarily
-	//until i find out how to get sagPlayer
-
-	class AutoFireHelper final
+	if (rdr2::sagPlayer *const plr{ rdr2::GetPlayer() })
 	{
-	private:
-		rdr2::weapWeapon *m_weapon{};
-		int m_og_auto_fire{};
-	
-	public:
-		AutoFireHelper(rdr2::weapWeapon *const weapon, const int og_auto_fire) {
-			m_weapon = weapon;
-			m_og_auto_fire = og_auto_fire;
-		}
-
-	public:
-		void apply()
+		if (rdr2::weapWeapon *const wep{ plr->GetActiveWeapon(true) })
 		{
-			if (m_weapon) {
-				m_weapon->GetAutoFire() = 1;
-			}
+			const int og_auto_fire{ wep->GetAutoFire() };
+
+			wep->GetAutoFire() = 1;
+
+			CALL_ORIGINAL(thisptr);
+
+			wep->GetAutoFire() = og_auto_fire;
+
+			return;
 		}
-
-		void restore()
-		{
-			if (m_weapon) {
-				m_weapon->GetAutoFire() = m_og_auto_fire;
-			}
-		}
-	};
-
-	std::vector<AutoFireHelper> auto_fire_helper{};
-
-	if (rdr2::sagActor *const plr{ rdr2::GetPlayerActor() })
-	{
-		for (int n{}; n < 16; n++)
-		{
-			if (rdr2::weapWeapon *const plr_wep{ rdr2::FindWeaponFromActor(plr, n, nullptr) }) {
-				auto_fire_helper.push_back(AutoFireHelper{ plr_wep, plr_wep->GetAutoFire() });
-			}
-		}
-	}
-
-	for (AutoFireHelper &afh : auto_fire_helper) {
-		afh.apply();
 	}
 
 	CALL_ORIGINAL(thisptr);
-
-	for (AutoFireHelper &afh : auto_fire_helper) {
-		afh.restore();
-	}
 }

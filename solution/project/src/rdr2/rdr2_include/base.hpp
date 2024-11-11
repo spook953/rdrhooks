@@ -30,6 +30,9 @@ MAKE_SIG(WeaponEnumManager_sm_EnumWeaponEnumTree, mem::findBytes("RDR.exe", "48 
 //ZombieDLCManager::sm_instance
 MAKE_SIG(ZombieDLCManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? 48 85 C9 74 07 33 D2 E8 ? ? ? ? 0F B6 D0 48 8B 03").fixRip(3));
 
+//qword_1422CBF00 / local player ptr (sagPlayer **)
+MAKE_SIG(sagPlayer_ptr, mem::findBytes("RDR.exe", "48 8B 1D ? ? ? ? 48 85 DB 74 6C 80 BB ? ? ? ? ? 74 63").fixRip(3));
+
 #pragma endregion
 
 #pragma region global functions
@@ -142,6 +145,7 @@ MAKE_SIG(sagPlayer_UpdateFoot, mem::findBytes("RDR.exe", "40 53 41 56 48 83 EC 5
 MAKE_SIG(sagPlayer_IncrementStat, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 74 24 ? 48 8B BC 24 ? ? ? ?").fixRip());
 MAKE_SIG(sagPlayer_UpdateState, mem::findBytes("RDR.exe", "40 55 57 48 83 EC 68"));
 MAKE_SIG(sagPlayer_UpdateWeaponSelection, mem::findBytes("RDR.exe", "4C 8B DC 57 41 54 48 83 EC 68"));
+MAKE_SIG(sagPlayer_Reset, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 3D ? ? ? ? ? 75 27").fixRip());
 
 #pragma endregion
 
