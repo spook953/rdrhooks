@@ -193,6 +193,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\WeaponSpecialRequest.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\weapProjectileInfo.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\weapWeapon.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\ZombieDLCManager.hpp" />
     <ClInclude Include="src\shared\make_sig\make_sig.hpp" />
     <ClInclude Include="src\shared\minhook\buffer.hpp" />
     <ClInclude Include="src\shared\minhook\hde64.hpp" />

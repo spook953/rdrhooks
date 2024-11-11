@@ -4,6 +4,8 @@
 
 #pragma region instances
 
+//TODO: recheck if all these need a deref
+
 //atSingleton<camManager>::sm_Instance
 MAKE_SIG(camManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B D5 48 8B 48 50").fixRip(3).deref());
 
@@ -24,6 +26,9 @@ MAKE_SIG(aGuidGeneral_gohBase_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 
 
 //WeaponEnumManager::sm_EnumWeaponEnumTree
 MAKE_SIG(WeaponEnumManager_sm_EnumWeaponEnumTree, mem::findBytes("RDR.exe", "48 8B 05 61 ? ? ? 48 85 C0 74 23 0F 1F 40 00").fixRip(3).deref());
+
+//ZombieDLCManager::sm_instance
+MAKE_SIG(ZombieDLCManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? 48 85 C9 74 07 33 D2 E8 ? ? ? ? 0F B6 D0 48 8B 03").fixRip(3));
 
 #pragma endregion
 

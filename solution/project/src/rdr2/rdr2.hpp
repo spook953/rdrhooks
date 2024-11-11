@@ -82,6 +82,7 @@
 #include "rdr2_include/WeaponSpecialRequest.hpp"
 #include "rdr2_include/weapProjectileInfo.hpp"
 #include "rdr2_include/weapWeapon.hpp"
+#include "rdr2_include/ZombieDLCManager.hpp"
 
 namespace rdr2
 {
@@ -151,6 +152,11 @@ namespace rdr2
 	camManager *GetCamManager()
 	{
 		return sigs::camManager_sm_Instance.rcast<camManager *>();
+	}
+
+	ZombieDLCManager *GetZombieDLCManager()
+	{
+		return sigs::ZombieDLCManager_sm_Instance.rcast<ZombieDLCManager *>();
 	}
 }
 
