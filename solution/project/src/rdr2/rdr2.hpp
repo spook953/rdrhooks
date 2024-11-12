@@ -86,14 +86,27 @@
 
 namespace rdr2
 {
-	sagActor *GetPlayerActor()
+	camManager *GetCamManager()
 	{
-		return sigs::GetPlayerActor.call<sagActor *>();
+		return sigs::camManager_sm_Instance.rcast<camManager *>();
+	}
+
+	ZombieDLCManager *GetZombieDLCManager()
+	{
+		return sigs::ZombieDLCManager_sm_Instance.rcast<ZombieDLCManager *>();
 	}
 
 	sagPlayer *GetPlayer()
 	{
-		return *sigs::sagPlayer_ptr.rcast<rdr2::sagPlayer **>();
+		return *sigs::sagPlayer_ptr.rcast<sagPlayer **>();
+	}
+}
+
+namespace rdr2
+{
+	sagActor *GetPlayerActor()
+	{
+		return sigs::GetPlayerActor.call<sagActor *>();
 	}
 
 	weapWeapon *FindWeaponFromActor(sagActor *param_1, int param_2, AmmoComponent **param_3)
@@ -149,18 +162,5 @@ namespace rdr2
 	void SetWeaponAmmoForItem(sagActor *param_1, invBaseItem *param_2, float param_3)
 	{
 		sigs::SetWeaponAmmoForItem.call<void>(param_1, param_2, param_3);
-	}
-}
-
-namespace rdr2
-{
-	camManager *GetCamManager()
-	{
-		return sigs::camManager_sm_Instance.rcast<camManager *>();
-	}
-
-	ZombieDLCManager *GetZombieDLCManager()
-	{
-		return sigs::ZombieDLCManager_sm_Instance.rcast<ZombieDLCManager *>();
 	}
 }
