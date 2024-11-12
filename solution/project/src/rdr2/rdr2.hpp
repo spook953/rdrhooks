@@ -164,26 +164,3 @@ namespace rdr2
 		return sigs::ZombieDLCManager_sm_Instance.rcast<ZombieDLCManager *>();
 	}
 }
-
-namespace rdr2
-{
-	bool ActorHasWeapon(sagActor *const actor, weapWeapon *const weapon)
-	{
-		if (!actor || !weapon) {
-			return false;
-		}
-
-		//4 = revolver
-		//8 = carbine
-		constexpr int max_it{ 16 };
-
-		for (int n{}; n < max_it; n++)
-		{
-			if (FindWeaponFromActor(actor, n, nullptr) == weapon) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-}
