@@ -66,31 +66,31 @@ MAKE_HOOK(
 	return CALL_ORIGINAL(thisptr);
 }
 
-MAKE_HOOK(
-	sagShellDerived_Update,
-	sigs::sagShellDerived_Update.get(),
-	void,
-	void *thisptr)
-{
-	//TODO: find a more appropriate function for this
-	if (weapon_force_auto_fire)
-	{
-		if (rdr2::sagPlayer *const plr{ rdr2::GetPlayer() })
-		{
-			if (rdr2::weapWeapon *const wep{ plr->GetActiveWeapon(true) })
-			{
-				const int og_auto_fire{ wep->GetAutoFire() };
-
-				wep->GetAutoFire() = 1;
-
-				CALL_ORIGINAL(thisptr);
-
-				wep->GetAutoFire() = og_auto_fire;
-
-				return;
-			}
-		}
-	}
-
-	CALL_ORIGINAL(thisptr);
-}
+//MAKE_HOOK(
+//	sagShellDerived_Update,
+//	sigs::sagShellDerived_Update.get(),
+//	void,
+//	void *thisptr)
+//{
+//	//TODO: find a more appropriate function for this
+//	if (weapon_force_auto_fire)
+//	{
+//		if (rdr2::sagPlayer *const plr{ rdr2::GetPlayer() })
+//		{
+//			if (rdr2::weapWeapon *const wep{ plr->GetActiveWeapon(true) })
+//			{
+//				const int og_auto_fire{ wep->GetAutoFire() };
+//
+//				wep->GetAutoFire() = 1;
+//
+//				CALL_ORIGINAL(thisptr);
+//
+//				wep->GetAutoFire() = og_auto_fire;
+//
+//				return;
+//			}
+//		}
+//	}
+//
+//	CALL_ORIGINAL(thisptr);
+//}

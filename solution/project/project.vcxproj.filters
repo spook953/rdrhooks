@@ -109,5 +109,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\CutsceneCameraShotTuningManager.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eCameraChannelEnum.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\ZombieDLCManager.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\gohBase.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\aniAimSweep.hpp" />
   </ItemGroup>
 </Project>

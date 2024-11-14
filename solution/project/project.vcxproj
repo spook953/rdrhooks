@@ -114,6 +114,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\aniActionSet.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniActionSetData.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniAim.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\aniAimSweep.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniAnimProp.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniGatling.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniLedge.h" />
@@ -146,6 +147,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\eState.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eTransitionType.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eWeaponAction.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\gohBase.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohCameraTarget.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohDofSettings.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohGUID.hpp" />

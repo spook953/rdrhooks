@@ -16,3 +16,4 @@
 #undef min
 #undef max
 #undef GetObject
+#undef SetProp

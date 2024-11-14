@@ -63,7 +63,7 @@ MAKE_SIG(camCameraChannel_ReleaseTransitionCamera, mem::findBytes("RDR.exe", "E8
 
 #pragma region CameraViewport
 
-MAKE_SIG(CameraViewport_SetCameraMatrix, mem::findBytes("RDR.exe", "48 83 EC 28 44 8B 89 ? ? ? ?"));
+MAKE_SIG(CameraViewport_SetCameraMatrix, mem::findBytes("RDR.exe", "E8 ? ? ? ? 49 8B 8E ? ? ? ? 48 8B 01 FF 50 08 49 8B 86 ? ? ? ? B2 01").fixRip());
 MAKE_SIG(CameraViewport_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8D 57 40 48 8D 8F ? ? ? ?").fixRip());
 MAKE_SIG(CameraViewport_Lerp, mem::findBytes("RDR.exe", "E9 ? ? ? ? CC CC 48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B 01").fixRip());
 MAKE_SIG(CameraViewport_LerpArc, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F 28 B4 24 ? ? ? ? 48 8B AC 24 ? ? ? ?").fixRip());
@@ -319,12 +319,27 @@ MAKE_SIG(aniAim_UpdateInternalStates, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 0
 #pragma region aniAnimProp
 
 MAKE_SIG(aniAnimProp_UpdatePropAttachments, mem::findBytes("RDR.exe", "48 8B C4 48 89 70 18 48 89 78 20 55 41 56 41 57 48 8B EC"));
+MAKE_SIG(aniAnimProp_SetProp, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 16 49 8B 8E ? ? ? ?").fixRip());
+MAKE_SIG(aniAnimProp_Shutdown, mem::findBytes("RDR.exe", "41 57 48 83 EC 30 48 83 79 ? ?"));
 
 #pragma endregion
 
 #pragma region aniGatling
 
 MAKE_SIG(aniGatling_UpdateWeaponLocation, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 05 48 85 FF").fixRip());
+MAKE_SIG(aniGatling_RequestFire, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 8B 41 30"));
+MAKE_SIG(aniGatling_Reset, mem::findBytes("RDR.exe", "48 89 5C 24 ? 57 48 83 EC 20 44 0F B7 41 ? 33 FF"));
+MAKE_SIG(aniGatling_Update, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48 8B D9 E8 ? ? ? ? 80 63 40 F8"));
+MAKE_SIG(aniGatling_UpdateGatlingMachine, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 63 40 F8").fixRip());
+MAKE_SIG(aniGatling_UpdateBoneIDs, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8B 47 30 83 F8 03").fixRip());
+MAKE_SIG(aniGatling_UpdateIK, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 53 10 0F B6 BB ? ? ? ?").fixRip());
+
+
+#pragma endregion
+
+#pragma region aniAimSweep
+
+MAKE_SIG(aniAimSweep_Reset, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 63 40 F0").fixRip());
 
 #pragma endregion
 
@@ -412,5 +427,11 @@ MAKE_SIG(camCameraTransitionFactory_GetTransition, mem::findBytes("RDR.exe", "E8
 
 MAKE_SIG(camCameraTransitionBase_ComputeCollision, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC 30 48 8B 01"));
 MAKE_SIG(camCameraTransitionBase_Start, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 F3 0F 10 0A"));
+
+#pragma endregion
+
+#pragma region gohBase
+
+MAKE_SIG(gohBase_Destroy, mem::findBytes("RDR.exe", "E9 ? ? ? ? 48 8B 51 28").fixRip());
 
 #pragma endregion
