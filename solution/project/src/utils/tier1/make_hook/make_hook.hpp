@@ -8,6 +8,7 @@ private:
 	std::string m_name{};
 	std::function<bool()> m_init_fn{};
 	void *m_og_fn{};
+	void *m_src_fn{};
 
 public:
 	Hook(std::string_view name, const std::function<bool()> &init_fn) : InstTracker(this)
@@ -19,7 +20,22 @@ public:
 public:
 	bool create(void *const src, void *const dst)
 	{
-		return MH_CreateHook(src, dst, &m_og_fn) == MH_OK;
+		if (MH_CreateHook(src, dst, &m_og_fn) != MH_OK || MH_EnableHook(src) != MH_OK) {
+			return false;
+		}
+
+		m_src_fn = src;
+
+		return true;
+	}
+
+	bool remove()
+	{
+		if (!m_src_fn) {
+			return true;
+		}
+
+		return MH_DisableHook(m_src_fn) == MH_OK && MH_RemoveHook(m_src_fn) == MH_OK;
 	}
 
 public:

@@ -2,6 +2,11 @@
 
 bool rdrhLoad()
 {
+	if (MH_Initialize() != MH_OK) {
+		con::printErr("failed to initialize minhook\n");
+		return false;
+	}
+
 	for (Sig *const s : getInsts<Sig>())
 	{
 		if (!s->init()) {
@@ -10,11 +15,6 @@ bool rdrhLoad()
 		}
 
 		con::printMsg(std::format("found {} at {:X}\n", s->name(), s->addr().get()));
-	}
-
-	if (MH_Initialize() != MH_OK) {
-		con::printErr("failed to initialize minhook\n");
-		return false;
 	}
 
 	for (Hook *const h : getInsts<Hook>())
@@ -27,16 +27,21 @@ bool rdrhLoad()
 		con::printMsg(std::format("hooked {}\n", h->name()));
 	}
 
-	if (MH_EnableHook(MH_ALL_HOOKS) != MH_OK) {
-		con::printErr("failed to enable all hooks\n");
-		return false;
-	}
-
 	return true;
 }
 
 bool rdrhUnload()
 {
+	for (Hook *const h : getInsts<Hook>())
+	{
+		if (!h->remove()) {
+			con::printErr(std::format("failed to unhook {}\n", h->name()));
+			return false;
+		}
+
+		con::printMsg(std::format("unhooked {}\n", h->name()));
+	}
+
 	if (MH_Uninitialize() != MH_OK) {
 		con::printErr("minhook failed to uninitialize\n");
 		return false;
@@ -60,6 +65,8 @@ DWORD WINAPI mainThread(LPVOID param)
 
 	rdrhUnload();
 
+	Sleep(100);
+
 	con::printOke("unloaded\n");
 
 	con::free();
@@ -69,6 +76,8 @@ DWORD WINAPI mainThread(LPVOID param)
 
 BOOL WINAPI DllMain(HINSTANCE inst, DWORD reason, LPVOID reserved)
 {
+	DisableThreadLibraryCalls(inst);
+
 	if (reason != DLL_PROCESS_ATTACH) {
 		return FALSE;
 	}
