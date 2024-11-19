@@ -1,10 +1,6 @@
 #pragma once
 
-#include "../inst_tracker/inst_tracker.hpp"
-#include "../minhook/minhook.hpp"
-
-#include <string>
-#include <functional>
+#include "../../tier0/tier0.hpp"
 
 class Hook final : public InstTracker<Hook>
 {

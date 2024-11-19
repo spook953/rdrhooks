@@ -1,10 +1,6 @@
 #pragma once
 
-#include "../inst_tracker/inst_tracker.hpp"
-#include "../mem_address/mem_address.hpp"
-
-#include <string>
-#include <functional>
+#include "../../tier0/tier0.hpp"
 
 class Sig final : public InstTracker<Sig>
 {

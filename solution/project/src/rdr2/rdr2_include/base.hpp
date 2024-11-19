@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../shared/shared.hpp"
+#include "../../utils/utils.hpp"
 
 #pragma region instances
 
@@ -201,7 +201,7 @@ MAKE_SIG(hlthHealthComponent_HandleInjure, mem::findBytes("RDR.exe", "E8 ? ? ? ?
 #pragma region weapWeapon
 
 MAKE_SIG(weapWeapon_OnFireProjectile, mem::findBytes("RDR.exe", "48 89 54 24 ? 55 53 56 57 41 54 41 55 41 56 41 57 48 81 EC ? ? ? ? 48 8D 6C 24 ? 44 0F B7 41 ?"));
-MAKE_SIG(weapWeapon_GetReloadTimeScale, mem::findBytes("RDR.exe", "E8 ? ? ? ? 45 33 F6 0F 2F F0").fixRip());
+MAKE_SIG(weapWeapon_SomeShotDelayFunc, mem::findBytes("RDR.exe", "E8 ? ? ? ? 45 33 F6 0F 2F F0").fixRip());
 MAKE_SIG(weapWeapon_ClampVelocityToMaxFlatDist, mem::findBytes("RDR.exe", "40 53 48 83 EC 50 48 63 41 30"));
 MAKE_SIG(weapWeapon_ComputeMainMuzzlePosition, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B BC 24 ? ? ? ? F3 44 0F 10 17").fixRip());
 MAKE_SIG(weapWeapon_GetMuzzleLocationMatrix, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 0F 10 05 ? ? ? ? 48 8B 83 ? ? ? ?").fixRip());

@@ -2,16 +2,6 @@
 
 static std::string con_name{};
 
-void setColors(const int colors)
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), colors);
-}
-
-void resetColors()
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-}
-
 std::string getTimeStamp()
 {
 	const std::chrono::system_clock::time_point now{ std::chrono::system_clock::now() };
@@ -28,6 +18,16 @@ std::string getTimeStamp()
 		<< std::setw(2) << std::setfill('0') << local_time.tm_sec;
 
 	return oss.str();
+}
+
+void setColors(const int colors)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), colors);
+}
+
+void resetColors()
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 }
 
 void printStr(std::string_view str)
@@ -60,16 +60,16 @@ void con::free()
 	FreeConsole();
 }
 
-void con::printOke(std::string_view str)
+void con::printMsg(std::string_view str)
 {
-	setColors(FOREGROUND_GREEN);
+	setColors(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 	printStr(str);
 	resetColors();
 }
 
-void con::printMsg(std::string_view str)
+void con::printOke(std::string_view str)
 {
-	setColors(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+	setColors(FOREGROUND_GREEN);
 	printStr(str);
 	resetColors();
 }

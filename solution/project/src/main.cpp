@@ -1,4 +1,4 @@
-#include "shared/shared.hpp"
+#include "utils/utils.hpp"
 
 bool rdrhLoad()
 {
@@ -17,8 +17,6 @@ bool rdrhLoad()
 		return false;
 	}
 
-	//con::printMsg("minhook initialized\n");
-
 	for (Hook *const h : getInsts<Hook>())
 	{
 		if (!h->init()) {
@@ -33,8 +31,6 @@ bool rdrhLoad()
 		con::printErr("failed to enable all hooks\n");
 		return false;
 	}
-
-	//con::printMsg("all hooks enabled\n");
 
 	return true;
 }

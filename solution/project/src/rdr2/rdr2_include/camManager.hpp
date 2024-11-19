@@ -34,19 +34,9 @@ namespace rdr2
 		}
 
 	public:
-		camCamera *GetCamera()
-		{
-			return *reinterpret_cast<camCamera **>(reinterpret_cast<uintptr_t>(this) + 0x38); //wrong
-		}
-
 		camCameraChannel *GetCameraChannel()
 		{
 			return *reinterpret_cast<camCameraChannel **>(reinterpret_cast<uintptr_t>(this) + 0x8);
-		}
-
-		CameraViewport *GetCameraViewport()
-		{
-			return *reinterpret_cast<CameraViewport **>(reinterpret_cast<uintptr_t>(this) + 0x38); //wrong
 		}
 
 		gohCameraFactory *GetCameraFactory()
