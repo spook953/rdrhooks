@@ -124,6 +124,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\animMotionTreeManager.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniNavigationGait.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniRide.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\atArray.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\base.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\bhPacketExec.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\bhWeaponsPacket.hpp" />
@@ -152,9 +153,13 @@
     <ClInclude Include="src\rdr2\rdr2_include\gohDofSettings.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohGUID.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\grcViewport.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\grmMatrixSet.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\grmModel.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\grmShaderGroup.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthHealthComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthMsgInjure.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCamera.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\InstanceTreeRenderer.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invBaseItem.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invInventoryComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invWeaponType.hpp" />
@@ -171,10 +176,13 @@
     <ClInclude Include="src\rdr2\rdr2_include\Matrix44.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Quaternion.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\rdrAnimation.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\rmcInstanceRenderBase.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagMsgAttachmentImpact.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagMsgDestroyOnDeathNotify.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagObjRscHandler.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagPlayerMgr.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagPlayerStates.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\TreeDrawList.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Vector2.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Vector3.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\Vector4.hpp" />

@@ -82,3 +82,15 @@ MAKE_HOOK(
 
 	CALL_ORIGINAL(thisptr);
 }
+
+MAKE_HOOK(
+	CameraViewport_UnknownFunc,
+	sigs::CameraViewport_UnknownFunc.get(),
+	void,
+	rdr2::CameraViewport *thisptr)
+{
+	CALL_ORIGINAL(thisptr);
+
+	//fov override
+	thisptr->m_Fov = 65.0f;
+}

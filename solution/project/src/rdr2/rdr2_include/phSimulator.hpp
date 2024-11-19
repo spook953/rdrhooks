@@ -20,5 +20,10 @@ namespace rdr2
 		{
 			sigs::phSimulator_AddFixedObject.call<void>(this, param_1);
 		}
+
+		bool TeleportObject(phInst *param_1, Matrix34 *param_2, Matrix34 *param_3)
+		{
+			return sigs::phSimulator_TeleportObject.call<bool>(this, param_1, param_2, param_3);
+		}
 	};
 }

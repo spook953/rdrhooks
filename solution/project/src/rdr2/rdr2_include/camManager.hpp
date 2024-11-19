@@ -43,5 +43,11 @@ namespace rdr2
 		{
 			return *reinterpret_cast<gohCameraFactory **>(reinterpret_cast<uintptr_t>(this) + 0x50);
 		}
+
+		CameraViewport *GetCameraViewport()
+		{
+			//cba to convert to c++ casts
+			return (CameraViewport *)(*((uintptr_t *)*((uintptr_t *)this + 0x4) + 0x42));
+		}
 	};
 }

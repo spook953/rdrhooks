@@ -15,6 +15,7 @@
 #include "rdr2_include/animMotionTreeManager.hpp"
 #include "rdr2_include/aniNavigationGait.hpp"
 #include "rdr2_include/aniRide.hpp"
+#include "rdr2_include/atArray.hpp"
 #include "rdr2_include/bhPacketExec.hpp"
 #include "rdr2_include/bhWeaponsPacket.hpp"
 #include "rdr2_include/camCamera.hpp"
@@ -47,8 +48,12 @@
 #include "rdr2_include/gohDofSettings.hpp"
 #include "rdr2_include/gohGUID.hpp"
 #include "rdr2_include/grcViewport.hpp"
+#include "rdr2_include/grmMatrixSet.hpp"
+#include "rdr2_include/grmModel.hpp"
+#include "rdr2_include/grmShaderGroup.hpp"
 #include "rdr2_include/hlthHealthComponent.hpp"
 #include "rdr2_include/hlthMsgInjure.hpp"
+#include "rdr2_include/InstanceTreeRenderer.hpp"
 #include "rdr2_include/invBaseItem.hpp"
 #include "rdr2_include/invInventoryComponent.hpp"
 #include "rdr2_include/invWeaponType.hpp"
@@ -66,16 +71,19 @@
 #include "rdr2_include/rdrActorTracker.hpp"
 #include "rdr2_include/rdrAnimation.hpp"
 #include "rdr2_include/rdrMatrixAudioEntity.hpp"
+#include "rdr2_include/rmcInstanceRenderBase.hpp"
 #include "rdr2_include/sagActor.hpp"
 #include "rdr2_include/sagGuid.hpp"
 #include "rdr2_include/sagLayout.hpp"
 #include "rdr2_include/sagMsgAttachmentImpact.hpp"
 #include "rdr2_include/sagMsgDestroyOnDeathNotify.hpp"
+#include "rdr2_include/sagObjRscHandler.hpp"
 #include "rdr2_include/sagPlayer.hpp"
 #include "rdr2_include/sagPlayerMgr.hpp"
 #include "rdr2_include/sagPlayerStates.hpp"
 #include "rdr2_include/tgtReticleComponent.hpp"
 #include "rdr2_include/TransitionCamera.hpp"
+#include "rdr2_include/TreeDrawList.hpp"
 #include "rdr2_include/Vector2.hpp"
 #include "rdr2_include/Vector3.hpp"
 #include "rdr2_include/Vector4.hpp"
@@ -101,6 +109,11 @@ namespace rdr2
 	sagPlayer *GetPlayer()
 	{
 		return *sigs::sagPlayer_ptr.rcast<sagPlayer **>();
+	}
+
+	phSimulator *GetSimulator()
+	{
+		return sigs::phSimulator_sm_ActiveInstance.rcast<phSimulator *>();
 	}
 }
 

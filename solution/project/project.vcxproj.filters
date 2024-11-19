@@ -114,5 +114,13 @@
     <ClInclude Include="src\libs\libs.hpp" />
     <ClInclude Include="src\utils\tier0\tier0.hpp" />
     <ClInclude Include="src\utils\tier1\tier1.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagObjRscHandler.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\InstanceTreeRenderer.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\atArray.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\TreeDrawList.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\rmcInstanceRenderBase.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\grmModel.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\grmShaderGroup.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\grmMatrixSet.hpp" />
   </ItemGroup>
 </Project>

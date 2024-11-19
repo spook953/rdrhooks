@@ -3,12 +3,21 @@
 #include "base.hpp"
 
 #include "grcViewport.hpp"
-#include "Matrix34.hpp"
+#include "Matrix44.hpp"
 
 namespace rdr2
 {
 	class CameraViewport
 	{
+	public:
+		Matrix44 m_Matrix{}; //0x0000
+
+	private:
+		char pad_0040[232]{}; //0x0040
+
+	public:
+		float m_Fov{}; //0x0128
+
 	public:
 		void SetCameraMatrix(Matrix34 *param_1)
 		{
@@ -33,12 +42,6 @@ namespace rdr2
 		void Reset()
 		{
 			sigs::CameraViewport_Reset.call<void>(this);
-		}
-
-	public:
-		grcViewport *GetViewport()
-		{
-			return *reinterpret_cast<grcViewport **>(reinterpret_cast<uintptr_t>(this) + 0x150);
 		}
 	};
 }
