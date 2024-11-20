@@ -98,17 +98,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\hooks.cpp" />
-    <ClCompile Include="src\libs\minhook\buffer.cpp" />
-    <ClCompile Include="src\libs\minhook\hde64.cpp" />
-    <ClCompile Include="src\libs\minhook\hook.cpp" />
-    <ClCompile Include="src\libs\minhook\trampoline.cpp" />
+    <ClCompile Include="src\core\core.cpp" />
+    <ClCompile Include="src\core\features\hooks.cpp" />
+    <ClCompile Include="src\shared\libs\minhook\buffer.cpp" />
+    <ClCompile Include="src\shared\libs\minhook\hde64.cpp" />
+    <ClCompile Include="src\shared\libs\minhook\hook.cpp" />
+    <ClCompile Include="src\shared\libs\minhook\trampoline.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\utils\tier0\con_utils\con_utils.cpp" />
-    <ClCompile Include="src\utils\tier0\mem_address\mem_address.cpp" />
-    <ClCompile Include="src\utils\tier0\mem_utils\mem_utils.cpp" />
+    <ClCompile Include="src\shared\utils\tier0\con_utils\con_utils.cpp" />
+    <ClCompile Include="src\shared\utils\tier0\mem_address\mem_address.cpp" />
+    <ClCompile Include="src\shared\utils\tier0\mem_utils\mem_utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\core.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\ActionContext.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\AmmoComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniActionSet.hpp" />
@@ -204,21 +206,22 @@
     <ClInclude Include="src\rdr2\rdr2_include\weapProjectileInfo.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\weapWeapon.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\ZombieDLCManager.hpp" />
-    <ClInclude Include="src\libs\libs.hpp" />
-    <ClInclude Include="src\utils\tier1\make_sig\make_sig.hpp" />
-    <ClInclude Include="src\libs\minhook\buffer.hpp" />
-    <ClInclude Include="src\libs\minhook\hde64.hpp" />
-    <ClInclude Include="src\libs\minhook\minhook.hpp" />
-    <ClInclude Include="src\libs\minhook\table64.hpp" />
-    <ClInclude Include="src\libs\minhook\trampoline.hpp" />
-    <ClInclude Include="src\utils\tier0\con_utils\con_utils.hpp" />
-    <ClInclude Include="src\utils\utils.hpp" />
-    <ClInclude Include="src\utils\tier0\inst_tracker\inst_tracker.hpp" />
-    <ClInclude Include="src\utils\tier0\mem_address\mem_address.hpp" />
-    <ClInclude Include="src\utils\tier0\mem_utils\mem_utils.hpp" />
-    <ClInclude Include="src\utils\tier1\make_hook\make_hook.hpp" />
-    <ClInclude Include="src\utils\tier0\tier0.hpp" />
-    <ClInclude Include="src\utils\tier1\tier1.hpp" />
+    <ClInclude Include="src\shared\libs\libs.hpp" />
+    <ClInclude Include="src\shared\shared.hpp" />
+    <ClInclude Include="src\shared\utils\tier1\make_sig\make_sig.hpp" />
+    <ClInclude Include="src\shared\libs\minhook\buffer.hpp" />
+    <ClInclude Include="src\shared\libs\minhook\hde64.hpp" />
+    <ClInclude Include="src\shared\libs\minhook\minhook.hpp" />
+    <ClInclude Include="src\shared\libs\minhook\table64.hpp" />
+    <ClInclude Include="src\shared\libs\minhook\trampoline.hpp" />
+    <ClInclude Include="src\shared\utils\tier0\con_utils\con_utils.hpp" />
+    <ClInclude Include="src\shared\utils\utils.hpp" />
+    <ClInclude Include="src\shared\utils\tier0\inst_tracker\inst_tracker.hpp" />
+    <ClInclude Include="src\shared\utils\tier0\mem_address\mem_address.hpp" />
+    <ClInclude Include="src\shared\utils\tier0\mem_utils\mem_utils.hpp" />
+    <ClInclude Include="src\shared\utils\tier1\make_hook\make_hook.hpp" />
+    <ClInclude Include="src\shared\utils\tier0\tier0.hpp" />
+    <ClInclude Include="src\shared\utils\tier1\tier1.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

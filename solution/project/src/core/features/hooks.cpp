@@ -1,4 +1,4 @@
-#include "../rdr2/rdr2.hpp"
+#include "../../rdr2/rdr2.hpp"
 
 MAKE_HOOK(
 	hlthHealthComponent_SetHitPoints,
@@ -92,5 +92,5 @@ MAKE_HOOK(
 	CALL_ORIGINAL(thisptr);
 
 	//fov override
-	thisptr->m_Fov = 65.0f;
+	thisptr->m_Fov += 20.0f;
 }
