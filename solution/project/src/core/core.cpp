@@ -43,7 +43,7 @@ bool Core::unload()
 	}
 
 	if (MH_Uninitialize() != MH_OK) {
-		con::printErr("minhook failed to uninitialize\n");
+		con::printErr("failed to uninitialize minhook\n");
 		return false;
 	}
 
