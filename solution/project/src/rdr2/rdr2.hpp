@@ -29,6 +29,7 @@
 #include "rdr2_include/CollisionHelper.hpp"
 #include "rdr2_include/Color32.hpp"
 #include "rdr2_include/ConditionMoverNotOnGround.hpp"
+#include "rdr2_include/CRadar.hpp"
 #include "rdr2_include/crClip.hpp"
 #include "rdr2_include/crExpressions.hpp"
 #include "rdr2_include/crFrame.hpp"
@@ -53,6 +54,7 @@
 #include "rdr2_include/grmShaderGroup.hpp"
 #include "rdr2_include/hlthHealthComponent.hpp"
 #include "rdr2_include/hlthMsgInjure.hpp"
+#include "rdr2_include/hudManager.hpp"
 #include "rdr2_include/InstanceTreeRenderer.hpp"
 #include "rdr2_include/invBaseItem.hpp"
 #include "rdr2_include/invInventoryComponent.hpp"
@@ -96,85 +98,90 @@
 
 namespace rdr2
 {
-	camManager *GetCamManager()
+	inline camManager *GetCamManager()
 	{
 		return sigs::camManager_sm_Instance.rcast<camManager *>();
 	}
 
-	ZombieDLCManager *GetZombieDLCManager()
+	inline ZombieDLCManager *GetZombieDLCManager()
 	{
 		return sigs::ZombieDLCManager_sm_Instance.rcast<ZombieDLCManager *>();
 	}
 
-	sagPlayer *GetPlayer()
+	inline sagPlayer *GetPlayer()
 	{
 		return *sigs::sagPlayer_ptr.rcast<sagPlayer **>();
 	}
 
-	phSimulator *GetSimulator()
+	inline phSimulator *GetSimulator()
 	{
 		return sigs::phSimulator_sm_ActiveInstance.rcast<phSimulator *>();
+	}
+
+	inline hudManager *GetHudManager()
+	{
+		return sigs::atSingleton_hudManager_sm_Instance.rcast<hudManager *>();
 	}
 }
 
 namespace rdr2
 {
-	sagActor *GetPlayerActor()
+	inline sagActor *GetPlayerActor()
 	{
 		return sigs::GetPlayerActor.call<sagActor *>();
 	}
 
-	weapWeapon *FindWeaponFromActor(sagActor *param_1, int param_2, AmmoComponent **param_3)
+	inline weapWeapon *FindWeaponFromActor(sagActor *param_1, int param_2, AmmoComponent **param_3)
 	{
 		return sigs::FindWeaponFromActor.call<weapWeapon *>(param_1, param_2, param_3);
 	}
 
-	void *GetBonePointerById(int param_1, sagActor *param_2)
+	inline void *GetBonePointerById(int param_1, sagActor *param_2)
 	{
 		return sigs::GetBonePointerById.call<void *>(param_1, param_2);
 	}
 
-	int GetEquipSlot(int param_1)
+	inline int GetEquipSlot(int param_1)
 	{
 		return sigs::GetEquipSlot.call<int>(param_1);
 	}
 
-	int GetFeelingForTarget(sagActor *param_1, sagActor *param_2)
+	inline int GetFeelingForTarget(sagActor *param_1, sagActor *param_2)
 	{
 		return sigs::GetFeelingForTarget.call<int>(param_1, param_2);
 	}
 
-	bool GetHardLockTargetAnchorPoint(Vector3 *param_1, Vector3 *param_2, Vector3 *param_3, gohGUID *param_4, bool param_5, Vector2 *param_6)
+	inline bool GetHardLockTargetAnchorPoint(Vector3 *param_1, Vector3 *param_2, Vector3 *param_3, gohGUID *param_4, bool param_5, Vector2 *param_6)
 	{
 		return sigs::GetHardLockTargetAnchorPoint.call<bool>(param_1, param_2, param_3, param_4, param_5, param_6);
 	}
 
-	bool GetHoofMatrix(int param_1, sagActor *param_2, Matrix34 *param_3)
+	inline bool GetHoofMatrix(int param_1, sagActor *param_2, Matrix34 *param_3)
 	{
 		return sigs::GetHoofMatrix.call<bool>(param_1, param_2, param_3);
 	}
 
-	int GetWeaponEnumForAmmoEnum(sagActor *param_1, int param_2)
+	inline int GetWeaponEnumForAmmoEnum(sagActor *param_1, int param_2)
 	{
 		return sigs::GetWeaponEnumForAmmoEnum.call<int>(param_1, param_2);
 	}
 
-	void GiveEnumeratedWeapon(sagActor *param_1, int param_2, float param_3, bool param_4, bool param_5)
+	inline void GiveEnumeratedWeapon(sagActor *param_1, int param_2, float param_3, bool param_4, bool param_5)
 	{
 		sigs::GiveEnumeratedWeapon.call<void>(param_1, param_2, param_3, param_4, param_5);
 	}
 
-	bool IsViewVectorInBox(Vector3 *param_1, Matrix34 *param_2, Vector2 *param_3)
+	inline bool IsViewVectorInBox(Vector3 *param_1, Matrix34 *param_2, Vector2 *param_3)
 	{
 		return sigs::IsViewVectorInBox.call<bool>(param_1, param_2, param_3);
 	}
 
-	bool SelectEnumeratedWeapon(sagActor *param_1, int param_2, bool param_3)
+	inline bool SelectEnumeratedWeapon(sagActor *param_1, int param_2, bool param_3)
 	{
 		return sigs::SelectEnumeratedWeapon.call<bool>(param_1, param_2, param_3);
 	}
 
-	void SetWeaponAmmoForItem(sagActor *param_1, invBaseItem *param_2, float param_3)
+	inline void SetWeaponAmmoForItem(sagActor *param_1, invBaseItem *param_2, float param_3)
 	{
 		sigs::SetWeaponAmmoForItem.call<void>(param_1, param_2, param_3);
 	}

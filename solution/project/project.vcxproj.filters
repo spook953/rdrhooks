@@ -11,6 +11,15 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\shared\utils\tier0\con_utils\con_utils.cpp" />
     <ClCompile Include="src\core\core.cpp" />
+    <ClCompile Include="src\sdk\renderer\renderer.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_impl_dx12.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\sdk\draw\draw.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\Color32.hpp" />
@@ -125,5 +134,18 @@
     <ClInclude Include="src\rdr2\rdr2_include\grmMatrixSet.hpp" />
     <ClInclude Include="src\core\core.hpp" />
     <ClInclude Include="src\shared\shared.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\hudManager.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\CRadar.hpp" />
+    <ClInclude Include="src\sdk\sdk.hpp" />
+    <ClInclude Include="src\sdk\renderer\renderer.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imconfig.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imgui.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imgui_impl_dx12.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imgui_impl_win32.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imgui_internal.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imstb_rectpack.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imstb_textedit.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imstb_truetype.hpp" />
+    <ClInclude Include="src\sdk\draw\draw.hpp" />
   </ItemGroup>
 </Project>

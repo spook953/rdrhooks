@@ -1,4 +1,49 @@
-#include "../../rdr2/rdr2.hpp"
+#include "../../sdk/sdk.hpp"
+
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+MAKE_HOOK(
+	GameWndProc,
+	sigs::GameWndProc.get(),
+	LONG,
+	HWND wnd, UINT msg, WPARAM wparam, LPARAM lparam)
+{
+	ImGui_ImplWin32_WndProcHandler(wnd, msg, wparam, lparam);
+
+	return CALL_ORIGINAL(wnd, msg, wparam, lparam);
+}
+
+MAKE_HOOK(
+	CDXGISwapChain_Present,
+	mem::findVirtual(sigs::IDXGISwapChain_ptr.rcast<IDXGISwapChain *>(), 8).get(),
+	HRESULT,
+	IDXGISwapChain *thisptr, UINT SyncInterval, UINT Flags)
+{
+	if (Renderer::start())
+	{
+		Draw::rect({ 200.0f, 200.0f }, { 100.0f, 250.0f }, { 20, 220, 55, 255 });
+		Draw::rectFilled({ 500.0f, 400.0f }, { 50.0f, 50.0f }, { 220, 50, 80, 100 });
+
+		Renderer::end();
+	}
+
+	return CALL_ORIGINAL(thisptr, SyncInterval, Flags);
+}
+
+MAKE_HOOK(
+	CDXGISwapChain_ResizeBuffers,
+	mem::findVirtual(sigs::IDXGISwapChain_ptr.rcast<IDXGISwapChain *>(), 13).get(),
+	HRESULT,
+	IDXGISwapChain *thisptr, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
+{
+	Renderer::uninit();
+
+	const HRESULT result{ CALL_ORIGINAL(thisptr, BufferCount, Width, Height, NewFormat, SwapChainFlags) };
+
+	Renderer::init();
+
+	return result;
+}
 
 MAKE_HOOK(
 	hlthHealthComponent_SetHitPoints,
@@ -92,5 +137,5 @@ MAKE_HOOK(
 	CALL_ORIGINAL(thisptr);
 
 	//fov override
-	thisptr->m_Fov += 20.0f;
+	thisptr->m_Fov += 10.0f;
 }

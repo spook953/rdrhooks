@@ -17,6 +17,11 @@ bool Core::load()
 		con::printMsg(std::format("found {} at {:X}\n", s->name(), s->addr().get()));
 	}
 
+	if (!Renderer::init()) {
+		con::printErr("failed to initialize renderer\n");
+		return false;
+	}
+
 	for (Hook *const h : getInsts<Hook>())
 	{
 		if (!h->init()) {
@@ -44,6 +49,11 @@ bool Core::unload()
 
 	if (MH_Uninitialize() != MH_OK) {
 		con::printErr("failed to uninitialize minhook\n");
+		return false;
+	}
+
+	if (!Renderer::uninit()) {
+		con::printErr("failed to uninitialize renderer\n");
 		return false;
 	}
 

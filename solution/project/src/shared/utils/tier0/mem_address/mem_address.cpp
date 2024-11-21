@@ -83,7 +83,7 @@ MemAddr MemAddr::deref(size_t count)
 	return *this;
 }
 
-MemAddr MemAddr::fixRip(const size_t offset)
+MemAddr MemAddr::rip(const size_t offset)
 {
 	if (m_addr && offset)
 	{

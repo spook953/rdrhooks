@@ -27,7 +27,7 @@ public:
 public:
     MemAddr offset(const size_t offset);
     MemAddr deref(size_t count = 1);
-    MemAddr fixRip(const size_t offset = 1);
+    MemAddr rip(const size_t offset = 1);
 
 public:
     template <typename T>

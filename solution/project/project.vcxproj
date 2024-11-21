@@ -100,6 +100,15 @@
   <ItemGroup>
     <ClCompile Include="src\core\core.cpp" />
     <ClCompile Include="src\core\features\hooks.cpp" />
+    <ClCompile Include="src\sdk\draw\draw.cpp" />
+    <ClCompile Include="src\sdk\renderer\renderer.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_impl_dx12.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\shared\libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\shared\libs\minhook\buffer.cpp" />
     <ClCompile Include="src\shared\libs\minhook\hde64.cpp" />
     <ClCompile Include="src\shared\libs\minhook\hook.cpp" />
@@ -138,6 +147,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\CameraViewport.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\CollisionHelper.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\ConditionMoverNotOnGround.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\CRadar.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\crClip.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\crExpressions.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\crFrame.hpp" />
@@ -161,6 +171,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\hlthHealthComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hlthMsgInjure.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCamera.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\hudManager.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\InstanceTreeRenderer.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invBaseItem.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invInventoryComponent.hpp" />
@@ -206,6 +217,17 @@
     <ClInclude Include="src\rdr2\rdr2_include\weapProjectileInfo.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\weapWeapon.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\ZombieDLCManager.hpp" />
+    <ClInclude Include="src\sdk\draw\draw.hpp" />
+    <ClInclude Include="src\sdk\renderer\renderer.hpp" />
+    <ClInclude Include="src\sdk\sdk.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imconfig.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imgui.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imgui_impl_dx12.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imgui_impl_win32.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imgui_internal.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imstb_rectpack.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imstb_textedit.hpp" />
+    <ClInclude Include="src\shared\libs\imgui\imstb_truetype.hpp" />
     <ClInclude Include="src\shared\libs\libs.hpp" />
     <ClInclude Include="src\shared\shared.hpp" />
     <ClInclude Include="src\shared\utils\tier1\make_sig\make_sig.hpp" />

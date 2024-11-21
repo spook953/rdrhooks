@@ -32,7 +32,7 @@ public:
 	bool remove()
 	{
 		if (!m_src_fn) {
-			return true;
+			return false;
 		}
 
 		return MH_DisableHook(m_src_fn) == MH_OK && MH_RemoveHook(m_src_fn) == MH_OK;
