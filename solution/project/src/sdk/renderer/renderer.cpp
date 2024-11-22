@@ -29,7 +29,6 @@ bool Renderer::init()
 		swap_chain->GetDesc(&sc_desc);
 
 		wnd = sc_desc.OutputWindow;
-
 		frame_buf_count = sc_desc.BufferCount;
 
 		frame_ctx.clear();
