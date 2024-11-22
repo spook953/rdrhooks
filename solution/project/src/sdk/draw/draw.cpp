@@ -2,7 +2,7 @@
 
 rdr2::Vector2 Draw::getScreenSize()
 {
-	return { ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.x };
+	return { ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y };
 }
 
 bool Draw::worldToScreen(const rdr2::Vector3 &world, rdr2::Vector2 &screen)
