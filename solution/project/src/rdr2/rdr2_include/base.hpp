@@ -126,7 +126,7 @@ MAKE_SIG(sagPlayer_UpdateTargeting, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 
 MAKE_SIG(sagPlayer_UpdateStateVehicle, mem::findBytes("RDR.exe", "40 53 57 48 83 EC 28 0F B7 81 ? ? ? ?"));
 MAKE_SIG(sagPlayer_EndDeadEyeCommon, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F B6 93 ? ? ? ? 0F B6 83 ? ? ? ?").rip());
 MAKE_SIG(sagPlayer_CancelDeadeye, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 8B C7 41 8B D7").rip());
-MAKE_SIG(sagPlayer_UpdateAttackInput, mem::findBytes("RDR.exe", " 40 53 41 56 48 83 EC 28 66 83 B9 ? ? ? ? ?"));
+MAKE_SIG(sagPlayer_UpdateAttackInput, mem::findBytes("RDR.exe", "40 53 41 56 48 83 EC 28 66 83 B9 ? ? ? ? ?"));
 MAKE_SIG(sagPlayer_UpdateWeaponSpecialMove, mem::findBytes("RDR.exe", "E8 ? ? ? ? 41 B1 01 49 8B CF").rip());
 MAKE_SIG(sagPlayer_ResetData, mem::findBytes("RDR.exe", "E8 ? ? ? ? C6 83 ? ? ? ? ? 33 C0").rip());
 MAKE_SIG(sagPlayer_UpdateStateHorse, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 9C 24 ? ? ? ? 48 8B B4 24 ? ? ? ? 0F 28 74 24 ?").rip());
