@@ -49,6 +49,9 @@ MAKE_SIG(grcViewport_sm_Current, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? F3 
 //rage::grcViewport::sm_ScreenViewport
 MAKE_SIG(grcViewport_sm_ScreenViewport, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? 44 0F 28 C7 F3 44 0F 59 C0 F3 0F 11 7C 24 ? 66 0F 6E 81 ? ? ? ? 66 0F 6E 89 ? ? ? ?").rip(3).deref());
 
+//???
+MAKE_SIG(WorldToScreenMtx, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 89 7C 24 50 89 6C 24 48 89 74 24 40").rip(3).deref().offset(0x240));
+
 MAKE_SIG(GetPlayerActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 C0 74 DF").rip());
 MAKE_SIG(FindWeaponFromActor, mem::findBytes("RDR.exe", "40 56 48 83 EC 20 49 8B F0"));
 MAKE_SIG(GetBonePointerById, mem::findBytes("RDR.exe", "48 89 5C 24 ? 8B 41 38"));
@@ -65,6 +68,7 @@ MAKE_SIG(rmcInstDrawModelUnskinned, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F B7 
 MAKE_SIG(rmcInstDrawModelSkinned, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 0E 44 89 6C 24 ?").rip());
 MAKE_SIG(DrawCircle, mem::findBytes("RDR.exe", "E8 ? ? ? ? E8 ? ? ? ? 44 8B 0D ? ? ? ?").rip());
 MAKE_SIG(GameWndProc, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 49 8B D9 49 8B F8"));
+MAKE_SIG(WorldToScreen, mem::findBytes("RDR.exe", "48 83 EC 28 F3 41 0F 10 28"));
 
 MAKE_SIG(CRadar_DrawRadar, mem::findBytes("RDR.exe", "48 8B C4 F3 0F 11 50 ? 55 53 41 56"));
 
@@ -85,6 +89,7 @@ MAKE_SIG(CameraViewport_Reset, mem::findBytes("RDR.exe", "33 C0 48 C7 41 ? ? ? ?
 MAKE_SIG(CameraViewport_UnknownFunc, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC 60 48 8B 81 ? ? ? ?"));
 
 MAKE_SIG(grcViewport_SetCameraMtx, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 8B 55 40").rip());
+MAKE_SIG(grcViewport_ComputeFullCompositeMtx, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8D 4D D7 0F 10 00").rip());
 
 MAKE_SIG(camManager_EndDeathScreenCamera, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 48 8B 41 40"));
 MAKE_SIG(camManager_PostInit, mem::findBytes("RDR.exe", "48 83 EC 38 48 8B 05 ? ? ? ? 4C 8D 05 ? ? ? ?"));

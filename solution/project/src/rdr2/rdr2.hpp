@@ -122,6 +122,11 @@ namespace rdr2
 	{
 		return sigs::atSingleton_hudManager_sm_Instance.rcast<hudManager *>();
 	}
+
+	inline grcViewport *GetCurViewport()
+	{
+		return sigs::grcViewport_sm_Current.rcast<grcViewport *>();
+	}
 }
 
 namespace rdr2
@@ -184,5 +189,17 @@ namespace rdr2
 	inline void SetWeaponAmmoForItem(sagActor *param_1, invBaseItem *param_2, float param_3)
 	{
 		sigs::SetWeaponAmmoForItem.call<void>(param_1, param_2, param_3);
+	}
+}
+
+namespace rdr2
+{
+	inline void WorldToScreen(const rdr2::Vector3 &world, rdr2::Vector2 &screen)
+	{
+		rdr2::Vector3 tmp{};
+
+		sigs::WorldToScreen.call<void>(sigs::WorldToScreenMtx.rcast<rdr2::Matrix44 *>(), &tmp, &world);
+
+		screen = { tmp.x, tmp.y };
 	}
 }

@@ -75,7 +75,7 @@ void Core::entry()
 
 	unload();
 
-	Sleep(100);
+	Sleep(250);
 
 	con::printOke("unloaded\n");
 

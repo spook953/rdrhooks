@@ -21,16 +21,16 @@ MAKE_HOOK(
 {
 	if (Renderer::start())
 	{
-		Draw::line({ 300.0f, 349.0f }, { 789.0f, 457.0f }, { 90, 70, 200, 255 });
+		if (rdr2::sagActor *const plr{ rdr2::GetPlayerActor() })
+		{
+			rdr2::Vector3 head{};
+			plr->GetHeadPosition(head);
 
-		Draw::rect({ 200.0f, 200.0f }, { 50.0f, 50.0f }, { 20, 160, 70, 255 });
-		Draw::rectFilled({ 400.0f, 100.0f }, { 150.0f, 70.0f }, { 20, 160, 70, 255 });
+			rdr2::Vector2 head_2d{};
+			rdr2::WorldToScreen(head, head_2d);
 
-		Draw::circle({ 200.0f, 500.0f }, 20.0f, { 50, 100, 100, 255 });
-		Draw::circleFilled({ 250.0f, 550.0f }, 30.0f, { 100, 20, 150, 255 });
-
-		Draw::text({ 300.0f, 200.0f }, "hello :D", { 200, 200, 200, 255 });
-		Draw::textOutlined({ 300.0f, 220.0f }, "whatsup", { 20, 220, 50, 255 }, Draw::CENTERX);
+			Draw::textOutlined(head_2d - rdr2::Vector2{ 5.0f, 5.0f }, "fuck this game", { 20, 220, 55, 255 }, Draw::CENTERXY);
+		}
 
 		Renderer::end();
 	}

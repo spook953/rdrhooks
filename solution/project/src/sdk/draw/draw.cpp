@@ -5,13 +5,6 @@ rdr2::Vector2 Draw::getScreenSize()
 	return { ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y };
 }
 
-bool Draw::worldToScreen(const rdr2::Vector3 &world, rdr2::Vector2 &screen)
-{
-	//TODO:
-
-	return false;
-}
-
 void Draw::line(const rdr2::Vector2 &from, const rdr2::Vector2 &to, const rdr2::Color32 clr)
 {
 	ImDrawList *const dl{ ImGui::GetBackgroundDrawList() };
