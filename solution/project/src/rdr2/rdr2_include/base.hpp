@@ -2,8 +2,6 @@
 
 #include "../../shared/shared.hpp"
 
-#pragma region instances
-
 //TODO: recheck if all these need a deref
 
 //atSingleton<camManager>::sm_Instance
@@ -48,9 +46,8 @@ MAKE_SIG(ID3D12CommandQueue_ptr, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 48 
 //rage::grcViewport::sm_Current
 MAKE_SIG(grcViewport_sm_Current, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? F3 0F 11 05 ? ? ? ? F3 0F 10 4A ? F3 0F 11 0D ? ? ? ? F3 0F 10 42 ?").rip(3).deref());
 
-#pragma endregion
-
-#pragma region global functions
+//rage::grcViewport::sm_ScreenViewport
+MAKE_SIG(grcViewport_sm_ScreenViewport, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? 44 0F 28 C7 F3 44 0F 59 C0 F3 0F 11 7C 24 ? 66 0F 6E 81 ? ? ? ? 66 0F 6E 89 ? ? ? ?").rip(3).deref());
 
 MAKE_SIG(GetPlayerActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 C0 74 DF").rip());
 MAKE_SIG(FindWeaponFromActor, mem::findBytes("RDR.exe", "40 56 48 83 EC 20 49 8B F0"));
@@ -69,32 +66,16 @@ MAKE_SIG(rmcInstDrawModelSkinned, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 0E 44
 MAKE_SIG(DrawCircle, mem::findBytes("RDR.exe", "E8 ? ? ? ? E8 ? ? ? ? 44 8B 0D ? ? ? ?").rip());
 MAKE_SIG(GameWndProc, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 49 8B D9 49 8B F8"));
 
-#pragma endregion
-
-#pragma region CRadar
-
 MAKE_SIG(CRadar_DrawRadar, mem::findBytes("RDR.exe", "48 8B C4 F3 0F 11 50 ? 55 53 41 56"));
-
-#pragma endregion
-
-#pragma region sagObjRscHandler
 
 MAKE_SIG(sagObjRscHandler_DrawGrass, mem::findBytes("RDR.exe", "4C 89 44 24 ? 53 48 81 EC ? ? ? ?"));
 MAKE_SIG(sagObjRscHandler_DrawTrees, mem::findBytes("RDR.exe", "44 89 4C 24 ? 55 53 56 57 41 54"));
 MAKE_SIG(sagObjRscHandler_DrawBillboards, mem::findBytes("RDR.exe", "E8 ? ? ? ? 45 84 ED 74 0C").rip());
 
-#pragma endregion
-
-#pragma region camCameraChannel
-
 MAKE_SIG(camCameraChannel_RemoveCamera, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 53 38 45 33 C9").rip());
 MAKE_SIG(camCameraChannel_PushCamera, mem::findBytes("RDR.exe", "E9 ? ? ? ? 41 83 F8 FF").rip());
 MAKE_SIG(camCameraChannel_Update, mem::findBytes("RDR.exe", "48 89 5C 24 ? 57 48 83 EC 20 48 8B 59 18 48 8B F9 48 89 5C 24 ?"));
 MAKE_SIG(camCameraChannel_ReleaseTransitionCamera, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB A4").rip());
-
-#pragma endregion
-
-#pragma region CameraViewport
 
 MAKE_SIG(CameraViewport_SetCameraMatrix, mem::findBytes("RDR.exe", "E8 ? ? ? ? 49 8B 8E ? ? ? ? 48 8B 01 FF 50 08 49 8B 86 ? ? ? ? B2 01").rip());
 MAKE_SIG(CameraViewport_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8D 57 40 48 8D 8F ? ? ? ?").rip());
@@ -103,36 +84,16 @@ MAKE_SIG(CameraViewport_LerpArc, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F 28 B4 
 MAKE_SIG(CameraViewport_Reset, mem::findBytes("RDR.exe", "33 C0 48 C7 41 ? ? ? ? ? 48 8D 91 ? ? ? ?"));
 MAKE_SIG(CameraViewport_UnknownFunc, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC 60 48 8B 81 ? ? ? ?"));
 
-#pragma endregion
-
-#pragma region grcViewport
-
 MAKE_SIG(grcViewport_SetCameraMtx, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 8B 55 40").rip());
-
-#pragma endregion
-
-#pragma region camManager
 
 MAKE_SIG(camManager_EndDeathScreenCamera, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 48 8B 41 40"));
 MAKE_SIG(camManager_PostInit, mem::findBytes("RDR.exe", "48 83 EC 38 48 8B 05 ? ? ? ? 4C 8D 05 ? ? ? ?"));
 MAKE_SIG(camManager_RemoveCameraOnChannel, mem::findBytes("RDR.exe", "85 D2 75 22 4C 8B 49 08"));
 MAKE_SIG(camManager_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 0D ? ? ? ? 33 FF 48 85 C9").rip());
 
-#pragma endregion
-
-#pragma region gohCameraFactory
-
 MAKE_SIG(gohCameraFactory_GetCamera, mem::findBytes("RDR.exe", "4C 8B C9 85 D2 0F 84 ? ? ? ?"));
 
-#pragma endregion
-
-#pragma region invInventoryComponent
-
 MAKE_SIG(invInventoryComponent_IsItemSwitchingWeaponToWeapon, mem::findBytes("RDR.exe", "40 53 48 81 EC ? ? ? ? F3 0F 10 05 ? ? ? ?"));
-
-#pragma endregion
-
-#pragma region sagActor
 
 MAKE_SIG(sagActor_GetInstance, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B 76 30").rip());
 MAKE_SIG(sagActor_IsIndoors, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 88 65 63").rip());
@@ -146,10 +107,6 @@ MAKE_SIG(sagActor_GetMostLocalDescription, mem::findBytes("RDR.exe", "E8 ? ? ? ?
 MAKE_SIG(sagActor_SpatialPositionUpdate, mem::findBytes("RDR.exe", "48 8B C4 56 41 57 48 83 EC 58"));
 MAKE_SIG(sagActor_Shutdown, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8B CB E8 ? ? ? ? 48 8B 5C 24 ?").rip());
 MAKE_SIG(sagActor_ProcessPhase1, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 74 A9").rip());
-
-#pragma endregion
-
-#pragma region sagPlayer
 
 MAKE_SIG(sagPlayer_CanSniperZoom, mem::findBytes("RDR.exe", "E8 ? ? ? ? 88 44 24 34").rip());
 MAKE_SIG(sagPlayer_GetActiveWeapon, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 89 45 B7").rip());
@@ -181,21 +138,7 @@ MAKE_SIG(sagPlayer_UpdateState, mem::findBytes("RDR.exe", "40 55 57 48 83 EC 68"
 MAKE_SIG(sagPlayer_UpdateWeaponSelection, mem::findBytes("RDR.exe", "4C 8B DC 57 41 54 48 83 EC 68"));
 MAKE_SIG(sagPlayer_Reset, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 3D ? ? ? ? ? 75 27").rip());
 
-#pragma endregion
-
-#pragma region sagLayout
-
 MAKE_SIG(sagLayout_DestroyActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 0F B6 DB").rip());
-
-#pragma endregion
-
-#pragma region sagPlayerMgr
-
-
-
-#pragma endregion
-
-#pragma region sagPlayerStates
 
 MAKE_SIG(sagPlayerStates_CheckIsUsingGringo, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 75 A7").rip());
 MAKE_SIG(sagPlayerStates_AllowWeaponsCycle, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 4C 8B 01 48 8B D9"));
@@ -206,21 +149,9 @@ MAKE_SIG(sagPlayerStates_CheckIsUsingVehicle, mem::findBytes("RDR.exe", "E8 ? ? 
 MAKE_SIG(sagPlayerStates_CheckIsInsideVehicle, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 74 3D 4D 85 C9").rip());
 MAKE_SIG(sagPlayerStates_EvaluateReticleDraw, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8E ? ? ? ? 0F 57 F6").rip());
 
-#pragma endregion
-
-#pragma region sagShellDerived
-
 MAKE_SIG(sagShellDerived_Update, mem::findBytes("RDR.exe", "40 55 53 56 57 41 54 41 55 41 56 48 8D AC 24 ? ? ? ?"));
 
-#pragma endregion
-
-#pragma region entEntityComponent
-
 MAKE_SIG(entEntityComponent_HandleDestroyOnDeathNotify_newbodies, mem::findBytes("RDR.exe", "48 89 54 24 ? 55 41 55"));
-
-#pragma endregion
-
-#pragma region hlthHealthComponent
 
 MAKE_SIG(hlthHealthComponent_SetHitPoints, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 0F 2E C7").rip());
 MAKE_SIG(hlthHealthComponent_InstantCorpsify, mem::findBytes("RDR.exe", "E8 ? ? ? ? 88 43 28").rip());
@@ -229,10 +160,6 @@ MAKE_SIG(hlthHealthComponent_HandleMoverLanded, mem::findBytes("RDR.exe", "40 53
 MAKE_SIG(hlthHealthComponent_Kill, mem::findBytes("RDR.exe", "E9 ? ? ? ? F6 C1 84").rip());
 MAKE_SIG(hlthHealthComponent_Injure, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 BB ? ? ? ? ? B9 ? ? ? ?").rip());
 MAKE_SIG(hlthHealthComponent_HandleInjure, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F B7 8F ? ? ? ? 4C 8B 05 ? ? ? ? 48 03 C9 0F B7 87 ? ? ? ? 66 41 39 44 C8 ?").rip());
-
-#pragma endregion
-
-#pragma region weapWeapon
 
 MAKE_SIG(weapWeapon_OnFireProjectile, mem::findBytes("RDR.exe", "48 89 54 24 ? 55 53 56 57 41 54 41 55 41 56 41 57 48 81 EC ? ? ? ? 48 8D 6C 24 ? 44 0F B7 41 ?"));
 MAKE_SIG(weapWeapon_SomeShotDelayFunc, mem::findBytes("RDR.exe", "E8 ? ? ? ? 45 33 F6 0F 2F F0").rip());
@@ -256,40 +183,16 @@ MAKE_SIG(weapWeapon_Init, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 03 48 83 C
 MAKE_SIG(weapWeapon_FireProjectileRemote, mem::findBytes("RDR.exe", "48 89 74 24 ? 57 48 81 EC ? ? ? ? 48 63 41 30"));
 MAKE_SIG(weapWeapon_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B C3 B2 01").rip());
 
-#pragma endregion
-
-#pragma region scrThread
-
 MAKE_SIG(scrThread_Run, mem::findBytes("RDR.exe", "89 54 24 10 55 53 57 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 44 8B 79 10"));
 
-#pragma endregion
-
-#pragma region ConditionMoverNotOnGround
-
 MAKE_SIG(ConditionMoverNotOnGround_Match, mem::findBytes("RDR.exe", "48 83 EC 28 48 83 7A ? ? 4C 8B C9"));
-
-#pragma endregion
-
-#pragma region bhPacketExec
 
 MAKE_SIG(bhPacketExec_PerformWeapon, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B BC 24 ? ? ? ? 4C 8B CE").rip());
 MAKE_SIG(bhPacketExec_DoPerformWeapon, mem::findBytes("RDR.exe", "44 88 44 24 ? 55 53"));
 
-#pragma endregion
-
-#pragma region rdrActorTracker
-
 MAKE_SIG(rdrActorTracker_EndTrack, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F B6 86 ? ? ? ? 81 A6 ? ? ? ? ? ? ? ?").rip());
 
-#pragma endregion
-
-#pragma region rdrMatrixAudioEntity
-
 MAKE_SIG(rdrMatrixAudioEntity_PlayWeaponSound, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8B 05 ? ? ? ? 48 8B 0D ? ? ? ?").rip());
-
-#pragma endregion
-
-#pragma region animAnimatorComponent
 
 MAKE_SIG(animAnimatorComponent_ResetMembers, mem::findBytes("RDR.exe", "E8 ? ? ? ? 40 38 AB ? ? ? ? 74 1E").rip());
 MAKE_SIG(animAnimatorComponent_InitAnimator, mem::findBytes("RDR.exe", "48 89 5C 24 ? 55 48 83 EC 20 48 8B 41 10"));
@@ -311,29 +214,13 @@ MAKE_SIG(animAnimatorComponent_EnableRepulsion, mem::findBytes("RDR.exe", "E8 ? 
 MAKE_SIG(animAnimatorComponent_UpdateCharacterAnimation, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 48 8B 41 10 44 8B C2"));
 MAKE_SIG(animAnimatorComponent_HandleAttachmentImpact, mem::findBytes("RDR.exe", "E8 ? ? ? ? 49 8B 55 00 48 8B 5C 24 ?").rip());
 
-#pragma endregion
-
-#pragma region aniActionSet
-
 MAKE_SIG(aniActionSet_Init, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B BB ? ? ? ? 48 39 2F").rip());
 MAKE_SIG(aniActionSet_Shutdown, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 4B 08 48 8B D7").rip());
 
-#pragma endregion
-
-#pragma region aniNavigationGait
-
 MAKE_SIG(aniNavigationGait_Set, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B 4D 20").rip());
-
-#pragma endregion
-
-#pragma region animMotionTreeManager
 
 MAKE_SIG(animMotionTreeManager_ScheduleAnimation, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4D 8B 77 08 EB 03").rip());
 MAKE_SIG(animMotionTreeManager_Shutdown, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8B ? ? ? ? 33 FF 48 85 C9 74 0F").rip());
-
-#pragma endregion
-
-#pragma region aniAim
 
 MAKE_SIG(aniAim_UpdateWeaponAttachment, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8B ? ? ? ? 48 8B 49 28").rip());
 MAKE_SIG(aniAim_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F 28 74 24 ? 85 F6").rip());
@@ -348,17 +235,9 @@ MAKE_SIG(aniAim_FillAimFrameMT, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F 29 BC 2
 MAKE_SIG(aniAim_AddDrawHolsterToFrameMT, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B CE E8 ? ? ? ? E9 ? ? ? ? 48 8B 80 ? ? ? ?").rip());
 MAKE_SIG(aniAim_UpdateInternalStates, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 0F 10 87 ? ? ? ? F3 0F 10 4F ?").rip());
 
-#pragma endregion
-
-#pragma region aniAnimProp
-
 MAKE_SIG(aniAnimProp_UpdatePropAttachments, mem::findBytes("RDR.exe", "48 8B C4 48 89 70 18 48 89 78 20 55 41 56 41 57 48 8B EC"));
 MAKE_SIG(aniAnimProp_SetProp, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 16 49 8B 8E ? ? ? ?").rip());
 MAKE_SIG(aniAnimProp_Shutdown, mem::findBytes("RDR.exe", "41 57 48 83 EC 30 48 83 79 ? ?"));
-
-#pragma endregion
-
-#pragma region aniGatling
 
 MAKE_SIG(aniGatling_UpdateWeaponLocation, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 05 48 85 FF").rip());
 MAKE_SIG(aniGatling_RequestFire, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 8B 41 30"));
@@ -368,55 +247,22 @@ MAKE_SIG(aniGatling_UpdateGatlingMachine, mem::findBytes("RDR.exe", "E8 ? ? ? ? 
 MAKE_SIG(aniGatling_UpdateBoneIDs, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8B 47 30 83 F8 03").rip());
 MAKE_SIG(aniGatling_UpdateIK, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 53 10 0F B6 BB ? ? ? ?").rip());
 
-
-#pragma endregion
-
-#pragma region aniAimSweep
-
 MAKE_SIG(aniAimSweep_Reset, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 63 40 F0").rip());
-
-#pragma endregion
-
-#pragma region aniLedge
 
 MAKE_SIG(aniLedge_CancelLedge, mem::findBytes("RDR.exe", "E8 ? ? ? ? E9 ? ? ? ? 83 F9 01").rip());
 
-#pragma endregion
-
-#pragma region aniRide
-
 MAKE_SIG(aniRide_FastDismount, mem::findBytes("RDR.exe", "E8 ? ? ? ? 83 7F 18 05").rip());
-
-#pragma endregion
-
-#pragma region animAnimSetHandle
 
 MAKE_SIG(animAnimSetHandle_GetObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 38 58 28").rip());
 
-#pragma endregion
-
-#pragma region crFrame
-
 MAKE_SIG(crFrame_Set, mem::findBytes("RDR.exe", "E9 ? ? ? ? 48 8B 51 28").rip());
-
-#pragma endregion
-
-#pragma region phSimulator
 
 MAKE_SIG(phSimulator_MoveObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 45 84 F6 74 08").rip());
 MAKE_SIG(phSimulator_AddFixedObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B 57 10").rip());
 MAKE_SIG(phSimulator_TeleportObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8D 8B ? ? ? ? 48 8B 01 FF 50 50").rip());
 
-#pragma endregion
-
-#pragma region phLevelNew
-
 MAKE_SIG(phLevelNew_AddObject, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8B F8 3D ? ? ? ?").rip());
 MAKE_SIG(phLevelNew_AddObjectHelper, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 7C 24 ? ? 8B D8").rip());
-
-#pragma endregion
-
-#pragma region camCamera
 
 MAKE_SIG(camCamera_GetCollisionTarget, mem::findBytes("RDR.exe", "48 89 5C 24 ? 57 48 83 EC 20 48 8B 99 ? ? ? ? 49 8B C0"));
 MAKE_SIG(camCamera_InitCameraSettingsFromCamera, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 88 65 C7").rip());
@@ -425,48 +271,18 @@ MAKE_SIG(camCamera_Reset, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48 8D 99 
 MAKE_SIG(camCamera_ShakeCameraRandom, mem::findBytes("RDR.exe", "E8 ? ? ? ? E9 ? ? ? ? F3 0F 59 73 ?").rip());
 MAKE_SIG(camCamera_Update, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48 8B 01 48 8B D9 FF 90 ? ? ? ? 84 C0 74 35"));
 
-#pragma endregion
-
-#pragma region gohCameraTarget
-
 MAKE_SIG(gohCameraTarget_GetPosition, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 0F 10 83 ? ? ? ? 48 8D 45 6F").rip());
-
-#pragma endregion
-
-#pragma region CollisionHelper
 
 MAKE_SIG(CollisionHelper_PerformCollision, mem::findBytes("RDR.exe", "E8 ? ? ? ? 84 C0 74 1C 41 80 7E ? ?").rip());
 
-#pragma endregion
-
-#pragma region CameraShakeFactory
-
 MAKE_SIG(CameraShakeFactory_ReturnCameraShake, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 C7 83 ? ? ? ? ? ? ? ? 48 8B 03").rip());
 
-#pragma endregion
-
-#pragma region TransitionCamera
-
 MAKE_SIG(TransitionCamera_Reset, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 13 4C 8D 05 ? ? ? ?").rip());
-
-#pragma endregion
-
-#pragma region camCameraTransitionFactory
 
 MAKE_SIG(camCameraTransitionFactory_ReleaseTransition, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B E5").rip());
 MAKE_SIG(camCameraTransitionFactory_GetTransition, mem::findBytes("RDR.exe", "E8 ? ? ? ? 49 89 43 70").rip());
 
-#pragma endregion
-
-#pragma region camCameraTransitionBase
-
 MAKE_SIG(camCameraTransitionBase_ComputeCollision, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC 30 48 8B 01"));
 MAKE_SIG(camCameraTransitionBase_Start, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 F3 0F 10 0A"));
 
-#pragma endregion
-
-#pragma region gohBase
-
 MAKE_SIG(gohBase_Destroy, mem::findBytes("RDR.exe", "E9 ? ? ? ? 48 8B 51 28").rip());
-
-#pragma endregion
