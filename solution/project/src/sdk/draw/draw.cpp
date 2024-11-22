@@ -69,10 +69,6 @@ void Draw::circleFilled(const rdr2::Vector2 &center, const float radius, const r
 
 void Draw::text(const rdr2::Vector2 &pos, std::string_view txt, const rdr2::Color32 clr, const Align align)
 {
-	if (txt.empty()) {
-		return;
-	}
-
 	ImDrawList *const dl{ ImGui::GetBackgroundDrawList() };
 
 	if (!dl) {
@@ -108,10 +104,6 @@ void Draw::text(const rdr2::Vector2 &pos, std::string_view txt, const rdr2::Colo
 
 void Draw::textOutlined(const rdr2::Vector2 &pos, std::string_view txt, const rdr2::Color32 clr, const Align align)
 {
-	if (txt.empty()) {
-		return;
-	}
-
 	ImDrawList *const dl{ ImGui::GetBackgroundDrawList() };
 
 	if (!dl) {
