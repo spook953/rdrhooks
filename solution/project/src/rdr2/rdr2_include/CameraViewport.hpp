@@ -9,14 +9,17 @@ namespace rdr2
 {
 	class CameraViewport
 	{
+	private:
+		char pad_000[16]{};
+
 	public:
-		Matrix44 m_Matrix{}; //0x0000
+		Matrix44 m_Matrix1{};
 
 	private:
-		char pad_0040[232]{}; //0x0040
+		char pad_003[232 - 16]{};
 
 	public:
-		float m_Fov{}; //0x0128
+		float m_Fov{};
 
 	public:
 		void SetCameraMatrix(Matrix34 *param_1)

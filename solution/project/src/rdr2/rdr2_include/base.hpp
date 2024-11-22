@@ -45,6 +45,9 @@ MAKE_SIG(IDXGISwapChain_ptr, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 48 8B 4
 //ID3D12CommandQueue *
 MAKE_SIG(ID3D12CommandQueue_ptr, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 48 8B 48 50 48 8B 89 ? ? ? ? 48 8B 01 FF 90 ? ? ? ? 0F 57 C9").rip(3).deref().offset(0x50).deref().offset(0x128).deref().offset(0x190).deref());
 
+//rage::grcViewport::sm_Current
+MAKE_SIG(grcViewport_sm_Current, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? F3 0F 11 05 ? ? ? ? F3 0F 10 4A ? F3 0F 11 0D ? ? ? ? F3 0F 10 42 ?").rip(3).deref());
+
 #pragma endregion
 
 #pragma region global functions
