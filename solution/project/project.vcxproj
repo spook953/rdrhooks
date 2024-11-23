@@ -102,6 +102,7 @@
     <ClCompile Include="src\core\features\esp\esp.cpp" />
     <ClCompile Include="src\core\hooks.cpp" />
     <ClCompile Include="src\sdk\draw\draw.cpp" />
+    <ClCompile Include="src\sdk\input\input.cpp" />
     <ClCompile Include="src\sdk\renderer\renderer.cpp" />
     <ClCompile Include="src\libs\imgui\imgui.cpp" />
     <ClCompile Include="src\libs\imgui\imgui_demo.cpp" />
@@ -223,6 +224,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\weapWeapon.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\ZombieDLCManager.hpp" />
     <ClInclude Include="src\sdk\draw\draw.hpp" />
+    <ClInclude Include="src\sdk\input\input.hpp" />
     <ClInclude Include="src\sdk\renderer\renderer.hpp" />
     <ClInclude Include="src\sdk\sdk.hpp" />
     <ClInclude Include="src\libs\imgui\imconfig.hpp" />

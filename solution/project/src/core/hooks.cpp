@@ -8,6 +8,8 @@ MAKE_HOOK(
 {
 	ImGui_ImplWin32_WndProcHandler(wnd, msg, wparam, lparam);
 
+	Input::wndproc(msg, wparam, lparam);
+
 	return CALL_ORIGINAL(wnd, msg, wparam, lparam);
 }
 
@@ -17,12 +19,16 @@ MAKE_HOOK(
 	HRESULT,
 	IDXGISwapChain *thisptr, UINT SyncInterval, UINT Flags)
 {
+	Input::start();
+
 	if (Renderer::start())
 	{
 		ESP::run();
 		
 		Renderer::end();
 	}
+
+	Input::end();
 
 	return CALL_ORIGINAL(thisptr, SyncInterval, Flags);
 }
