@@ -1,8 +1,8 @@
-#include "core/core.hpp"
+#include "app/app.hpp"
 
 DWORD DllMainThread(LPVOID param)
 {
-	Core::entry();
+	App::entry();
 
 	FreeLibraryAndExitThread(reinterpret_cast<HMODULE>(param), EXIT_SUCCESS);
 }

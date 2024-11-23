@@ -2,7 +2,7 @@
 
 #include "../sdk/sdk.hpp"
 
-class Core final
+class App final
 {
 private:
 	static bool load();

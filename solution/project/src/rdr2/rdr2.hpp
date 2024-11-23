@@ -96,7 +96,7 @@
 #include "rdr2_include/weapWeapon.hpp"
 #include "rdr2_include/ZombieDLCManager.hpp"
 
-namespace rdr2
+namespace rdr2::global
 {
 	inline camManager *GetCamManager()
 	{
@@ -127,10 +127,7 @@ namespace rdr2
 	{
 		return sigs::grcViewport_sm_Current.rcast<grcViewport *>();
 	}
-}
 
-namespace rdr2
-{
 	inline sagActor *GetPlayerActor()
 	{
 		return sigs::GetPlayerActor.call<sagActor *>();

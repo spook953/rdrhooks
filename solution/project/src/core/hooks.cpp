@@ -1,4 +1,4 @@
-#include "esp/esp.hpp"
+#include "features/esp/esp.hpp"
 
 MAKE_HOOK(
 	GameWndProc,
@@ -49,7 +49,7 @@ MAKE_HOOK(
 	rdr2::hlthHealthComponent *thisptr, float param_1, bool param_2, bool param_3, rdr2::hlthMsgInjure *param_4)
 {
 	//player invincibility
-	if (thisptr && thisptr->GetActor() == rdr2::GetPlayerActor()) {
+	if (thisptr && thisptr->GetActor() == rdr2::global::GetPlayerActor()) {
 		return;
 	}
 
@@ -63,7 +63,7 @@ MAKE_HOOK(
 	rdr2::weapWeapon *thisptr, rdr2::weapProjectileInfo *proj_info)
 {
 	//infinite ammo
-	if (rdr2::sagPlayer *const plr{ rdr2::GetPlayer() })
+	if (rdr2::sagPlayer *const plr{ rdr2::global::GetPlayer() })
 	{
 		if (thisptr && thisptr == plr->GetActiveWeapon(true))
 		{
@@ -87,7 +87,7 @@ MAKE_HOOK(
 	rdr2::weapWeapon *thisptr)
 {
 	//no shot delay
-	if (rdr2::sagPlayer *const plr{ rdr2::GetPlayer() })
+	if (rdr2::sagPlayer *const plr{ rdr2::global::GetPlayer() })
 	{
 		if (thisptr && thisptr == plr->GetActiveWeapon(true)) {
 			return -0.42f;
@@ -106,12 +106,12 @@ MAKE_HOOK(
 	//TODO: find a more appropriate function for this
 	//NOTE: sagShellDerived::Update is a big game update function
 	//force weapon to auto fire
-	if (rdr2::sagPlayer *const plr{ rdr2::GetPlayer() })
+	if (rdr2::sagPlayer *const plr{ rdr2::global::GetPlayer() })
 	{
 		if (rdr2::weapWeapon *const wep{ plr->GetActiveWeapon(true) })
 		{
 			const int og_auto_fire{ wep->GetAutoFire() };
-
+			
 			wep->GetAutoFire() = 1;
 
 			CALL_ORIGINAL(thisptr);

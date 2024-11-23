@@ -1,6 +1,6 @@
-#include "core.hpp"
+#include "app.hpp"
 
-bool Core::load()
+bool App::load()
 {
 	if (MH_Initialize() != MH_OK) {
 		con::printErr("failed to initialize minhook\n");
@@ -35,7 +35,7 @@ bool Core::load()
 	return true;
 }
 
-bool Core::unload()
+bool App::unload()
 {
 	for (Hook *const h : getInsts<Hook>())
 	{
@@ -60,7 +60,7 @@ bool Core::unload()
 	return true;
 }
 
-void Core::entry()
+void App::entry()
 {
 	con::alloc("rdrh");
 
