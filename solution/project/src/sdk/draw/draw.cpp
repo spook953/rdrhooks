@@ -38,8 +38,8 @@ void Draw::line(const rdr2::Vector2 &from, const rdr2::Vector2 &to, const rdr2::
 
 	dl->AddLine
 	(
-		{ from.x, from.y },
-		{ to.x, to.y },
+		{ floorf(from.x), floorf(from.y)},
+		{ floorf(to.x), floorf(to.y)},
 		IM_COL32(clr.r, clr.g, clr.b, clr.a)
 	);
 }
