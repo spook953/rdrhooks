@@ -20,7 +20,7 @@ MAKE_HOOK(
 	if (Renderer::start())
 	{
 		ESP::run();
-
+		
 		Renderer::end();
 	}
 
@@ -48,9 +48,11 @@ MAKE_HOOK(
 	void,
 	rdr2::hlthHealthComponent *thisptr, float param_1, bool param_2, bool param_3, rdr2::hlthMsgInjure *param_4)
 {
-	//player invincibility
-	if (thisptr && thisptr->GetActor() == rdr2::global::GetPlayerActor()) {
-		return;
+	if (cfg::misc_god_mode)
+	{
+		if (thisptr && thisptr->GetActor() == rdr2::global::GetPlayerActor()) {
+			return;
+		}
 	}
 
 	CALL_ORIGINAL(thisptr, param_1, param_2, param_3, param_4);
@@ -62,18 +64,20 @@ MAKE_HOOK(
 	void,
 	rdr2::weapWeapon *thisptr, rdr2::weapProjectileInfo *proj_info)
 {
-	//infinite ammo
-	if (rdr2::sagPlayer *const plr{ rdr2::global::GetPlayer() })
+	if (cfg::misc_no_ammo_drain)
 	{
-		if (thisptr && thisptr == plr->GetActiveWeapon(true))
+		if (rdr2::sagPlayer *const plr{ rdr2::global::GetPlayer() })
 		{
-			const float pre_call_ammo_in_clip{ thisptr->GetAmmoInClip() };
+			if (thisptr && thisptr == plr->GetActiveWeapon(true))
+			{
+				const float pre_call_ammo_in_clip{ thisptr->GetAmmoInClip() };
 
-			CALL_ORIGINAL(thisptr, proj_info);
+				CALL_ORIGINAL(thisptr, proj_info);
 
-			thisptr->GetAmmoInClip() = pre_call_ammo_in_clip;
+				thisptr->GetAmmoInClip() = pre_call_ammo_in_clip;
 
-			return;
+				return;
+			}
 		}
 	}
 
@@ -86,11 +90,13 @@ MAKE_HOOK(
 	float,
 	rdr2::weapWeapon *thisptr)
 {
-	//no shot delay
-	if (rdr2::sagPlayer *const plr{ rdr2::global::GetPlayer() })
+	if (cfg::misc_no_shot_delay)
 	{
-		if (thisptr && thisptr == plr->GetActiveWeapon(true)) {
-			return -0.42f;
+		if (rdr2::sagPlayer *const plr{ rdr2::global::GetPlayer() })
+		{
+			if (thisptr && thisptr == plr->GetActiveWeapon(true)) {
+				return -0.42f;
+			}
 		}
 	}
 
@@ -103,22 +109,22 @@ MAKE_HOOK(
 	void,
 	void *thisptr)
 {
-	//TODO: find a more appropriate function for this
-	//NOTE: sagShellDerived::Update is a big game update function
-	//force weapon to auto fire
-	if (rdr2::sagPlayer *const plr{ rdr2::global::GetPlayer() })
+	if (cfg::misc_force_auto_fire)
 	{
-		if (rdr2::weapWeapon *const wep{ plr->GetActiveWeapon(true) })
+		if (rdr2::sagPlayer *const plr{ rdr2::global::GetPlayer() })
 		{
-			const int og_auto_fire{ wep->GetAutoFire() };
-			
-			wep->GetAutoFire() = 1;
+			if (rdr2::weapWeapon *const wep{ plr->GetActiveWeapon(true) })
+			{
+				const int og_auto_fire{ wep->GetAutoFire() };
 
-			CALL_ORIGINAL(thisptr);
+				wep->GetAutoFire() = 1;
 
-			wep->GetAutoFire() = og_auto_fire;
+				CALL_ORIGINAL(thisptr);
 
-			return;
+				wep->GetAutoFire() = og_auto_fire;
+
+				return;
+			}
 		}
 	}
 
@@ -133,6 +139,7 @@ MAKE_HOOK(
 {
 	CALL_ORIGINAL(thisptr);
 
-	//fov override
-	thisptr->m_Fov += 10.0f;
+	if (cfg::visuals_fov_override_active) {
+		thisptr->m_Fov += cfg::visuals_fov_override_val;
+	}
 }

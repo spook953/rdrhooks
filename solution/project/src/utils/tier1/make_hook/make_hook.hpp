@@ -58,14 +58,14 @@ public:
 };
 
 #define MAKE_HOOK(name, address, type, ...) \
-namespace hooks::name \
+namespace make_hook::name \
 {\
 	bool init(); \
 	inline Hook hook{ #name, init }; \
 	using fn = type(__fastcall *)(__VA_ARGS__); \
 	type __fastcall func(__VA_ARGS__); \
 }\
-bool hooks::name::init() { return hook.create(reinterpret_cast<void *>(address), func); } \
-type __fastcall hooks::name::func(__VA_ARGS__)
+bool make_hook::name::init() { return hook.create(reinterpret_cast<void *>(address), func); } \
+type __fastcall make_hook::name::func(__VA_ARGS__)
 
 #define CALL_ORIGINAL hook.call<fn>()

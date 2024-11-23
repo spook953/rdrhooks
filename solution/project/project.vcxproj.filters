@@ -21,6 +21,7 @@
     <ClCompile Include="src\libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\sdk\draw\draw.cpp" />
     <ClCompile Include="src\core\features\esp\esp.cpp" />
+    <ClCompile Include="src\utils\tier1\make_cfgvar\make_cfgvar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\Color32.hpp" />
@@ -148,5 +149,8 @@
     <ClInclude Include="src\libs\imgui\imstb_truetype.hpp" />
     <ClInclude Include="src\sdk\draw\draw.hpp" />
     <ClInclude Include="src\core\features\esp\esp.hpp" />
+    <ClInclude Include="src\core\features\cfg.hpp" />
+    <ClInclude Include="src\libs\json\json.hpp" />
+    <ClInclude Include="src\utils\tier1\make_cfgvar\make_cfgvar.hpp" />
   </ItemGroup>
 </Project>

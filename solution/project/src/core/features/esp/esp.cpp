@@ -2,6 +2,10 @@
 
 void ESP::run()
 {
+	if (!cfg::esp_active) {
+		return;
+	}
+
 	rdr2::sagActor *const plr{ rdr2::global::GetPlayerActor() };
 
 	if (!plr) {

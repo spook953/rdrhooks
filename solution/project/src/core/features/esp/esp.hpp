@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../sdk/sdk.hpp"
+#include "../cfg.hpp"
 
 class ESP final
 {
