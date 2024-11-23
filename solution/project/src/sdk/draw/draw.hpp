@@ -19,6 +19,9 @@ public:
 	static rdr2::Vector2 getScreenSize();
 
 public:
+	static bool worldToScreen(const rdr2::Vector3 &world, rdr2::Vector2 &screen);
+
+public:
 	static void line(const rdr2::Vector2 &from, const rdr2::Vector2 &to, const rdr2::Color32 clr);
 	static void rect(const rdr2::Vector2 &pos, const rdr2::Vector2 &size, const rdr2::Color32 clr);
 	static void rectFilled(const rdr2::Vector2 &pos, const rdr2::Vector2 &size, const rdr2::Color32 clr);

@@ -99,6 +99,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\core.cpp" />
+    <ClCompile Include="src\core\features\esp\esp.cpp" />
     <ClCompile Include="src\core\features\hooks.cpp" />
     <ClCompile Include="src\sdk\draw\draw.cpp" />
     <ClCompile Include="src\sdk\renderer\renderer.cpp" />
@@ -120,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\core.hpp" />
+    <ClInclude Include="src\core\features\esp\esp.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\ActionContext.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\AmmoComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aniActionSet.hpp" />

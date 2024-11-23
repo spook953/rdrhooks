@@ -191,15 +191,3 @@ namespace rdr2
 		sigs::SetWeaponAmmoForItem.call<void>(param_1, param_2, param_3);
 	}
 }
-
-namespace rdr2
-{
-	inline void WorldToScreen(const rdr2::Vector3 &world, rdr2::Vector2 &screen)
-	{
-		rdr2::Vector3 tmp{};
-
-		sigs::WorldToScreen.call<void>(sigs::WorldToScreenMtx.rcast<rdr2::Matrix44 *>(), &tmp, &world);
-
-		screen = { tmp.x, tmp.y };
-	}
-}

@@ -20,6 +20,7 @@
     <ClCompile Include="src\shared\libs\imgui\imgui_tables.cpp" />
     <ClCompile Include="src\shared\libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\sdk\draw\draw.cpp" />
+    <ClCompile Include="src\core\features\esp\esp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\Color32.hpp" />
@@ -147,5 +148,6 @@
     <ClInclude Include="src\shared\libs\imgui\imstb_textedit.hpp" />
     <ClInclude Include="src\shared\libs\imgui\imstb_truetype.hpp" />
     <ClInclude Include="src\sdk\draw\draw.hpp" />
+    <ClInclude Include="src\core\features\esp\esp.hpp" />
   </ItemGroup>
 </Project>

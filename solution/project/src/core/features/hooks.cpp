@@ -1,6 +1,4 @@
-#include "../../sdk/sdk.hpp"
-
-extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+#include "esp/esp.hpp"
 
 MAKE_HOOK(
 	GameWndProc,
@@ -21,16 +19,7 @@ MAKE_HOOK(
 {
 	if (Renderer::start())
 	{
-		if (rdr2::sagActor *const plr{ rdr2::GetPlayerActor() })
-		{
-			rdr2::Vector3 head{};
-			plr->GetHeadPosition(head);
-
-			rdr2::Vector2 head_2d{};
-			rdr2::WorldToScreen(head, head_2d);
-
-			Draw::textOutlined(head_2d - rdr2::Vector2{ 5.0f, 5.0f }, "fuck this game", { 20, 220, 55, 255 }, Draw::CENTERXY);
-		}
+		ESP::run();
 
 		Renderer::end();
 	}
