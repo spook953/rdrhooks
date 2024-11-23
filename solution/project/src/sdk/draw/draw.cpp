@@ -23,7 +23,7 @@ bool Draw::worldToScreen(const rdr2::Vector3 &world, rdr2::Vector2 &screen)
 	const float clip_y{ world.x * m[1] + world.y * m[5] + world.z * m[9] + m[13] };
 	const float clip_z{ world.x * m[2] + world.y * m[6] + world.z * m[10] + m[14] };
 
-	screen = { clip_x * (1.0f / clip_w) , clip_y * (1.0f / clip_w) };
+	screen = { clip_x * (1.0f / clip_w), clip_y * (1.0f / clip_w) };
 
 	return true;
 }
