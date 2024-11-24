@@ -6,7 +6,6 @@ bool ESP::getActorBounds(rdr2::sagActor *const actor, float &x, float &y, float 
 		return false;
 	}
 
-	//TODO: need bottom of bbox pos not center (root is center)
 	rdr2::Vector3 root_pos{};
 
 	if (!actor->GetRootPosition(root_pos)) {
@@ -136,10 +135,10 @@ void ESP::drawName(const float x, const float y, const float w, const float h, s
 
 void ESP::drawBox(const float x, const float y, const float w, const float h, const rdr2::Color32 clr)
 {
-	Draw::rect({ x, y }, { w, h }, clr);
-
 	Draw::rect({ x - 1.0f, y - 1.0f }, { w + 2.0f, h + 2.0f }, ESP_CLR_OUTLINE);
 	Draw::rect({ x + 1.0f, y + 1.0f }, { w - 2.0f, h - 2.0f }, ESP_CLR_OUTLINE);
+
+	Draw::rect({ x, y }, { w, h }, clr);
 }
 
 void ESP::drawHpBar(const float x, const float y, const float w, const float h, float hp, const float max_hp, const rdr2::Color32 clr)
