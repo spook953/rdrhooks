@@ -121,7 +121,7 @@ std::string ESP::getActorName(rdr2::sagActor *const actor)
 	return name;
 }
 
-void ESP::drawName(const float x, const float y, const float w, const float h, std::string name, const rdr2::Color32 clr)
+void ESP::drawName(const float x, const float y, const float w, const float h, std::string_view name, const rdr2::Color32 clr)
 {
 	Draw::textOutlined
 	(
