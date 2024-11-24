@@ -5,6 +5,13 @@ rdr2::Vector2 Draw::getScreenSize()
 	return { ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y };
 }
 
+rdr2::Vector2 Draw::getTextSize(std::string_view txt)
+{
+	const ImVec2 size{ ImGui::GetFont()->CalcTextSizeA(ImGui::GetFontSize(), FLT_MAX, 0.0f, txt.data()) };
+
+	return { size.x, size.y };
+}
+
 bool Draw::worldToScreen(const rdr2::Vector3 &world, rdr2::Vector2 &screen)
 {
 	const float *const m{ sigs::WorldToScreenMtx.rcast<float *>() };
@@ -147,7 +154,7 @@ void Draw::text(const rdr2::Vector2 &pos, std::string_view txt, const rdr2::Colo
 	);
 }
 
-void Draw::textOutlined(const rdr2::Vector2 &pos, std::string_view txt, const rdr2::Color32 clr, const Align align)
+void Draw::textOutlined(const rdr2::Vector2 &pos, std::string_view txt, const rdr2::Color32 clr, const rdr2::Color32 clr2, const Align align)
 {
 	ImDrawList *const dl{ ImGui::GetBackgroundDrawList() };
 
@@ -191,7 +198,7 @@ void Draw::textOutlined(const rdr2::Vector2 &pos, std::string_view txt, const rd
 		dl->AddText
 		(
 			{ x + offsets[n][0], y + offsets[n][1] },
-			IM_COL32(0, 0, 0, clr.a),
+			IM_COL32(clr2.r, clr2.g, clr2.b, clr2.a),
 			txt.data()
 		);
 	}

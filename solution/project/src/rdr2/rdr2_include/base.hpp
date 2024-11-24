@@ -70,6 +70,8 @@ MAKE_SIG(DrawCircle, mem::findBytes("RDR.exe", "E8 ? ? ? ? E8 ? ? ? ? 44 8B 0D ?
 MAKE_SIG(GameWndProc, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 49 8B D9 49 8B F8"));
 MAKE_SIG(WorldToScreen, mem::findBytes("RDR.exe", "48 83 EC 28 F3 41 0F 10 28"));
 
+MAKE_SIG(aActorTypeManager_GetType, mem::findBytes("RDR.exe", "E8 ? ? ? ? 33 F6 8B FE ").rip());
+
 MAKE_SIG(CRadar_DrawRadar, mem::findBytes("RDR.exe", "48 8B C4 F3 0F 11 50 ? 55 53 41 56"));
 
 MAKE_SIG(sagObjRscHandler_DrawGrass, mem::findBytes("RDR.exe", "4C 89 44 24 ? 53 48 81 EC ? ? ? ?"));
@@ -157,6 +159,7 @@ MAKE_SIG(sagPlayerStates_EvaluateReticleDraw, mem::findBytes("RDR.exe", "E8 ? ? 
 MAKE_SIG(sagShellDerived_Update, mem::findBytes("RDR.exe", "40 55 53 56 57 41 54 41 55 41 56 48 8D AC 24 ? ? ? ?"));
 
 MAKE_SIG(entEntityComponent_HandleDestroyOnDeathNotify_newbodies, mem::findBytes("RDR.exe", "48 89 54 24 ? 55 41 55"));
+MAKE_SIG(entEntityComponent_DeactivateEntityInst, mem::findBytes("RDR.exe", "E8 ? ? ? ? 49 8B 5F 10 48 8B CB").rip());
 
 MAKE_SIG(hlthHealthComponent_SetHitPoints, mem::findBytes("RDR.exe", "E8 ? ? ? ? 44 0F 2E C7").rip());
 MAKE_SIG(hlthHealthComponent_InstantCorpsify, mem::findBytes("RDR.exe", "E8 ? ? ? ? 88 43 28").rip());

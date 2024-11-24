@@ -1,5 +1,6 @@
 #pragma once
 
+#include "rdr2_include/aActorTypeManager.hpp"
 #include "rdr2_include/ActionContext.hpp"
 #include "rdr2_include/AmmoComponent.hpp"
 #include "rdr2_include/aniActionSet.hpp"

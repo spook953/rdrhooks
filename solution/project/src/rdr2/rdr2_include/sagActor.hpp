@@ -76,5 +76,59 @@ namespace rdr2
 		{
 			return *reinterpret_cast<entEntityComponent **>(reinterpret_cast<uintptr_t>(this) + 0x50);
 		}
+
+		bool IsAlive()
+		{
+			//hlth component?
+			uintptr_t some_addr{ *reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0x60) };
+
+			if (!some_addr) {
+				return false;
+			}
+
+			return *reinterpret_cast<float *>(some_addr + 0x20) > 0.0f;
+		}
+
+		float GetHealth()
+		{
+			//hlth component?
+			uintptr_t some_addr{ *reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0x60) };
+
+			if (!some_addr) {
+				return 0.0f;
+			}
+
+			return *reinterpret_cast<float *>(some_addr + 0x20);
+		}
+
+		float GetMaxHealth()
+		{
+			//hlth component?
+			uintptr_t some_addr{ *reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0x60) };
+
+			if (!some_addr) {
+				return 0.0f;
+			}
+
+			return *reinterpret_cast<float *>(some_addr + 0x1C);
+		}
+
+		int GetActorEnum()
+		{
+			return *reinterpret_cast<int *>(reinterpret_cast<uintptr_t>(this) + 0x108);
+		}
+
+		bool IsHuman()
+		{
+			//thanks K3rhos
+
+			uintptr_t unk{ *reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0xB0) };
+
+			if (!unk) {
+				return false;
+			}
+
+			return *reinterpret_cast<int *>(unk + 0xA3C) == 0;
+		}
 	};
 }

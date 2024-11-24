@@ -17,6 +17,7 @@ public:
 
 public:
 	static rdr2::Vector2 getScreenSize();
+	static rdr2::Vector2 getTextSize(std::string_view txt);
 
 public:
 	static bool worldToScreen(const rdr2::Vector3 &world, rdr2::Vector2 &screen);
@@ -28,5 +29,5 @@ public:
 	static void circle(const rdr2::Vector2 &center, const float radius, const rdr2::Color32 clr);
 	static void circleFilled(const rdr2::Vector2 &center, const float radius, const rdr2::Color32 clr);
 	static void text(const rdr2::Vector2 &pos, std::string_view txt, const rdr2::Color32 clr, const Align align = DEFAULT);
-	static void textOutlined(const rdr2::Vector2 &pos, std::string_view txt, const rdr2::Color32 clr, const Align align = DEFAULT);
+	static void textOutlined(const rdr2::Vector2 &pos, std::string_view txt, const rdr2::Color32 clr, const rdr2::Color32 clr2, const Align align = DEFAULT);
 };

@@ -13,5 +13,10 @@ namespace rdr2
 		{
 			sigs::entEntityComponent_HandleDestroyOnDeathNotify_newbodies.call<void>(this, param_1);
 		}
+
+		void DeactivateEntityInst()
+		{
+			sigs::entEntityComponent_DeactivateEntityInst.call<void>(this);
+		}
 	};
 }
