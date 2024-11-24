@@ -72,11 +72,6 @@ namespace rdr2
 		}
 
 	public:
-		sagLayout *GetLayout()
-		{
-			return *reinterpret_cast<sagLayout **>(reinterpret_cast<uintptr_t>(this) + 0x190);
-		}
-
 		entEntityComponent *GetEntityComponent()
 		{
 			return *reinterpret_cast<entEntityComponent **>(reinterpret_cast<uintptr_t>(this) + 0x50);

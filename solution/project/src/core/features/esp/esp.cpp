@@ -6,26 +6,32 @@ void ESP::run()
 		return;
 	}
 
-	rdr2::sagActor *const plr{ rdr2::global::GetPlayerActor() };
+	rdr2::sagLayout *const actors{ rdr2::global::GetActorLayout() };
 
-	if (!plr) {
+	if (!actors) {
 		return;
 	}
 
-	rdr2::Vector3 plr_root{};
-	rdr2::Vector3 plr_head{};
+	for (rdr2::sagActor **it{ actors->First() }; it; it = actors->Next(it))
+	{
+		rdr2::sagActor *const actor{ *it };
 
-	if (!plr->GetRootPosition(plr_root) || !plr->GetHeadPosition(plr_head)) {
-		return;
+		if (!actor) {
+			continue;
+		}
+
+		rdr2::Vector3 head{};
+
+		if (!actor->GetHeadPosition(head)) {
+			continue;
+		}
+
+		rdr2::Vector2 head_2d{};
+
+		if (!Draw::worldToScreen(head, head_2d)) {
+			continue;
+		}
+
+		Draw::textOutlined(head_2d, "head", { 20, 220, 55, 255 }, Draw::CENTERXY);
 	}
-
-	rdr2::Vector2 plr_root_2d{};
-	rdr2::Vector2 plr_head_2d{};
-
-	if (!Draw::worldToScreen(plr_root, plr_root_2d) || !Draw::worldToScreen(plr_head, plr_head_2d)) {
-		return;
-	}
-
-	Draw::textOutlined(plr_root_2d, "root", { 20, 220, 55, 255 }, Draw::CENTERXY);
-	Draw::textOutlined(plr_head_2d, "head", { 20, 220, 55, 255 }, Draw::CENTERXY);
 }

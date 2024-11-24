@@ -17,7 +17,7 @@ MAKE_SIG(sagLayoutManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 10 ? 
 MAKE_SIG(phLevelNew_sm_ActiveInstance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 4F 8D 04 40 4D 03 C0 48 8B 50 60").rip(3).deref());
 
 //rage::aGuidGeneral<>::sm_ManagerSlots
-MAKE_SIG(aGuidGeneral_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 44 8B 53 08 45 0F B7 CA 4D 03 C9").rip(3).deref());
+MAKE_SIG(aGuidGeneral_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 44 8B 53 08 45 0F B7 CA 4D 03 C9").rip(3));
 
 //rage::aGuidGeneral<gohBase>::sm_ManagerSlots
 MAKE_SIG(aGuidGeneral_gohBase_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? 44 0F B7 C0 4D 03 C0").rip(3).deref());

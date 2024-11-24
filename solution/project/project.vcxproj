@@ -196,6 +196,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\Quaternion.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\rdrAnimation.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\rmcInstanceRenderBase.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagLayoutManager.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagMsgAttachmentImpact.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagMsgDestroyOnDeathNotify.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagObjRscHandler.hpp" />

@@ -77,6 +77,7 @@
 #include "rdr2_include/sagActor.hpp"
 #include "rdr2_include/sagGuid.hpp"
 #include "rdr2_include/sagLayout.hpp"
+#include "rdr2_include/sagLayoutManager.hpp"
 #include "rdr2_include/sagMsgAttachmentImpact.hpp"
 #include "rdr2_include/sagMsgDestroyOnDeathNotify.hpp"
 #include "rdr2_include/sagObjRscHandler.hpp"
@@ -98,6 +99,22 @@
 
 namespace rdr2::global
 {
+	inline sagLayoutManager *GetLayoutManager()
+	{
+		return sigs::sagLayoutManager_sm_Instance.rcast<sagLayoutManager *>();
+	}
+
+	inline sagLayout *GetActorLayout()
+	{
+		sagLayoutManager *const layout_mgr{ global::GetLayoutManager() };
+
+		if (!layout_mgr) {
+			return nullptr;
+		}
+
+		return layout_mgr->GetActorLayout();
+	}
+
 	inline camManager *GetCamManager()
 	{
 		return sigs::camManager_sm_Instance.rcast<camManager *>();
