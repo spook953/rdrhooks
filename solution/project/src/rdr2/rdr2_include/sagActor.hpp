@@ -3,7 +3,9 @@
 #include "base.hpp"
 
 #include "entEntityComponent.hpp"
+#include "sagActorComponent.hpp"
 #include "sagLayout.hpp"
+#include "sagGuid.hpp"
 #include "Vector3.hpp"
 
 namespace rdr2
@@ -118,17 +120,20 @@ namespace rdr2
 			return *reinterpret_cast<int *>(reinterpret_cast<uintptr_t>(this) + 0x108);
 		}
 
+		sagActorComponent *GetActorComponent()
+		{
+			return *reinterpret_cast<sagActorComponent **>(reinterpret_cast<uintptr_t>(this) + 0xB0);
+		}
+
 		bool IsHuman()
 		{
-			//thanks K3rhos
+			sagActorComponent *const actor_component{ GetActorComponent() };
 
-			uintptr_t unk{ *reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0xB0) };
-
-			if (!unk) {
+			if (!actor_component) {
 				return false;
 			}
 
-			return *reinterpret_cast<int *>(unk + 0xA3C) == 0;
+			return actor_component->IsHuman();
 		}
 	};
 }

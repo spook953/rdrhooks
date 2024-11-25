@@ -158,5 +158,6 @@
     <ClInclude Include="src\rdr2\rdr2_include\sagLayoutManager.hpp" />
     <ClInclude Include="src\utils\tier0\math_utils\math_utils.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aActorTypeManager.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\sagActorComponent.hpp" />
   </ItemGroup>
 </Project>

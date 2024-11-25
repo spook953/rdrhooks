@@ -76,6 +76,7 @@
 #include "rdr2_include/rdrMatrixAudioEntity.hpp"
 #include "rdr2_include/rmcInstanceRenderBase.hpp"
 #include "rdr2_include/sagActor.hpp"
+#include "rdr2_include/sagActorComponent.hpp"
 #include "rdr2_include/sagGuid.hpp"
 #include "rdr2_include/sagLayout.hpp"
 #include "rdr2_include/sagLayoutManager.hpp"

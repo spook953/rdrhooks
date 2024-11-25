@@ -9,8 +9,8 @@ MAKE_CFGVAR(esp_humans_name, true);
 MAKE_CFGVAR(esp_humans_box, true);
 MAKE_CFGVAR(esp_humans_health_bar, true);
 
-MAKE_CFGVAR(visuals_fov_override_active, false);
-MAKE_CFGVAR(visuals_fov_override_val, 10.0f);
+MAKE_CFGVAR(visuals_fov_override_active, true);
+MAKE_CFGVAR(visuals_fov_override_val, 5.0f);
 
 MAKE_CFGVAR(misc_god_mode, true);
 MAKE_CFGVAR(misc_no_ammo_drain, true);

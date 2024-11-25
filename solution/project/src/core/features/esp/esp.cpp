@@ -141,7 +141,7 @@ void ESP::drawBox(const float x, const float y, const float w, const float h, co
 	Draw::rect({ x, y }, { w, h }, clr);
 }
 
-void ESP::drawHpBar(const float x, const float y, const float w, const float h, float hp, const float max_hp, const rdr2::Color32 clr)
+void ESP::drawHpBar(const float x, const float y, const float w, const float h, float hp, const float max_hp)
 {
 	if (hp > max_hp) {
 		hp = max_hp;
@@ -156,7 +156,7 @@ void ESP::drawHpBar(const float x, const float y, const float w, const float h, 
 	const float fill_h{ floorf((hp / max_hp) * bar_h) };
 
 	Draw::rectFilled({ bar_x - 1.0f, bar_y - 1.0f }, { bar_w + 2.0f, bar_h + 2.0f }, ESP_CLR_OUTLINE);
-	Draw::rectFilled({ bar_x, bar_y + (bar_h - fill_h) }, { bar_w, fill_h }, clr);
+	Draw::rectFilled({ bar_x, bar_y + (bar_h - fill_h) }, { bar_w, fill_h }, getHealthColor(hp, max_hp));
 }
 
 void ESP::run()
@@ -204,10 +204,7 @@ void ESP::run()
 
 			if (cfg::esp_humans_health_bar)
 			{
-				const float hp{ actor->GetHealth() };
-				const float max_hp{ actor->GetMaxHealth() };
-
-				drawHpBar(x, y, w, h, hp, max_hp, getHealthColor(hp, max_hp));
+				drawHpBar(x, y, w, h, actor->GetHealth(), actor->GetMaxHealth());
 			}
 		}
 	}

@@ -21,7 +21,7 @@ private:
 private:
 	static void drawName(const float x, const float y, const float w, const float h, std::string_view name, const rdr2::Color32 clr);
 	static void drawBox(const float x, const float y, const float w, const float h, const rdr2::Color32 clr);
-	static void drawHpBar(const float x, const float y, const float w, const float h, float hp, const float max_hp, const rdr2::Color32 clr);
+	static void drawHpBar(const float x, const float y, const float w, const float h, float hp, const float max_hp);
 
 public:
 	static void run();
