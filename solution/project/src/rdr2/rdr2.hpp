@@ -207,3 +207,15 @@ namespace rdr2::global
 		sigs::SetWeaponAmmoForItem.call<void>(param_1, param_2, param_3);
 	}
 }
+
+namespace rdr2::utils
+{
+	inline float remap(const float val, const float in_min, const float in_max, const float out_min, const float out_max)
+	{
+		if (in_min == in_max) {
+			return val >= in_max ? out_max : out_min;
+		}
+
+		return out_min + (out_max - out_min) * std::clamp((val - in_min) / (in_max - in_min), 0.0f, 1.0f);
+	}
+}
