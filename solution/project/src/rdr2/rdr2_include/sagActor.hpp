@@ -4,6 +4,7 @@
 
 #include "entEntityComponent.hpp"
 #include "sagActorComponent.hpp"
+#include "hlthHealthComponent.hpp"
 #include "sagLayout.hpp"
 #include "sagGuid.hpp"
 #include "Vector3.hpp"
@@ -79,45 +80,9 @@ namespace rdr2
 			return *reinterpret_cast<entEntityComponent **>(reinterpret_cast<uintptr_t>(this) + 0x50);
 		}
 
-		bool IsAlive()
+		hlthHealthComponent *GetHealthComponent()
 		{
-			//hlth component?
-			uintptr_t some_addr{ *reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0x60) };
-
-			if (!some_addr) {
-				return false;
-			}
-
-			return *reinterpret_cast<float *>(some_addr + 0x20) > 0.0f;
-		}
-
-		float GetHealth()
-		{
-			//hlth component?
-			uintptr_t some_addr{ *reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0x60) };
-
-			if (!some_addr) {
-				return 0.0f;
-			}
-
-			return *reinterpret_cast<float *>(some_addr + 0x20);
-		}
-
-		float GetMaxHealth()
-		{
-			//hlth component?
-			uintptr_t some_addr{ *reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0x60) };
-
-			if (!some_addr) {
-				return 0.0f;
-			}
-
-			return *reinterpret_cast<float *>(some_addr + 0x1C);
-		}
-
-		int GetActorEnum()
-		{
-			return *reinterpret_cast<int *>(reinterpret_cast<uintptr_t>(this) + 0x108);
+			return *reinterpret_cast<hlthHealthComponent **>(reinterpret_cast<uintptr_t>(this) + 0x60);
 		}
 
 		sagActorComponent *GetActorComponent()
@@ -134,6 +99,44 @@ namespace rdr2
 			}
 
 			return actor_component->IsHuman();
+		}
+
+		bool IsAlive()
+		{
+			hlthHealthComponent *const health_component{ GetHealthComponent() };
+
+			if (!health_component) {
+				return false;
+			}
+
+			return health_component->GetHP() > 0.0f;
+		}
+
+		float GetHP()
+		{
+			hlthHealthComponent *const health_component{ GetHealthComponent() };
+
+			if (!health_component) {
+				return false;
+			}
+
+			return health_component->GetHP();
+		}
+
+		float GetMaxHP()
+		{
+			hlthHealthComponent *const health_component{ GetHealthComponent() };
+
+			if (!health_component) {
+				return false;
+			}
+
+			return health_component->GetMaxHP();
+		}
+
+		int GetActorEnum()
+		{
+			return *reinterpret_cast<int *>(reinterpret_cast<uintptr_t>(this) + 0x108);
 		}
 	};
 }

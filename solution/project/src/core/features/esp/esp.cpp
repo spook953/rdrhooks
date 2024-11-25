@@ -201,7 +201,7 @@ void ESP::run()
 			}
 
 			if (cfg::esp_humans_health_bar) {
-				drawHpBar(x, y, w, h, actor->GetHealth(), actor->GetMaxHealth());
+				drawHpBar(x, y, w, h, actor->GetHP(), actor->GetMaxHP());
 			}
 		}
 	}

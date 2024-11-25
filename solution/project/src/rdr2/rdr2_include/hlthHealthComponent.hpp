@@ -4,10 +4,12 @@
 
 #include "hlthMsgInjure.hpp"
 #include "mvrMsgLanded.hpp"
-#include "sagActor.hpp"
+#include "sagGuid.hpp"
 
 namespace rdr2
 {
+	class sagActor;
+
 	class hlthHealthComponent
 	{
 	public:
@@ -53,6 +55,16 @@ namespace rdr2
 		sagActor *GetActor()
 		{
 			return *reinterpret_cast<sagActor **>(reinterpret_cast<uintptr_t>(this) + 0x10);
+		}
+
+		float GetMaxHP()
+		{
+			return *reinterpret_cast<float *>(reinterpret_cast<uintptr_t>(this) + 0x1C);
+		}
+
+		float GetHP()
+		{
+			return *reinterpret_cast<float *>(reinterpret_cast<uintptr_t>(this) + 0x20);
 		}
 	};
 }
