@@ -108,7 +108,7 @@ namespace rdr2::global
 
 	inline sagLayout *GetActorLayout()
 	{
-		sagLayoutManager *const layout_mgr{ global::GetLayoutManager() };
+		sagLayoutManager *const layout_mgr{ GetLayoutManager() };
 
 		if (!layout_mgr) {
 			return nullptr;

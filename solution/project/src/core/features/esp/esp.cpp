@@ -192,18 +192,15 @@ void ESP::run()
 
 			const rdr2::Color32 clr{ getActorColor(actor) };
 
-			if (cfg::esp_humans_name)
-			{
+			if (cfg::esp_humans_name) {
 				drawName(x, y, w, h, getActorName(actor), clr);
 			}
 
-			if (cfg::esp_humans_box)
-			{
+			if (cfg::esp_humans_box) {
 				drawBox(x, y, w, h, clr);
 			}
 
-			if (cfg::esp_humans_health_bar)
-			{
+			if (cfg::esp_humans_health_bar) {
 				drawHpBar(x, y, w, h, actor->GetHealth(), actor->GetMaxHealth());
 			}
 		}
