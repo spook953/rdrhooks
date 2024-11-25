@@ -17,7 +17,7 @@ namespace rdr2
 		}
 
 	public:
-		int GetSize()
+		int GetNumActors()
 		{
 			return *reinterpret_cast<int *>(reinterpret_cast<uintptr_t>(this) + 0x20);
 		}
