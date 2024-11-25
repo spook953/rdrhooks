@@ -117,7 +117,7 @@ namespace rdr2
 			hlthHealthComponent *const health_component{ GetHealthComponent() };
 
 			if (!health_component) {
-				return false;
+				return 0.0f;
 			}
 
 			return health_component->GetHP();
@@ -128,7 +128,7 @@ namespace rdr2
 			hlthHealthComponent *const health_component{ GetHealthComponent() };
 
 			if (!health_component) {
-				return false;
+				return 0.0f;
 			}
 
 			return health_component->GetMaxHP();
