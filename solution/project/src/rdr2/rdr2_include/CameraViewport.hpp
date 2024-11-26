@@ -22,9 +22,9 @@ namespace rdr2
 		float m_Fov{};
 
 	public:
-		void SetCameraMatrix(Matrix34 *param_1)
+		void SetCameraMatrix(const Matrix44 &matrix)
 		{
-			sigs::CameraViewport_SetCameraMatrix.call<void>(this, param_1);
+			sigs::CameraViewport_SetCameraMatrix.call<void, void *, const Matrix44 &>(this, matrix);
 		}
 
 		void Update()

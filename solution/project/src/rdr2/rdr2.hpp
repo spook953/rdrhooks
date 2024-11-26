@@ -101,6 +101,11 @@
 
 namespace rdr2::global
 {
+	inline float GetFrameTime()
+	{
+		return *reinterpret_cast<float *>(sigs::FrameTimeFloat.get());
+	}
+
 	inline sagLayoutManager *GetLayoutManager()
 	{
 		return sigs::sagLayoutManager_sm_Instance.rcast<sagLayoutManager *>();

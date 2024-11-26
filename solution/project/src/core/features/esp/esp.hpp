@@ -13,6 +13,10 @@ private:
 	static inline const float ESP_SPACING_NAME{ 4.0f };
 
 private:
+	static inline rdr2::Color32 ESP_CLR_PLAYER{ 131, 119, 209, 255 };
+	static inline rdr2::Color32 ESP_CLR_HUMAN{ 255, 155, 84, 255 };
+
+private:
 	static bool getActorBounds(rdr2::sagActor *const actor, float &x, float &y, float &w, float &h);
 	static rdr2::Color32 getHealthColor(const float hp, const float max_hp);
 	static rdr2::Color32 getActorColor(rdr2::sagActor *const actor);

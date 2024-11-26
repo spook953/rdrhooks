@@ -24,7 +24,7 @@ MAKE_HOOK(
 	if (Renderer::start())
 	{
 		ESP::run();
-		
+
 		Renderer::end();
 	}
 
@@ -144,8 +144,21 @@ MAKE_HOOK(
 	rdr2::CameraViewport *thisptr)
 {
 	CALL_ORIGINAL(thisptr);
-
+	
 	if (cfg::visuals_fov_override_active) {
 		thisptr->m_Fov += cfg::visuals_fov_override_val;
 	}
+}
+
+MAKE_HOOK(
+	camCamera_ProcessShake,
+	sigs::camCamera_ProcessShake.get(),
+	void,
+	rdr2::camCamera *thisptr)
+{
+	if (cfg::visuals_no_cam_shake) {
+		return;
+	}
+
+	CALL_ORIGINAL(thisptr);
 }

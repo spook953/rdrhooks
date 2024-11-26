@@ -86,13 +86,13 @@ rdr2::Color32 ESP::getActorColor(rdr2::sagActor *const actor)
 	}
 
 	if (actor == rdr2::global::GetPlayerActor()) {
-		clr = { 131, 119, 209, 255 };
+		clr = ESP_CLR_PLAYER;
 	}
 
 	else
 	{
 		if (actor->IsHuman()) {
-			clr = { 255, 155, 84, 255 };
+			clr = ESP_CLR_HUMAN;
 		}
 	}
 

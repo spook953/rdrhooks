@@ -5,6 +5,11 @@ rdr2::Vector2 Draw::getScreenSize()
 	return { ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y };
 }
 
+rdr2::Vector2 Draw::getScreenCenter()
+{
+	return getScreenSize() * 0.5f;
+}
+
 rdr2::Vector2 Draw::getTextSize(std::string_view txt)
 {
 	const ImVec2 size{ ImGui::GetFont()->CalcTextSizeA(ImGui::GetFontSize(), FLT_MAX, 0.0f, txt.data()) };

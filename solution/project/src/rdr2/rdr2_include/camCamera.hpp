@@ -39,5 +39,10 @@ namespace rdr2
 		{
 			sigs::camCamera_Update.call<void>(this);
 		}
+
+		void GetTargetPoint(Vector3 &param_1, bool param_2)
+		{
+			sigs::camCamera_GetTargetPoint.call<void, camCamera *, Vector3 &, bool>(this, param_1, param_2);
+		}
 	};
 }

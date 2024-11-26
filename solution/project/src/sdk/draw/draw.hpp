@@ -17,6 +17,7 @@ public:
 
 public:
 	static rdr2::Vector2 getScreenSize();
+	static rdr2::Vector2 getScreenCenter();
 	static rdr2::Vector2 getTextSize(std::string_view txt);
 
 public:

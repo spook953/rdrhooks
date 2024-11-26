@@ -52,6 +52,12 @@ MAKE_SIG(grcViewport_sm_ScreenViewport, mem::findBytes("RDR.exe", "48 8B 0D ? ? 
 //???
 MAKE_SIG(WorldToScreenMtx, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 89 7C 24 50 89 6C 24 48 89 74 24 40").rip(3).deref().offset(0x240));
 
+//???
+MAKE_SIG(FrameTimeFloat, mem::findBytes("RDR.exe", "F3 0F 10 05 ? ? ? ? F3 0F 58 81 ? ? ? ? 44 0F 29 88 ? ? ? ?").rip(4));
+
+//rage::g_ReplayRand
+MAKE_SIG(g_ReplayRand, mem::findBytes("RDR.exe", "48 8D 0D ? ? ? ? E8 ? ? ? ? 0F 28 CF 48 8D 8C 24 ? ? ? ? 0F 28 D8").rip(3));
+
 MAKE_SIG(GetPlayerActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 C0 74 DF").rip());
 MAKE_SIG(FindWeaponFromActor, mem::findBytes("RDR.exe", "40 56 48 83 EC 20 49 8B F0"));
 MAKE_SIG(GetBonePointerById, mem::findBytes("RDR.exe", "48 89 5C 24 ? 8B 41 38"));
@@ -69,6 +75,8 @@ MAKE_SIG(rmcInstDrawModelSkinned, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 0E 44
 MAKE_SIG(DrawCircle, mem::findBytes("RDR.exe", "E8 ? ? ? ? E8 ? ? ? ? 44 8B 0D ? ? ? ?").rip());
 MAKE_SIG(GameWndProc, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 49 8B D9 49 8B F8"));
 MAKE_SIG(WorldToScreen, mem::findBytes("RDR.exe", "48 83 EC 28 F3 41 0F 10 28"));
+
+MAKE_SIG(tgtReticleComponent_UpdateTargetData, mem::findBytes("RDR.exe", "E8 ? ? ? ? 39 9F ? ? ? ? 74 06").rip());
 
 MAKE_SIG(aActorTypeManager_GetType, mem::findBytes("RDR.exe", "E8 ? ? ? ? 33 F6 8B FE ").rip());
 
@@ -278,6 +286,7 @@ MAKE_SIG(camCamera_ProcessShake, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48
 MAKE_SIG(camCamera_Reset, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48 8D 99 ? ? ? ? C7 81 ? ? ? ? ? ? ? ?"));
 MAKE_SIG(camCamera_ShakeCameraRandom, mem::findBytes("RDR.exe", "E8 ? ? ? ? E9 ? ? ? ? F3 0F 59 73 ?").rip());
 MAKE_SIG(camCamera_Update, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48 8B 01 48 8B D9 FF 90 ? ? ? ? 84 C0 74 35"));
+MAKE_SIG(camCamera_GetTargetPoint, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 48 8B 89 ? ? ? ? 48 8B DA"));
 
 MAKE_SIG(gohCameraTarget_GetPosition, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 0F 10 83 ? ? ? ? 48 8D 45 6F").rip());
 
