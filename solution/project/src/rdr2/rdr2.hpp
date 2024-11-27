@@ -79,6 +79,7 @@
 #include "rdr2_include/rdrAnimation.hpp"
 #include "rdr2_include/rdrMatrixAudioEntity.hpp"
 #include "rdr2_include/rmcInstanceRenderBase.hpp"
+#include "rdr2_include/Roam_Camera.hpp"
 #include "rdr2_include/sagActor.hpp"
 #include "rdr2_include/sagActorComponent.hpp"
 #include "rdr2_include/sagGuid.hpp"

@@ -91,6 +91,7 @@ MAKE_SIG(tgtReticleComponent_FindBestHardLockTarget, mem::findBytes("RDR.exe", "
 MAKE_SIG(tgtReticleComponent_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F B7 83 ? ? ? ? 4C 8B 15 ? ? ? ?").rip());
 
 MAKE_SIG(camCMXCameraActions_Roam_Camera_ComputeFollowMatrix, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8F ? ? ? ? 0F 57 C9 48 85 C9").rip());
+MAKE_SIG(camCMXCameraActions_Roam_Camera_UpdateFollowBehavior, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 0F 10 8F ? ? ? ? 0F 57 C0 0F 2E C8").rip());
 
 MAKE_SIG(aActorTypeManager_GetType, mem::findBytes("RDR.exe", "E8 ? ? ? ? 33 F6 8B FE ").rip());
 

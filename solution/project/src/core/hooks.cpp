@@ -165,18 +165,28 @@ MAKE_HOOK(
 }
 
 MAKE_HOOK(
-	camCMXCameraActions_Roam_Camera_ComputeFollowMatrix,
-	sigs::camCMXCameraActions_Roam_Camera_ComputeFollowMatrix.get(),
+	camCMXCameraActions_Roam_Camera_UpdateFollowBehavior,
+	sigs::camCMXCameraActions_Roam_Camera_UpdateFollowBehavior.get(),
 	void,
-	void *thisptr, const rdr2::Vector3 &param_1, float param_2, bool param_3, rdr2::Matrix44 &param_4)
+	rdr2::Roam_Camera *thisptr)
 {
 	rdr2::Vector3 aim_angles{};
 
-	if (Aim::run(aim_angles)) {
-		return CALL_ORIGINAL(thisptr, aim_angles, param_2, param_3, param_4);
+	if (Aim::run(aim_angles))
+	{
+		rdr2::Matrix44 aim_matrix{};
+
+		thisptr->ComputeFollowMatrix({ aim_angles.x - 0.051f, aim_angles.y, 0.0f }, 0.0f, false, aim_matrix);
+		thisptr->GetVelocity() = {};
+
+		CALL_ORIGINAL(thisptr);
+
+		thisptr->GetMatrix1() = aim_matrix;
+
+		return;
 	}
 
-	CALL_ORIGINAL(thisptr, param_1, param_2, param_3, param_4);
+	CALL_ORIGINAL(thisptr);
 }
 
 MAKE_HOOK(
