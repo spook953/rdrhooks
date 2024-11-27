@@ -138,6 +138,8 @@ bool Aim::aimAt(const Target &target, rdr2::Vector3 &cam_angs)
 
 bool Aim::run(rdr2::Vector3 &cam_angs)
 {
+	has_target = false;
+
 	//Input::getKey() doesnt work on mouse keys..
 	//TODO: figure out how to deal with input better because wndproc is weird in this game
 
@@ -155,6 +157,8 @@ bool Aim::run(rdr2::Vector3 &cam_angs)
 		return false;
 	}
 
+	has_target = true;
+
 	if (cfg::aim_auto_fire) {
 		want_attack = true;
 	}
@@ -164,7 +168,8 @@ bool Aim::run(rdr2::Vector3 &cam_angs)
 
 void Aim::processAttack(void *const some_ptr)
 {
-	if (!some_ptr) {
+	if (!some_ptr || !has_target) {
+		want_attack = false;
 		return;
 	}
 

@@ -18,6 +18,7 @@ private:
 	static bool aimAt(const Target &target, rdr2::Vector3 &cam_angs);
 
 private:
+	static inline bool has_target{};
 	static inline bool want_attack{};
 
 public:
