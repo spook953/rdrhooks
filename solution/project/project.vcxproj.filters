@@ -23,6 +23,7 @@
     <ClCompile Include="src\core\features\esp\esp.cpp" />
     <ClCompile Include="src\utils\tier1\make_cfgvar\make_cfgvar.cpp" />
     <ClCompile Include="src\sdk\input\input.cpp" />
+    <ClCompile Include="src\core\features\aim\aim.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\rdr2\rdr2_include\Color32.hpp" />
@@ -157,5 +158,10 @@
     <ClInclude Include="src\rdr2\rdr2_include\sagLayoutManager.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\aActorTypeManager.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\sagActorComponent.hpp" />
+    <ClInclude Include="src\core\features\aim\aim.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\phSegment.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\phIntersection.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\InputSystem_c.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\Gamepad_c.hpp" />
   </ItemGroup>
 </Project>

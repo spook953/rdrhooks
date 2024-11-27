@@ -116,6 +116,11 @@ namespace rdr2
 			sigs::weapWeapon_Update.call<void>(this, param_1, param_2, param_3, param_4);
 		}
 
+		void GetMuzzleLocation(Vector3 &param_1, float param_2 = 0.0f)
+		{
+			sigs::weapWeapon_GetMuzzleLocation.call<void, void *, Vector3 &, float>(this, param_1, param_2);
+		}
+
 	public:
 		float &GetAmmoInClip()
 		{

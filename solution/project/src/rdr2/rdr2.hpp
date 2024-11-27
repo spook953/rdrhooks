@@ -43,6 +43,7 @@
 #include "rdr2_include/eState.hpp"
 #include "rdr2_include/eTransitionType.hpp"
 #include "rdr2_include/eWeaponAction.hpp"
+#include "rdr2_include/Gamepad_c.hpp"
 #include "rdr2_include/gohBase.hpp"
 #include "rdr2_include/gohCamera.hpp"
 #include "rdr2_include/gohCameraFactory.hpp"
@@ -56,6 +57,7 @@
 #include "rdr2_include/hlthHealthComponent.hpp"
 #include "rdr2_include/hlthMsgInjure.hpp"
 #include "rdr2_include/hudManager.hpp"
+#include "rdr2_include/InputSystem_c.hpp"
 #include "rdr2_include/InstanceTreeRenderer.hpp"
 #include "rdr2_include/invBaseItem.hpp"
 #include "rdr2_include/invInventoryComponent.hpp"
@@ -66,7 +68,9 @@
 #include "rdr2_include/mvrMoverComponent.hpp"
 #include "rdr2_include/mvrMsgLanded.hpp"
 #include "rdr2_include/phInst.hpp"
+#include "rdr2_include/phIntersection.hpp"
 #include "rdr2_include/phLevelNew.hpp"
+#include "rdr2_include/phSegment.hpp"
 #include "rdr2_include/phSimulator.hpp"
 #include "rdr2_include/ProjectileLaunchData.hpp"
 #include "rdr2_include/projProjectile.hpp"
@@ -101,6 +105,35 @@
 
 namespace rdr2::global
 {
+	inline InputSystem_c *GetInputSystem()
+	{
+		return sigs::InputSystem_c_Get.call<InputSystem_c *>();
+	}
+
+	inline int ProbeMultipleExcludeInsts(
+		const phSegment &param_1,
+		int param_2,
+		phIntersection *param_3,
+		int param_4,
+		/*const*/ phInst */*const*/ *param_5,
+		int param_6,
+		int param_7)
+	{
+		return sigs::ProbeMultipleExcludeInsts.call
+			<int, const phSegment &, int, phIntersection *, int, /*const*/ phInst */*const*/ *, int, int>
+			(param_1, param_2, param_3, param_4, param_5, param_6, param_7);
+	}
+	
+	inline unsigned int ConfigureActorExcludeInsts(sagGuid *param_1, phInst **param_2, int param_3, unsigned int param_4)
+	{
+		return sigs::ConfigureActorExcludeInsts.call<unsigned int>(param_1, param_2, param_3, param_4);
+	}
+
+	inline void SetDrawActor(sagActor *a1, bool a2)
+	{
+		sigs::SetDrawActor.call<void>(a1, a2);
+	}
+
 	inline float GetFrameTime()
 	{
 		return *reinterpret_cast<float *>(sigs::FrameTimeFloat.get());
@@ -125,6 +158,25 @@ namespace rdr2::global
 	inline camManager *GetCamManager()
 	{
 		return sigs::camManager_sm_Instance.rcast<camManager *>();
+	}
+
+	inline bool GetCamPos(Vector3 &cam_pos)
+	{
+		camManager *const cam_mgr{ GetCamManager() };
+
+		if (!cam_mgr) {
+			return false;
+		}
+
+		CameraViewport *const cam_viewport{ cam_mgr->GetCameraViewport() };
+
+		if (!cam_viewport) {
+			return false;
+		}
+
+		cam_pos = cam_viewport->m_Matrix1.As34().pos;
+
+		return true;
 	}
 
 	inline ZombieDLCManager *GetZombieDLCManager()
@@ -222,5 +274,19 @@ namespace rdr2::utils
 		}
 
 		return out_min + (out_max - out_min) * std::clamp((val - in_min) / (in_max - in_min), 0.0f, 1.0f);
+	}
+
+	inline Vector3 calcAngle(const Vector3 &from, const Vector3 &to)
+	{
+		const Vector3 delta{ to - from };
+
+		float pitch{ atanf(delta.y / sqrtf((delta.x * delta.x) + (delta.z * delta.z))) };
+		float yaw{ atan2f(delta.x, delta.z) };
+
+		if (yaw < 0.0f) {
+			yaw += 2.0f * rdr2::pi();
+		}
+
+		return { -pitch, yaw, 0.0f };
 	}
 }

@@ -14,9 +14,9 @@ namespace rdr2
 	class sagActor
 	{
 	public:
-		void *GetInstance()
+		phInst *GetInstance()
 		{
-			return sigs::sagActor_GetInstance.call<void *>(this);
+			return sigs::sagActor_GetInstance.call<phInst *>(this);
 		}
 
 		bool IsIndoors()
@@ -75,6 +75,11 @@ namespace rdr2
 		}
 
 	public:
+		sagGuid GetSagGUID()
+		{
+			return *reinterpret_cast<sagGuid *>(reinterpret_cast<uintptr_t>(this) + 0x8);
+		}
+
 		entEntityComponent *GetEntityComponent()
 		{
 			return *reinterpret_cast<entEntityComponent **>(reinterpret_cast<uintptr_t>(this) + 0x50);
@@ -85,10 +90,26 @@ namespace rdr2
 			return *reinterpret_cast<hlthHealthComponent **>(reinterpret_cast<uintptr_t>(this) + 0x60);
 		}
 
+		mvrMoverComponent *GetMoverComponent()
+		{
+			return *reinterpret_cast<mvrMoverComponent **>(reinterpret_cast<uintptr_t>(this) + 0x88);
+		}
+
 		sagActorComponent *GetActorComponent()
 		{
 			return *reinterpret_cast<sagActorComponent **>(reinterpret_cast<uintptr_t>(this) + 0xB0);
 		}
+
+		/*phInst *GetPhysicsInst()
+		{
+			mvrMoverComponent *const mover_component{ GetMoverComponent() };
+
+			if (!mover_component) {
+				return nullptr;
+			}
+
+			return mover_component->GetPhysicsInst();
+		}*/
 
 		bool IsHuman()
 		{

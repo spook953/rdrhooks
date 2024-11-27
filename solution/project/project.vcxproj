@@ -99,6 +99,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\app\app.cpp" />
+    <ClCompile Include="src\core\features\aim\aim.cpp" />
     <ClCompile Include="src\core\features\esp\esp.cpp" />
     <ClCompile Include="src\core\hooks.cpp" />
     <ClCompile Include="src\sdk\draw\draw.cpp" />
@@ -123,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\app\app.hpp" />
+    <ClInclude Include="src\core\features\aim\aim.hpp" />
     <ClInclude Include="src\core\features\cfg.hpp" />
     <ClInclude Include="src\core\features\esp\esp.hpp" />
     <ClInclude Include="src\libs\json\json.hpp" />
@@ -167,6 +169,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\eState.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eTransitionType.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\eWeaponAction.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\Gamepad_c.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohBase.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohCameraTarget.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\gohDofSettings.hpp" />
@@ -179,6 +182,7 @@
     <ClInclude Include="src\rdr2\rdr2_include\hlthMsgInjure.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\camCamera.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\hudManager.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\InputSystem_c.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\InstanceTreeRenderer.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invBaseItem.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\invInventoryComponent.hpp" />
@@ -186,7 +190,9 @@
     <ClInclude Include="src\rdr2\rdr2_include\mvrMoverComponent.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\mvrMsgLanded.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\phInst.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\phIntersection.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\phLevelNew.hpp" />
+    <ClInclude Include="src\rdr2\rdr2_include\phSegment.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\phSimulator.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\ProjectileLaunchData.hpp" />
     <ClInclude Include="src\rdr2\rdr2_include\projProjectile.hpp" />

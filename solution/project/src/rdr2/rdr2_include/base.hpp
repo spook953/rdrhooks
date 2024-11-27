@@ -75,8 +75,22 @@ MAKE_SIG(rmcInstDrawModelSkinned, mem::findBytes("RDR.exe", "E8 ? ? ? ? EB 0E 44
 MAKE_SIG(DrawCircle, mem::findBytes("RDR.exe", "E8 ? ? ? ? E8 ? ? ? ? 44 8B 0D ? ? ? ?").rip());
 MAKE_SIG(GameWndProc, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 49 8B D9 49 8B F8"));
 MAKE_SIG(WorldToScreen, mem::findBytes("RDR.exe", "48 83 EC 28 F3 41 0F 10 28"));
+MAKE_SIG(GetDrawActor, mem::findBytes("RDR.exe", "40 53 48 83 EC 20 48 85 C9 74 66"));
+MAKE_SIG(SetDrawActor, mem::findBytes("RDR.exe", "E9 ? ? ? ? 48 8B 02 48 8B CA 48 89 5C 24 ?").rip());
+MAKE_SIG(ProbeMultipleExcludeInsts, mem::findBytes("RDR.exe", "E8 ? ? ? ? 85 C0 74 3C").rip());
+MAKE_SIG(ConfigureActorExcludeInsts, mem::findBytes("RDR.exe", "E8 ? ? ? ? 8D 3C 03").rip());
+
+MAKE_SIG(InputSystem_c_Get, mem::findBytes("RDR.exe", "E8 ? ? ? ? C1 EF 08").rip());
+MAKE_SIG(InputSystem_c_GetGamepad, mem::findBytes("RDR.exe", "85 D2 75 09 48 8B 41 58"));
+
+MAKE_SIG(SomeInputFuncOrSomething, mem::findBytes("RDR.exe", "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 40 48 83 79 ? ?"));
 
 MAKE_SIG(tgtReticleComponent_UpdateTargetData, mem::findBytes("RDR.exe", "E8 ? ? ? ? 39 9F ? ? ? ? 74 06").rip());
+MAKE_SIG(tgtReticleComponent_ComputeReticleInfo, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8D 87 ? ? ? ? 48 8D 54 24 ?").rip());
+MAKE_SIG(tgtReticleComponent_FindBestHardLockTarget, mem::findBytes("RDR.exe", "E8 ? ? ? ? 83 F8 FF 7E 12").rip());
+MAKE_SIG(tgtReticleComponent_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 0F B7 83 ? ? ? ? 4C 8B 15 ? ? ? ?").rip());
+
+MAKE_SIG(camCMXCameraActions_Roam_Camera_ComputeFollowMatrix, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 8F ? ? ? ? 0F 57 C9 48 85 C9").rip());
 
 MAKE_SIG(aActorTypeManager_GetType, mem::findBytes("RDR.exe", "E8 ? ? ? ? 33 F6 8B FE ").rip());
 
@@ -198,6 +212,7 @@ MAKE_SIG(weapWeapon_SetDrawn, mem::findBytes("RDR.exe", "E8 ? ? ? ? 80 7B 20 00"
 MAKE_SIG(weapWeapon_Init, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 03 48 83 C4 30").rip());
 MAKE_SIG(weapWeapon_FireProjectileRemote, mem::findBytes("RDR.exe", "48 89 74 24 ? 57 48 81 EC ? ? ? ? 48 63 41 30"));
 MAKE_SIG(weapWeapon_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? 4C 8B C3 B2 01").rip());
+MAKE_SIG(weapWeapon_GetMuzzleLocation, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B BC 24 ? ? ? ? F3 44 0F 10 17").rip());
 
 MAKE_SIG(scrThread_Run, mem::findBytes("RDR.exe", "89 54 24 10 55 53 57 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 44 8B 79 10"));
 
