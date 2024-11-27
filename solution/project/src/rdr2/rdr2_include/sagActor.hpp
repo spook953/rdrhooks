@@ -111,6 +111,17 @@ namespace rdr2
 			return mover_component->GetPhysicsInst();
 		}*/
 
+		Vector3 GetVelocity()
+		{
+			mvrMoverComponent *const mover_component{ GetMoverComponent() };
+
+			if (!mover_component) {
+				return {};
+			}
+
+			return mover_component->GetVelocity();
+		}
+
 		bool IsHuman()
 		{
 			sagActorComponent *const actor_component{ GetActorComponent() };
