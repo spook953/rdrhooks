@@ -22,6 +22,6 @@ private:
 	static inline bool want_attack{};
 
 public:
-	static bool run(rdr2::Vector3 &cam_angs);
+	static bool run(rdr2::Vector3 &result);
 	static void processAttack(void *const some_ptr);
 };

@@ -195,20 +195,42 @@ MAKE_HOOK(
 	void,
 	rdr2::Roam_Camera *thisptr)
 {
-	rdr2::Vector3 aim_angles{};
-
-	if (Aim::run(aim_angles))
+	if (cfg::aim_aiming_method == 0)
 	{
-		rdr2::Matrix44 aim_matrix{};
+		rdr2::Vector3 aim_angles{};
 
-		thisptr->ComputeFollowMatrix({ aim_angles.x - 0.051f, aim_angles.y, 0.0f }, 0.0f, false, aim_matrix);
-		thisptr->GetVelocity() = {};
+		if (Aim::run(aim_angles))
+		{
+			rdr2::Matrix44 aim_matrix{};
 
-		CALL_ORIGINAL(thisptr);
+			thisptr->ComputeFollowMatrix({ aim_angles.x - 0.051f, aim_angles.y, 0.0f }, 0.0f, false, aim_matrix);
+			thisptr->GetVelocity() = {};
 
-		thisptr->GetMatrix1() = aim_matrix;
+			CALL_ORIGINAL(thisptr);
 
-		return;
+			thisptr->GetMatrix1() = aim_matrix;
+
+			return;
+		}
+	}
+
+	CALL_ORIGINAL(thisptr);
+}
+
+MAKE_HOOK(
+	tgtReticleComponent_UpdateTargetData,
+	sigs::tgtReticleComponent_UpdateTargetData.get(),
+	void,
+	rdr2::tgtReticleComponent *thisptr)
+{
+	if (cfg::aim_aiming_method == 1)
+	{
+		rdr2::Vector3 target_point{};
+
+		if (Aim::run(target_point)) {
+			thisptr->SetTargetPoint(target_point);
+			return;
+		}
 	}
 
 	CALL_ORIGINAL(thisptr);

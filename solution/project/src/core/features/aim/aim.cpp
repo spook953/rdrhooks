@@ -136,7 +136,7 @@ bool Aim::aimAt(const Target &target, rdr2::Vector3 &cam_angs)
 	return true;
 }
 
-bool Aim::run(rdr2::Vector3 &cam_angs)
+bool Aim::run(rdr2::Vector3 &result)
 {
 	has_target = false;
 
@@ -153,8 +153,15 @@ bool Aim::run(rdr2::Vector3 &cam_angs)
 		return false;
 	}
 
-	if (!aimAt(target, cam_angs)) {
-		return false;
+	if (cfg::aim_aiming_method == 0)
+	{
+		if (!aimAt(target, result)) {
+			return false;
+		}
+	}
+
+	else if (cfg::aim_aiming_method == 1) {
+		result = target.pos;
 	}
 
 	has_target = true;

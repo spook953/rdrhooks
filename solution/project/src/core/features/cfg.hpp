@@ -8,7 +8,8 @@ MAKE_CFGVAR(aim_active, true);
 MAKE_CFGVAR(aim_key, VK_XBUTTON1);
 MAKE_CFGVAR(aim_auto_fire, true);
 
-MAKE_CFGVAR(aim_score_method, 0); //(0 = screen dist) (1 = world dist)
+MAKE_CFGVAR(aim_aiming_method, 1); //(0 = normal) (1 = silent)
+MAKE_CFGVAR(aim_score_method, 1); //(0 = screen dist) (1 = world dist)
 MAKE_CFGVAR(aim_max_screen_dist, 200.0f);
 MAKE_CFGVAR(aim_max_world_dist, 200.0f);
 
@@ -29,7 +30,7 @@ MAKE_CFGVAR(esp_humans_health_bar, true);
 
 MAKE_CFGVAR(visuals_fov_override_active, true);
 MAKE_CFGVAR(visuals_fov_override_mode, 0); //(0 = set) (1 = add)
-MAKE_CFGVAR(visuals_fov_override_set_val, 70.0f);
+MAKE_CFGVAR(visuals_fov_override_set_val, 65.0f);
 MAKE_CFGVAR(visuals_fov_override_add_val, 5.0f);
 
 MAKE_CFGVAR(visuals_no_cam_shake, true);
