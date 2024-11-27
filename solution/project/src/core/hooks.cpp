@@ -164,6 +164,24 @@ MAKE_HOOK(
 	CALL_ORIGINAL(thisptr);
 }
 
+//this is more accurate im pretty sure..
+//but it has an annoying down flick after aim stops aiming
+//WTF!!
+//MAKE_HOOK(
+//	camCMXCameraActions_Roam_Camera_ComputeFollowMatrix,
+//	sigs::camCMXCameraActions_Roam_Camera_ComputeFollowMatrix.get(),
+//	void,
+//	rdr2::Roam_Camera *thisptr, const rdr2::Vector3 &param_1, float param_2, bool param_3, rdr2::Matrix44 &param_4)
+//{
+//	rdr2::Vector3 aim_angles{};
+//
+//	if (Aim::run(aim_angles)) {
+//		return CALL_ORIGINAL(thisptr, aim_angles, param_2, param_3, param_4);
+//	}
+//
+//	CALL_ORIGINAL(thisptr, param_1, param_2, param_3, param_4);
+//}
+
 MAKE_HOOK(
 	camCMXCameraActions_Roam_Camera_UpdateFollowBehavior,
 	sigs::camCMXCameraActions_Roam_Camera_UpdateFollowBehavior.get(),
@@ -200,4 +218,24 @@ MAKE_HOOK(
 	Aim::processAttack(thisptr);
 
 	return result;
+}
+
+MAKE_HOOK(
+	projProjectile_Launch,
+	sigs::projProjectile_Launch.get(),
+	void,
+	rdr2::projProjectile *thisptr, rdr2::Matrix34 *param_1, int param_2, rdr2::Vector3 *param_3, rdr2::sagGuid param_4,
+	rdr2::Vector3 *param_5, bool param_6, bool param_7, float param_8, rdr2::Vector3 *param_9)
+{
+	if (cfg::misc_no_weapon_spread)
+	{
+		if (rdr2::sagActor *const plr{ rdr2::global::GetPlayerActor() })
+		{
+			if (param_4 == plr->GetSagGUID()) {
+				param_7 = true;
+			}
+		}
+	}
+
+	CALL_ORIGINAL(thisptr, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9);
 }
