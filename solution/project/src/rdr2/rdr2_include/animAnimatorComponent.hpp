@@ -12,6 +12,8 @@
 
 namespace rdr2
 {
+	class sagActor;
+
 	class animAnimatorComponent
 	{
 	public:
@@ -108,6 +110,12 @@ namespace rdr2
 		void HandleAttachmentImpact(sagMsgAttachmentImpact *param_1)
 		{
 			sigs::animAnimatorComponent_HandleAttachmentImpact.call<void>(this, param_1);
+		}
+
+	public:
+		sagActor *GetActor()
+		{
+			return *reinterpret_cast<sagActor **>(reinterpret_cast<uintptr_t>(this) + 0x10);
 		}
 	};
 }

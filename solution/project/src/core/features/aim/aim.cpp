@@ -129,7 +129,7 @@ bool Aim::aimAt(const Target &target, rdr2::Vector3 &cam_angs)
 		return false;
 	}
 
-	cam_pos += plr_actor->GetVelocity() * (rdr2::global::GetFrameTime() * 1.0f);
+	cam_pos += plr_actor->GetVelocity() * (rdr2::global::GetFrameTime() * 2.0f);
 
 	cam_angs = rdr2::utils::calcAngle(cam_pos, target.pos);
 

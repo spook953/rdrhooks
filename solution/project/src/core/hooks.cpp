@@ -146,8 +146,15 @@ MAKE_HOOK(
 {
 	CALL_ORIGINAL(thisptr);
 	
-	if (cfg::visuals_fov_override_active) {
-		thisptr->m_Fov += cfg::visuals_fov_override_val;
+	if (cfg::visuals_fov_override_active)
+	{
+		if (cfg::visuals_fov_override_mode == 0) {
+			thisptr->m_Fov = cfg::visuals_fov_override_set_val;
+		}
+
+		if (cfg::visuals_fov_override_mode == 1) {
+			thisptr->m_Fov += cfg::visuals_fov_override_add_val;
+		}
 	}
 }
 
@@ -238,4 +245,41 @@ MAKE_HOOK(
 	}
 
 	CALL_ORIGINAL(thisptr, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9);
+}
+
+MAKE_HOOK(
+	animAnimatorComponent_Update,
+	sigs::animAnimatorComponent_Update.get(),
+	void,
+	rdr2::animAnimatorComponent *thisptr)
+{
+	if (cfg::misc_speed_active && Input::getKey(cfg::misc_speed_key).held)
+	{
+		if (thisptr && thisptr->GetActor() == rdr2::global::GetPlayerActor())
+		{
+			for (int n{}; n < cfg::misc_speed_amount; n++) {
+				CALL_ORIGINAL(thisptr);
+			}
+
+			return;
+		}
+	}
+
+	CALL_ORIGINAL(thisptr);
+}
+
+MAKE_HOOK(
+	rage_rmpRoomGroupBase_QueryRoomInPoint,
+	sigs::rage_rmpRoomGroupBase_QueryRoomInPoint.get(),
+	int64_t,
+	void *thisptr, const rdr2::Vector3 &param_1)
+{
+	if (cfg::misc_time_scale_override != 1.0f)
+	{
+		if (_ReturnAddress() == sigs::sagShellDerived_Update_QueryRoomInPoint_call.rcast<void *>()) {
+			*reinterpret_cast<float *>(sigs::TimeScale.get()) = cfg::misc_time_scale_override;
+		}
+	}
+
+	return CALL_ORIGINAL(thisptr, param_1);
 }

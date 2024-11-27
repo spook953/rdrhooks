@@ -28,7 +28,9 @@ MAKE_CFGVAR(esp_humans_health_bar, true);
 #pragma region visuals
 
 MAKE_CFGVAR(visuals_fov_override_active, true);
-MAKE_CFGVAR(visuals_fov_override_val, 5.0f);
+MAKE_CFGVAR(visuals_fov_override_mode, 0); //(0 = set) (1 = add)
+MAKE_CFGVAR(visuals_fov_override_set_val, 70.0f);
+MAKE_CFGVAR(visuals_fov_override_add_val, 5.0f);
 
 MAKE_CFGVAR(visuals_no_cam_shake, true);
 
@@ -41,5 +43,10 @@ MAKE_CFGVAR(misc_no_ammo_drain, true);
 MAKE_CFGVAR(misc_no_shot_delay, true);
 MAKE_CFGVAR(misc_no_weapon_spread, true);
 MAKE_CFGVAR(misc_force_auto_fire, true);
+MAKE_CFGVAR(misc_time_scale_override, 1.0f);
+
+MAKE_CFGVAR(misc_speed_active, true);
+MAKE_CFGVAR(misc_speed_key, VK_SHIFT);
+MAKE_CFGVAR(misc_speed_amount, 10);
 
 #pragma endregion

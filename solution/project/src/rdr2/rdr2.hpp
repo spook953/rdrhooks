@@ -135,7 +135,7 @@ namespace rdr2::global
 		sigs::SetDrawActor.call<void>(a1, a2);
 	}
 
-	inline float GetFrameTime()
+	inline float &GetFrameTime()
 	{
 		return *reinterpret_cast<float *>(sigs::FrameTimeFloat.get());
 	}

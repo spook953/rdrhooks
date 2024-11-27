@@ -58,6 +58,12 @@ MAKE_SIG(FrameTimeFloat, mem::findBytes("RDR.exe", "F3 0F 10 05 ? ? ? ? F3 0F 58
 //rage::g_ReplayRand
 MAKE_SIG(g_ReplayRand, mem::findBytes("RDR.exe", "48 8D 0D ? ? ? ? E8 ? ? ? ? 0F 28 CF 48 8D 8C 24 ? ? ? ? 0F 28 D8").rip(3));
 
+//???
+MAKE_SIG(TimeScale, mem::findBytes("RDR.exe", "F3 0F 11 05 ? ? ? ? 48 8B 0D ? ? ? ? 48 63 41 48 48 8B 54 C1 ?").rip(4));
+
+MAKE_SIG(rage_rmpRoomGroupBase_QueryRoomInPoint, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 C0 75 20").rip());
+MAKE_SIG(sagShellDerived_Update_QueryRoomInPoint_call, mem::findBytes("RDR.exe", "E8 ? ? ? ? F3 0F 10 15 ? ? ? ? 48 85 C0 74 12 F3 0F 5C 15 ? ? ? ?").offset(5));
+
 MAKE_SIG(GetPlayerActor, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 85 C0 74 DF").rip());
 MAKE_SIG(FindWeaponFromActor, mem::findBytes("RDR.exe", "40 56 48 83 EC 20 49 8B F0"));
 MAKE_SIG(GetBonePointerById, mem::findBytes("RDR.exe", "48 89 5C 24 ? 8B 41 38"));
@@ -246,6 +252,7 @@ MAKE_SIG(animAnimatorComponent_UpdatePM, mem::findBytes("RDR.exe", "E8 ? ? ? ? F
 MAKE_SIG(animAnimatorComponent_EnableRepulsion, mem::findBytes("RDR.exe", "E8 ? ? ? ? 40 38 77 1C").rip());
 MAKE_SIG(animAnimatorComponent_UpdateCharacterAnimation, mem::findBytes("RDR.exe", "40 53 48 83 EC 30 48 8B 41 10 44 8B C2"));
 MAKE_SIG(animAnimatorComponent_HandleAttachmentImpact, mem::findBytes("RDR.exe", "E8 ? ? ? ? 49 8B 55 00 48 8B 5C 24 ?").rip());
+MAKE_SIG(animAnimatorComponent_Update, mem::findBytes("RDR.exe", "E8 ? ? ? ? F6 83 ? ? ? ? ? 74 2F").rip());
 
 MAKE_SIG(aniActionSet_Init, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B BB ? ? ? ? 48 39 2F").rip());
 MAKE_SIG(aniActionSet_Shutdown, mem::findBytes("RDR.exe", "E8 ? ? ? ? 48 8B 4B 08 48 8B D7").rip());
