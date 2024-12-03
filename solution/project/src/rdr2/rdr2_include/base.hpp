@@ -11,7 +11,7 @@ MAKE_SIG(camManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B 
 MAKE_SIG(WeatherManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 8B 48 54 85 C9 74 1C").rip(3).deref());
 
 //sagLayoutManager::sm_Instance
-MAKE_SIG(sagLayoutManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 10 ? ? ? 48 8B 48 10 48 8B 71 10 48 85 F6").rip(3).deref());
+MAKE_SIG(sagLayoutManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 48 8B 48 10 48 8B 71 10 48 85 F6 0F 84 ? ? ? ? 0F 29 B4 24 ? ? ? ?").rip(3).deref());
 
 //rage::phLevelNew::sm_ActiveInstance
 MAKE_SIG(phLevelNew_sm_ActiveInstance, mem::findBytes("RDR.exe", "48 8B 05 ? ? ? ? 4F 8D 04 40 4D 03 C0 48 8B 50 60").rip(3).deref());
@@ -21,9 +21,6 @@ MAKE_SIG(aGuidGeneral_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 05 ? ? ?
 
 //rage::aGuidGeneral<gohBase>::sm_ManagerSlots
 MAKE_SIG(aGuidGeneral_gohBase_sm_ManagerSlots, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? 44 0F B7 C0 4D 03 C0").rip(3).deref());
-
-//WeaponEnumManager::sm_EnumWeaponEnumTree
-MAKE_SIG(WeaponEnumManager_sm_EnumWeaponEnumTree, mem::findBytes("RDR.exe", "48 8B 05 61 ? ? ? 48 85 C0 74 23 0F 1F 40 00").rip(3).deref());
 
 //ZombieDLCManager::sm_instance
 MAKE_SIG(ZombieDLCManager_sm_Instance, mem::findBytes("RDR.exe", "48 8B 0D ? ? ? ? 48 85 C9 74 07 33 D2 E8 ? ? ? ? 0F B6 D0 48 8B 03").rip(3));
